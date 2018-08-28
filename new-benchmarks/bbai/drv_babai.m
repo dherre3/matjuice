@@ -5,5 +5,4 @@ for i = 1 : scale
 	y=randn(10,1);
 	z=babai(A,y);
 end
-
 end

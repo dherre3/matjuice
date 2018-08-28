@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="McLabCore">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/mclab-core/languages/Natlab/McLabCore.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="file://$PROJECT_DIR$/mclab-core/languages/Natlab/src" />
+    </SOURCES>
+  </library>
+</component>

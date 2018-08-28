@@ -22,25 +22,25 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.util.*;
+import java.util.function.BiConsumer;
 
 import matjuice.pretty.Pretty;
 import matjuice.codegen.Generator;
 import matjuice.codegen.FunctionRenamer;
 import matjuice.jsast.Program;
 
-import matjuice.utils.Utils;
+import matwably.transformer.BuiltinInputTransformer;
 import natlab.tame.BasicTamerTool;
+import natlab.tame.callgraph.FunctionCollection;
+import natlab.tame.callgraph.SimpleFunctionCollection;
+import natlab.tame.callgraph.StaticFunction;
 import natlab.tame.tir.*;
 import natlab.tame.valueanalysis.IntraproceduralValueAnalysis;
 import natlab.tame.valueanalysis.ValueAnalysis;
-import natlab.tame.valueanalysis.value.Args;
 import natlab.tame.valueanalysis.aggrvalue.AggrValue;
 import natlab.tame.valueanalysis.basicmatrix.BasicMatrixValue;
 
-import natlab.tame.valueanalysis.components.shape.Shape;
-import natlab.toolkits.analysis.core.Def;
-import natlab.toolkits.analysis.core.ReachingDefs;
-import natlab.toolkits.analysis.core.UseDefDefUseChain;
+import natlab.toolkits.Context;
 import natlab.toolkits.filehandling.GenericFile;
 import natlab.toolkits.path.FileEnvironment;
 
@@ -48,6 +48,7 @@ import natlab.toolkits.path.FileEnvironment;
 import com.beust.jcommander.JCommander;
 import com.beust.jcommander.Parameter;
 import com.beust.jcommander.Parameters;
+import natlab.toolkits.path.FunctionReference;
 
 
 public class Main {
@@ -95,7 +96,7 @@ public class Main {
         for (int i = 2; i < opts.arguments.size(); ++i) {
             shapeDesc[i-2] = opts.arguments.get(i);
         }
-
+        System.out.println(shapeDesc[0]);
         // Compilation time
         long startTime = 0;     // start time of the whole compilation
         long endTime = 0;       // end time of the whole compilation
@@ -111,16 +112,44 @@ public class Main {
 
         FileEnvironment fenv = new FileEnvironment(gfile);
         ValueAnalysis<AggrValue<BasicMatrixValue>> analysis = BasicTamerTool.analyze(shapeDesc, fenv);
-
         Set generated = new HashSet<String>();
         Program program = new Program();
         String entryPointName = null;
         String entryPointShape = null;
 
+        SimpleFunctionCollection callgraph = new SimpleFunctionCollection(fenv);
         int numFunctions = analysis.getNodeList().size();
         for (int i = 0; i < numFunctions; ++i) {
             IntraproceduralValueAnalysis<AggrValue<BasicMatrixValue>> funcAnalysis = analysis.getNodeList().get(i).getAnalysis();
+            if(opts.useWasm){
+                analysis = BasicTamerTool.analyze(shapeDesc, fenv);
+                FunctionReference ref = new FunctionReference(
+                        funcAnalysis.getTree().getName().getID(), fenv.getMainFunctionReference().getFile());
+                System.out.println(ref);
+                System.out.println("GETTING CONTEXT");
+                Context context = fenv.getContext(funcAnalysis.getTree(),
+                        ref.getFile());
+                System.out.println(context);
+                //  Transforms the input create canonical version
 
+                //BuiltinInputTransformer.apply(funcAnalysis.getTree(), analysis.getNodeList().get(i).getAnalysis());
+
+
+//                new StaticFunction(new TIRFunction(), ref, context);
+                TIRFunction function = funcAnalysis.getTree();
+                int a = analysis.getFunctionCollection().getAllFunctions().indexOf(function);
+                System.out.println(a);
+//                StaticFunction stat = new StaticFunction(function, ref,
+//                        context);
+//                StaticFunction func = callgraph.replace(ref,function);
+//                if( func == null){
+//                    throw new Error("NULL REPLACEMENT");
+//                }else{
+//                    System.out.println(func.getAst().getPrettyPrinted());
+//                }
+//                analysis = BasicTamerTool.analyze(callgraph, shapeDesc);
+//                funcAnalysis = analysis.getNodeList().get(i).getAnalysis();
+            }
             String functionName = funcAnalysis.getTree().getName().getID();
             String originalFunctionName = functionName;
 
@@ -131,7 +160,7 @@ public class Main {
 
             if (!generated.contains(functionName)) {
                 TIRFunction matlabFunction = funcAnalysis.getTree();
-                Generator gen = new Generator(funcAnalysis, opts.doCopyInsertion);
+                Generator gen = new Generator(funcAnalysis, opts.doCopyInsertion, opts.useWasm);
                 program.addFunction(gen.genFunction(matlabFunction));
                 generated.add(functionName);
                 System.out.println("Generated: " + functionName);
@@ -160,32 +189,27 @@ public class Main {
         FileWriter out = null;
         String[] jsDeps = {
             "mjapi.js",
-            "lib.js",
+            "lib.js"
         };
+        String[] wasmDeps = {
+                "wasm_loader.js"
+        };
+
 
         try {
             out = new FileWriter(javascriptFile);
-
-            for (String jsDep: jsDeps) {
-                InputStream stream = Main.class.getResourceAsStream("/" + jsDep);
-                if (stream != null) {
-                    BufferedReader in = new BufferedReader(new InputStreamReader(stream));
-                    out.write(slurp(in));
-                }
+            if( opts.useWasm ){
+                writeResources(out, wasmDeps);
+//                writeResources(out, jsDeps);
+            }else{
+                writeResources(out, jsDeps);
             }
-
             out.write(String.format("%n%n// BEGINNING OF PROGRAM%n%n"));
             out.write(Pretty.display(program.pp()));
             out.write('\n');
-            out.write(String.format("module.exports['/pando/1.0.0'] = function (x, cb) {%n" +
-                                    "  try {%n" +
-                                    "    var r = %s(x)%n" +
-                                    "    cb(null, r)%n" +
-                                    "  } catch (e) {%n" +
-                                    "    cb(e)%n" +
-                                    "  }%n" +
-                                    "}", entryPointName));
+            out.write(String.format("%s(10);", entryPointName));
             out.write('\n');
+            if( opts.useWasm) out.write("})();\n");
         }
         catch (IOException exc) {
             System.err.println("Error: cannot write to " + javascriptFile);
@@ -195,6 +219,18 @@ public class Main {
                 out.close();
             }
             catch (IOException e) {}
+        }
+    }
+
+    private static void writeResources(FileWriter out, String[] wasmDeps) throws IOException {
+        for (String wasmDep: wasmDeps) {
+            InputStream stream = Main.class.getResourceAsStream("/" + wasmDep);
+            if (stream != null) {
+                BufferedReader in = new BufferedReader(new InputStreamReader(stream));
+                out.write(slurp(in));
+            }else{
+                System.err.println("Error: cannot write to " + wasmDep);
+            }
         }
     }
 }
@@ -207,7 +243,8 @@ final class CommandLineOptions {
 
     @Parameter(names={ "-h", "--help" }, help=true, description="display this help message")
     public boolean help = false;
-
+    @Parameter(names={ "--use-wasm" }, description="Use wasm built-ins instead of the JavaScript implemented built-ins")
+    public boolean useWasm = false;
     @Parameter(names={ "--rename-operators" }, arity=1, description="replace scalar functions with JavaScript operators")
     public boolean renameOperators = true;
 

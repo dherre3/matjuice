@@ -21,7 +21,7 @@ import matjuice.pretty.PrettyBase;
 
 public class Utils {
     public static PrettyBase[] ppStmts(List<Stmt> stmts) {
-        int n = stmts.count();
+        int n = stmts.getNumChild();
         PrettyBase[] out = new PrettyBase[n];
         int i = 0;
         for (Stmt stmt: stmts) {

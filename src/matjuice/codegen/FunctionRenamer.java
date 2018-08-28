@@ -19,10 +19,7 @@ package matjuice.codegen;
 import matjuice.utils.Utils;
 
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Arrays;
-import java.util.Iterator;
+import java.util.*;
 
 import natlab.tame.builtin.Builtin;
 import natlab.tame.tir.TIRCommaSeparatedList;
@@ -60,7 +57,16 @@ public class FunctionRenamer {
             "lt", "le", "gt", "ge", "eq", "ne", "length",
             "sin", "cos", "tan", "uminus", "exp", "rdivide", "round", "sqrt",
             "mpower", "floor", "ceil", "power", "abs", "fix", "and", "times",
-            "log"
+            "log", "disp"
+    };
+    private static String[] SHAPE_INPUT = {
+            "randn","zeros","eye","rand","ones"
+    };
+    private static String[] SHAPE_INPUT_TO_THE_LEFT = {
+        "reshape","randi"
+    };
+    private static String[] VECTOR_INPUT = {
+            "vertcat","horzcat","colon","get","set"
     };
     private static String[] NONSPECIALIZED = {
             "any", "assert"
@@ -70,14 +76,24 @@ public class FunctionRenamer {
         // search over them.
         Arrays.sort(SPECIALIZED, (s, t) -> s.compareTo(t));
         Arrays.sort(NONSPECIALIZED, (s, t) -> s.compareTo(t));
-    }
+        Arrays.sort(VECTOR_INPUT, Comparator.naturalOrder());
+        Arrays.sort(SHAPE_INPUT, Comparator.naturalOrder());
 
+    }
+    public static boolean isVectorInput(String funcName){
+        return Arrays.binarySearch(VECTOR_INPUT, funcName,Comparator.naturalOrder()) >= 0;
+    }
+    public static boolean isShapeInput(String funcName){
+        return Arrays.binarySearch(SHAPE_INPUT, funcName,Comparator.naturalOrder()) >= 0;
+    }
+    public static boolean isMatlabBuiltin(String funcName ){
+        return Builtin.getInstance(funcName) != null;
+    }
     public static String toSuffix(Args<AggrValue<BasicMatrixValue>> args) {
         String suffix = "";
-        Iterator var2 = args.iterator();
 
-        while(var2.hasNext()) {
-            BasicMatrixValue bmv = (BasicMatrixValue)var2.next();
+        for (Object arg : args) {
+            BasicMatrixValue bmv = (BasicMatrixValue) arg;
             if (bmv.hasShape() && bmv.getShape().isScalar())
                 suffix += "S";
             else
@@ -101,21 +117,24 @@ public class FunctionRenamer {
     }
 
     public static String getFunctionName(TIRCallStmt tirStmt,
-      IntraproceduralValueAnalysis<AggrValue<BasicMatrixValue>> analysis) {
+      IntraproceduralValueAnalysis<AggrValue<BasicMatrixValue>> analysis, boolean useWasm) {
         String functionName = tirStmt.getFunctionName().getID();
         String suffix = toSuffix(tirStmt, analysis);
 
         if (Builtin.getInstance(functionName) == null) {
             return functionName + (suffix.equals("") ? "" : "_" + suffix);
         } else if (Arrays.binarySearch(SPECIALIZED, functionName, (s, t) -> s.compareTo(t)) >= 0) {
-            return "mc_" + functionName + (suffix.equals("") ? "" : "_" + suffix);
+            return ((useWasm)?"":"mc_") +functionName + (suffix.equals("") ? "" : "_" + suffix);
         } else {
-            return "mc_" + functionName;
+            return  ((useWasm)?"":"mc_") +functionName;
         }
+    }
+    public static Boolean isSpecializedFunction(String name){
+        return Arrays.binarySearch(SPECIALIZED, name, Comparator.naturalOrder()) >=0;
     }
 
     public static String getFunctionName(TIRFunction function,
-                                         IntraproceduralValueAnalysis<AggrValue<BasicMatrixValue>> analysis) {
+                                         IntraproceduralValueAnalysis<AggrValue<BasicMatrixValue>> analysis, boolean useWasm) {
         String functionName = function.getName().getID();
         String suffix = toSuffix(analysis.getArgs());
 
@@ -123,7 +142,7 @@ public class FunctionRenamer {
         if (Builtin.getInstance(functionName) == null) {
             return functionName + (suffix.equals("") ? "" : "_" + suffix);
         } else if (Arrays.binarySearch(SPECIALIZED, functionName, (s, t) -> s.compareTo(t)) >= 0) {
-            return "mc_" + functionName + (suffix.equals("") ? "" : "_" + suffix);
+            return ((useWasm)?"":"mc_") +functionName + (suffix.equals("") ? "" : "_" + suffix);
         } else {
             throw new Error("Unsupported redefinition of builtin function " + functionName);
         }

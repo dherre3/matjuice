@@ -1,0 +1,316 @@
+/*
+ *  Copyright 2014-2015, Vincent Foley-Bourgon, McGill University
+ *
+ *  Licensed under the Apache License, Version 2.0 (the "License");
+ *  you may not use this file except in compliance with the License.
+ *  You may obtain a copy of the License at
+ *
+ *    http://www.apache.org/licenses/LICENSE-2.0
+ *
+ *  Unless required by applicable law or agreed to in writing, software
+ *  distributed under the License is distributed on an "AS IS" BASIS,
+ *  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ *  See the License for the specific language governing permissions and
+ *  limitations under the License.
+ */
+
+
+import matjuice.pretty.Pretty;
+import matjuice.pretty.PrettyBase;
+
+aspect PrettyPrinter {
+
+    public abstract PrettyBase Stmt.pp();
+    public abstract PrettyBase Expr.pp();
+
+    public PrettyBase Program.pp() {
+        PrettyBase[] ppFunctions = new PrettyBase[this.getNumFunction()];
+        for (int i = 0; i < ppFunctions.length; ++i) {
+            ppFunctions[i] = this.getFunction(i).pp();
+        }
+        return Pretty.separateBy(Pretty.concat(Pretty.NEWLINE, Pretty.NEWLINE),
+                                 ppFunctions);
+    }
+
+    public PrettyBase Identifier.pp() {
+        return Pretty.text(this.getId());
+    }
+
+    public PrettyBase Function.pp() {
+        PrettyBase[] ppParams = new PrettyBase[this.getNumParam()];
+        for (int i = 0; i < ppParams.length; ++i) {
+            ppParams[i] = this.getParam(i).pp();
+        }
+
+        PrettyBase[] ppBody = new PrettyBase[this.getNumDecl() + 1];
+        for (int i = 0; i < this.getNumDecl(); ++i) {
+            ppBody[i] = Pretty.concat(
+                Pretty.text("var"),
+                Pretty.SPACE,
+                this.getDecl(i).pp(),
+                Pretty.text(" = 0;")
+                );
+        }
+
+        ppBody[ppBody.length - 1] = this.getStmts().pp();
+
+
+        return Pretty.concat(
+            Pretty.text("function"),
+            Pretty.SPACE,
+            Pretty.text(this.getFunctionName()),
+            Pretty.parenthesized(Pretty.separateBy(Pretty.text(", "), ppParams)),
+            Pretty.block(ppBody)
+            );
+    }
+
+    public PrettyBase StmtAssign.pp() {
+        return Pretty.concat(
+            Pretty.text(this.getLhs()),
+            Pretty.text(" = "),
+            this.getRhs().pp(),
+            Pretty.text(";")
+            );
+    }
+
+    public PrettyBase StmtGet.pp() {
+        return Pretty.concat(
+            Pretty.text(this.getLhs()),
+            Pretty.text(" = "),
+            Pretty.text(this.getRhs()),
+            Pretty.wrapped(
+                Pretty.text("["),
+                Pretty.text("]"),
+                this.getIndex().pp()
+                ),
+            Pretty.text(";")
+            );
+    }
+
+    public PrettyBase StmtSet.pp() {
+        return Pretty.concat(
+            Pretty.text(this.getLhs()),
+            Pretty.wrapped(
+                Pretty.text("["),
+                Pretty.text("]"),
+                this.getIndex().pp()
+                ),
+            Pretty.text(" = "),
+            Pretty.text(this.getRhs()),
+            Pretty.text(";")
+            );
+    }
+
+    public PrettyBase StmtUnop.pp() {
+        return Pretty.concat(
+            Pretty.text(this.getLhs()),
+            Pretty.text(" = "),
+            this.getOp().pp(),
+            this.getRhs().pp(),
+            Pretty.text(";")
+            );
+    }
+
+    public PrettyBase StmtBinop.pp() {
+        return Pretty.concat(
+            Pretty.text(this.getLhs()),
+            Pretty.text(" = "),
+            this.getRhs1().pp(),
+            Pretty.text(" "),
+            this.getOp().pp(),
+            Pretty.text(" "),
+            this.getRhs2().pp(),
+            Pretty.text(";")
+            );
+    }
+
+    public PrettyBase StmtIf.pp() {
+        PrettyBase ppThenStmts = this.getThenStmts().pp();
+
+        PrettyBase ppElse = Pretty.EMPTY;
+        if (this.getElseStmts().hasStmt()) {
+            PrettyBase ppElseStmts = this.getElseStmts().pp();
+            ppElse = Pretty.concat(
+                Pretty.SPACE,
+                Pretty.text("else"),
+                Pretty.SPACE,
+                Pretty.block(ppElseStmts)
+                );
+        }
+        return Pretty.concat(
+            Pretty.text("if"),
+            Pretty.SPACE,
+            Pretty.parenthesized(Pretty.text(this.getCondition())),
+            Pretty.SPACE,
+            Pretty.block(ppThenStmts),
+            ppElse
+            );
+    }
+
+    public PrettyBase StmtWhile.pp() {
+        PrettyBase ppBody = this.getBodyStmts().pp();
+        return Pretty.concat(
+            Pretty.text("while"),
+            Pretty.SPACE,
+            Pretty.parenthesized(this.getCondition().pp()),
+            Pretty.SPACE,
+            Pretty.block(ppBody)
+            );
+    }
+
+    public PrettyBase StmtFor.pp() {
+        PrettyBase ppBody = this.getBodyStmts().pp();
+        return Pretty.concat(
+            Pretty.text("for"),
+            Pretty.SPACE,
+            Pretty.parenthesized(
+                Pretty.concat(
+                    Pretty.text(this.getVar()),
+                    Pretty.text(" = "),
+                    this.getStart().pp(),
+                    Pretty.text("; "),
+                    Pretty.text(this.getVar()),
+                    this.getComparisonOp().pp(),
+                    this.getEnd().pp(),
+                    Pretty.text("; "),
+                    Pretty.text(this.getVar()),
+                    Pretty.text(" = "),
+                    Pretty.text(this.getVar()),
+                    this.getUpdateOp().pp(),
+                    this.getStep().pp()
+                    )
+                ),
+            Pretty.SPACE,
+            Pretty.block(ppBody)
+            );
+    }
+
+    public PrettyBase StmtReturn.pp() {
+        switch (this.getNumReturn()) {
+        case 0:
+            return Pretty.text("return;");
+        case 1:
+            return Pretty.concat(
+                Pretty.text("return"),
+                Pretty.SPACE,
+                this.getReturn(0).pp(),
+                Pretty.text(";")
+                );
+        default:
+            PrettyBase[] ppReturns = new PrettyBase[this.getNumReturn()];
+            for (int i = 0; i < ppReturns.length; ++i) {
+                ppReturns[i] = this.getReturn(i).pp();
+            }
+            return Pretty.concat(
+                Pretty.text("return"),
+                Pretty.SPACE,
+                Pretty.wrapped(
+                    Pretty.text("["),
+                    Pretty.text("]"),
+                    Pretty.separateBy(Pretty.text(", "), ppReturns)
+                    ),
+                Pretty.text(";")
+                );
+        }
+    }
+
+    public PrettyBase StmtCall.pp() {
+        PrettyBase[] ppArgs = new PrettyBase[this.getNumArgument()];
+        for (int i = 0; i < ppArgs.length; ++i) {
+            ppArgs[i] = this.getArgument(i).pp();
+        }
+        PrettyBase assignment =
+          this.hasLhs()
+          ? Pretty.concat(this.getLhs().pp(), Pretty.text(" = "))
+          : Pretty.EMPTY;
+        return Pretty.concat(
+            assignment,
+            Pretty.text(this.getFunction()),
+            Pretty.parenthesized(Pretty.separateBy(Pretty.text(", "), ppArgs)),
+            Pretty.text(";")
+            );
+    }
+
+    public PrettyBase StmtMethod.pp() {
+        PrettyBase[] ppArgs = new PrettyBase[this.getNumArgument()];
+        for (int i = 0; i < ppArgs.length; ++i) {
+            ppArgs[i] = this.getArgument(i).pp();
+        }
+        PrettyBase assignment =
+          this.hasLhs()
+          ? Pretty.concat(this.getLhs().pp(), Pretty.text(" = "))
+          : Pretty.EMPTY;
+        return Pretty.concat(
+            assignment,
+            this.getReceiver().pp(),
+            Pretty.text("."),
+            Pretty.text(this.getFunction()),
+            Pretty.parenthesized(Pretty.separateBy(Pretty.text(", "), ppArgs)),
+            Pretty.text(";")
+            );
+    }
+
+    public PrettyBase StmtBreak.pp() {
+        return Pretty.text("break;");
+    }
+
+    public PrettyBase StmtContinue.pp() {
+        return Pretty.text("continue;");
+    }
+
+    public PrettyBase StmtNull.pp() {
+        return Pretty.EMPTY;
+    }
+
+    public PrettyBase StmtSequence.pp() {
+        PrettyBase[] ppStmts = new PrettyBase[this.getNumStmt()];
+        for (int i = 0; i < ppStmts.length; ++i) {
+            ppStmts[i] = this.getStmt(i).pp();
+        }
+        return Pretty.separateBy(Pretty.NEWLINE, ppStmts);
+    }
+
+    public PrettyBase ExprInt.pp() {
+        return Pretty.text(this.getValue().toString());
+    }
+
+    public PrettyBase ExprFloat.pp() {
+        return Pretty.text(String.format("%.20g", this.getValue()));
+    }
+
+    public PrettyBase ExprId.pp() {
+        return Pretty.text(this.getValue());
+    }
+
+    public PrettyBase ExprString.pp() {
+        return Pretty.text("\"" + this.getValue() + "\"");
+    }
+
+    public PrettyBase ExprList.pp() {
+        PrettyBase[] ppExprs = new PrettyBase[this.getNumValue()];
+        for (int i = 0; i < ppExprs.length; ++i) {
+            ppExprs[i] = this.getValue(i).pp();
+        }
+        return Pretty.wrapped(
+            Pretty.text("["),
+            Pretty.text("]"),
+            Pretty.separateBy(Pretty.text(", "), ppExprs)
+            );
+    }
+
+    public PrettyBase ExprOp.pp() {
+        return Pretty.wrapped(
+            Pretty.text("("),
+            Pretty.text(")"),
+            Pretty.concat(
+                this.getLhs().pp(),
+                this.getOp().pp(),
+                this.getRhs().pp()
+            )
+        );
+    }
+
+    public PrettyBase ExprAny.pp() {
+        return Pretty.text(this.getExpr());
+    }
+}

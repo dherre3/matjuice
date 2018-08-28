@@ -28,7 +28,7 @@ all:
 	node_modules/sweet.js/bin/sjs -o $(GEN_DIR)/lib.js src/matjuice/lib/lib.sjs --readable-names
 	jar cf $(MATJUICE_JAR) -C bin matjuice
 	jar uf $(MATJUICE_JAR) -C gen lib.js
-	jar uf $(MATJUICE_JAR) -C src/matjuice/lib/ mjapi.js
+	jar uf $(MATJUICE_JAR) -C lib/ mjapi.js
 	@echo "$$MATJUICE_SCRIPT" > $(MATJUICE_SH)
 	chmod +x $(MATJUICE_SH)
 

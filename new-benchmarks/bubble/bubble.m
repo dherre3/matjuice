@@ -1,5 +1,5 @@
 function [x] = bubble(A)
-
+[g,t] = size(A)
 n=length(A);
 for j=1:n-1
 	% comparing each number with the next and swapping
