@@ -19,9 +19,12 @@ package matjuice.codegen;
 import java.util.Set;
 import java.util.Map;
 
+import ast.Name;
 import ast.NameExpr;
-import matjuice.codegen.wasm_builtin.ArgWasmInputBuiltinVisitor;
-import matjuice.codegen.wasm_builtin.BuiltinWasmGeneratorVisitor;
+import matjuice.builtin_input.OneMatrixAndShapeBuiltinInputTransformer;
+import matjuice.builtin_input.ResultInputTransformer;
+import matjuice.builtin_input.ShapeBuiltinInputTransformer;
+import matjuice.builtin_input.VectorBuiltinInputTransformer;
 import matjuice.jsast.*;
 import matjuice.analysis.ParameterCopyAnalysis;
 import matjuice.analysis.LocalVars;
@@ -30,9 +33,6 @@ import matjuice.transformer.ParameterCopyTransformer;
 import matjuice.transformer.CopyInsertion;
 import matjuice.transformer.MJCopyStmt;
 import matjuice.utils.Utils;
-
-import matwably.transformer.ArgInputTransform;
-import matwably.transformer.BuiltinInputTransformer;
 import natlab.tame.builtin.Builtin;
 import natlab.utils.NodeFinder;
 import natlab.tame.tir.*;
@@ -92,7 +92,6 @@ public class Generator {
         if (verbose) {
             System.out.println("genFunction(" + functionName + ")");
         }
-
         // Add an explicit return at the end of the function
         // if none is present.
         // This is somewhat of a hack, see the explanation in the comments at the top.
@@ -338,85 +337,6 @@ public class Generator {
         if (OperatorRenamer.isBasicArithmeticOperator(tirStmt, analysis)) {
             return genOp(tirStmt);
         }
-        if(useWasm){
-             genCallStmtWasm(tirStmt);
-        }
-        System.out.println("WHAT IS THE NAME" + tirStmt.getFunctionName().getID());
-//        List<Expr> args = new List<>();
-        // Generate input statements
-            // if wasm
-                // Transform inputs using the new input shape transformer
-        // Generate function call
-            // Take care of multiple output parameters
-            // Take care of no output parameter
-            // Take care of one output parameter
-
-        if(tirStmt.getFunctionName().getID().equals("horzcat") || tirStmt.getFunctionName().getID().equals("vertcat" )&&useWasm)
-        {
-
-            TIRCommaSeparatedList arguments = tirStmt.getArguments();
-            if(arguments.getNumChild() == 1){
-                ast.Expr arg1 = arguments.getChild(0);
-                BasicMatrixValue bmv = Utils.getBasicMatrixValue(analysis, tirStmt, arg1.getVarName());
-                if(bmv.getShape().isScalar()){
-                    if(tirStmt.isAssignToVar()){
-                        return new StmtAssign(tirStmt.getTargetName().getID(), genExpr(arg1));
-                    }else{
-                        return new StmtNull();
-                    }
-                }else{
-                    if(tirStmt.isAssignToVar()){
-                        return new StmtMethod(
-                                new Opt<>(new Identifier(tirStmt.getTargetName().getID())),
-                                "mj_clone",
-                                genExpr(arg1),
-                                new List<>()
-                        );
-                    }else {
-                        return new StmtMethod(
-                                new Opt<>(),
-                                "mj_clone",
-                                genExpr(arg1),
-                                new List<>()
-                        );
-                    }
-                }
-            }else{
-                List<Expr> args = new List<>();
-                StmtSequence seq = new StmtSequence();
-                // Go through each argument, if some are actual scalars
-                for (ast.Expr expr : tirStmt.getArguments()) {
-                    if(expr instanceof NameExpr){
-                        System.out.println("YES: "+ expr.getVarName());
-                        BasicMatrixValue bmv = Utils.getBasicMatrixValue(analysis, tirStmt, expr.getVarName());
-                        boolean isScalar = bmv.getShape().isScalar();
-                        if(isScalar) {
-                            String temp = newTemp();
-                            System.out.println("IT IS A SCALAR: "+expr.getVarName());
-                            // Convert to array
-                            seq.addStmt(new StmtCall(new Opt<>(new Identifier(temp)),"wi.convert_scalar_to_mxarray", new List<Expr>(genExpr(expr))));
-                            args.add(new ExprId(temp));
-                        }
-                        else  {
-                            System.out.println("IT IS NOT A SCALAR: "+expr.getVarName());
-                            args.add(genExpr(expr));
-                        }
-                    }else{
-                        System.out.println("NO: "+ expr.getVarName());
-                        throw new Error("Only named expressions allowed");
-                    }
-                    if(tirStmt.isAssignToVar()){
-                        seq.addStmt(new StmtCall(new Opt<>(new Identifier(tirStmt.getTargetName().getID())),
-                                    "wi."+FunctionRenamer.getFunctionName(tirStmt, analysis, useWasm),
-                                args));
-                    }else{
-                        return new StmtCall(new Opt<>(),
-                                "wi."+FunctionRenamer.getFunctionName(tirStmt, analysis, useWasm),
-                                args);
-                    }
-                }
-            }
-        }
 
         if(!useWasm) {
             List<Expr> args = new List<>();
@@ -457,119 +377,147 @@ public class Generator {
                 return seq;
             }
         }else{
+
             String functionName = FunctionRenamer.getFunctionName(tirStmt, analysis, useWasm);
             boolean isVectorInput = FunctionRenamer.isVectorInput(tirStmt.getFunctionName().getID());
             boolean isBuiltIn = FunctionRenamer.isMatlabBuiltin(tirStmt.getFunctionName().getID());
-            System.out.println(""+isVectorInput +","+ isBuiltIn+functionName+","+tirStmt.getFunctionName().getID());
+            boolean isShapeBuiltin = FunctionRenamer.isShapeInput(tirStmt.getFunctionName().getID());
+            boolean isBooleanBuiltin = tirStmt.getFunctionName().getID().equals("true")
+                    ||tirStmt.getFunctionName().getID().equals("false");
+            boolean isSpecialized = FunctionRenamer.isSpecializedFunction(tirStmt.getFunctionName().getID());
             boolean isAssignVar = tirStmt.isAssignToVar();
             boolean hasNoTarget = tirStmt.getTargets().size() == 0;
             boolean isListTarget = !isAssignVar && !hasNoTarget;
             StmtSequence seq = new StmtSequence();
-            String listTarget = (isAssignVar)? tirStmt.getTargetName().getID():(isListTarget)?newTemp():"";
-            if (isVectorInput && isBuiltIn){
-                String listArgsTarget = newTemp();
-                List<Expr> input_args_vec = new List<>();
-                input_args_vec.add(new ExprInt(tirStmt.getArguments().size()));
-//                input_args_vec.add(new ExprInt(5));
-                seq.addStmt(
-                        new StmtCall(
-                                new Opt<Identifier>(new Identifier(listArgsTarget)),
-                                "wi.create_mxvector",
-                                input_args_vec
-                        ));
-                int i = 1;
-                for (ast.Expr expr : tirStmt.getArguments()) {
-                    List<Expr> args_input = new List<>();
-                    args_input.add(new ExprId(listArgsTarget));
-                    args_input.add(new ExprInt(i));
-                    args_input.add(genExpr(expr));
-                    seq.addStmt(new StmtCall(
-                            new Opt<Identifier>(),
-                            "wi.set_array_index_f64",
-                            args_input
-                    ));
-                    i++;
-                }
-                seq.addStmt(
-                        new StmtCall((hasNoTarget)?new Opt<>():new Opt<>(new Identifier(listTarget)),
-                        "wi."+functionName,new List<>(new ExprId(listArgsTarget))));
-            }else{
-                List<Expr> args = new List<>();
-                for (ast.Expr expr : tirStmt.getArguments()) {
-                    args.add(genExpr(expr));
-                }
-
-                functionName = (isBuiltIn)?"wi."+functionName:functionName;
-                seq.addStmt(new StmtCall(
-                            (hasNoTarget)?new Opt<>():new Opt<>(new Identifier(listTarget)),
-                            functionName,
+            String listTarget = (isAssignVar) ? tirStmt.getTargetName().getID():(isListTarget)?newTemp():"";
+            if(isBuiltIn && !isSpecialized) {
+                // First process input
+                if (isVectorInput) {
+                    VectorBuiltinInputTransformer transformer = new VectorBuiltinInputTransformer(analysis, tirStmt, tirStmt.getArguments());
+                    ResultInputTransformer result = transformer.transform();
+                    seq = result.getStmts();
+                    locals.addAll(result.getLocals());
+                    List<Expr> args = new List<>(new ExprId(result.getTargetName()));
+                    seq.addStmt(new StmtCall(new Opt<>(new Identifier(listTarget)),
+                            "wi." + functionName,
                             args));
+                } else if (isShapeBuiltin) {
+                    ShapeBuiltinInputTransformer transformer =
+                                new ShapeBuiltinInputTransformer(analysis, tirStmt, tirStmt.getArguments());
+                    if (!transformer.isInForm()) {
+                        ResultInputTransformer result = transformer.transform();
+                        seq = result.getStmts();
+                        locals.addAll(result.getLocals());
+                        String input_target = result.getTargetName();
+                        functionName = (isBuiltIn) ? "wi." + functionName : functionName;
+                        seq.addStmt(new StmtCall(new Opt<>(new Identifier(listTarget)), functionName,
+                                new List<>(new ExprId(input_target))));
+                    } else {
+                        genCallStmtDefaultInputWasm(seq, tirStmt, listTarget, isBuiltIn);
+                    }
+                }else if(FunctionRenamer.isOneMatrixAndShapeBuiltin(tirStmt.getFunctionName().getID())){
+                    OneMatrixAndShapeBuiltinInputTransformer transformer =
+                                new OneMatrixAndShapeBuiltinInputTransformer(analysis, tirStmt, tirStmt.getArguments());
+                    if (!transformer.isInForm()) {
+                        ResultInputTransformer result = transformer.transform();
+                        seq = result.getStmts();
+                        locals.addAll(result.getLocals());
+                        String input_target = result.getTargetName();
+                        NameExpr arrName = (NameExpr) transformer.matrix;
+                        functionName = (isBuiltIn) ? "wi." + functionName : functionName;
+                        seq.addStmt(new StmtCall(new Opt<>(new Identifier(listTarget)), functionName,
+                                new List<>(new ExprId(arrName.getName().getID()), new ExprId(input_target))));
+                    } else {
+                        genCallStmtDefaultInputWasm(seq, tirStmt, listTarget, isBuiltIn);
+                    }
 
-            }
-            if(isListTarget){
-                int i = 1;
-                for (ast.Expr expr : tirStmt.getTargets()) {
-                    List<Expr> args_input = new List<Expr>();
-                    args_input.add(new ExprId(listTarget));
-                    args_input.add(new ExprInt(i));
-                    seq.addStmt(new StmtCall(
-                            new Opt<>(new Identifier(((NameExpr) expr).getName().getID())),
-                            "wi.get_array_index_f64",
-                            args_input
-                    ));
-                    i++;
+                }else if(isBooleanBuiltin){
+                    // TODO Fix this, tirStmt.getArguments().size() does not guarantee that is not a scalar
+                    if(tirStmt.getArguments().size() > 0){
+                        throw new Error("No support for current boolean builtins false|true that are not scalar");
+                    }
+                    seq.addStmt(new StmtAssign(listTarget,new ExprId(functionName)));
+                    // TODO FIX THIS, this is incorrect. Assumption is that there is a lhs. Also
+                    return seq;
+                }else{
+                    genCallStmtDefaultInputWasm(seq, tirStmt, listTarget,isBuiltIn);
                 }
+            }else{
+                genCallStmtDefaultInputWasm(seq, tirStmt,listTarget, isBuiltIn);
             }
+            // Generate result using list
+            genAssignTargetsFromResult(seq,tirStmt, tirStmt.getArguments(), tirStmt.getFunctionName().getID(),listTarget,isListTarget, isAssignVar );
             return seq;
         }
 
     }
+    private void genAssignTargetsFromResult(StmtSequence seq, TIRNode tirStmt, TIRCommaSeparatedList arguments,
+                                            String callName, String listTarget, boolean isListTarget, boolean isAssignVar){
+        if(isListTarget){
+            int i = 1;
+            TIRCallStmt call = (TIRCallStmt)tirStmt;
+            for (ast.Expr expr :call.getTargets()){
+                List<Expr> args_input = new List<Expr>();
+                args_input.add(new ExprId(listTarget));
+                args_input.add(new ExprInt(i));
+                seq.addStmt(new StmtCall(
+                        new Opt<>(new Identifier(((NameExpr) expr).getName().getID())),
+                        "wi.get_array_index_f64",
+                        args_input
+                ));
+                i++;
+            }
+        }else if(isAssignVar
+                && !FunctionRenamer.isScalarOutput(
+                callName)){
+            if(FunctionRenamer.isSpecializedFunction(callName)){
+                String suffix = FunctionRenamer.toSuffix((TIRCallStmt)tirStmt,  analysis);
+                if(!suffix.contains("M")) return;
+            }
+            BasicMatrixValue bmv = Utils.getBasicMatrixValue(analysis, tirStmt,
+                    listTarget);
 
-    private Stmt genCallStmtWasm(TIRCallStmt tirStmt) {
-        String matlabFunctionName = tirStmt.getFunctionName().getID();
+            if(bmv.hasShape() && bmv.getShape().isScalar() && Builtin.getInstance(callName)!= null){
+                seq.addStmt(new StmtCall(
+                        new Opt<>(new Identifier(listTarget)),
+                        "wi.get_array_index_f64",
+                        new List<>(new ExprId(listTarget), new ExprInt(1))
+                ));
+            }
+        }
+    }
+    private void genCallStmtDefaultInputWasm(StmtSequence seq, TIRCallStmt tirStmt, String listTarget, boolean isBuiltIn){
+        List<Expr> args = new List<>();
+        String functionName = FunctionRenamer.getFunctionName(tirStmt, analysis, useWasm);
+        for (ast.Expr expr : tirStmt.getArguments()) {
+            args.add(genExpr(expr));
+        }
+        boolean hasTarget = tirStmt.getNumTargets() > 0;
+        functionName = (isBuiltIn)?"wi."+functionName:functionName;
+        seq.addStmt(new StmtCall(
+                (hasTarget)?new Opt<>(new Identifier(listTarget)):new Opt<>(),
+                functionName,
+                args));
+
+    }
+
+//    private Stmt genCallStmtWasm(TIRCallStmt tirStmt) {
+//        String matlabFunctionName = tirStmt.getFunctionName().getID();
         // Take care of input arguments
         // take care of function call, is it specialized? Is it not specialized?
         // Then check how tirStmt is called.
         // Use get_scalar if scalar
-        Builtin builtin = Builtin.getInstance(tirStmt.getFunctionName().getID());
-        if(builtin != null){
-            ArgWasmInputBuiltinVisitor args = new ArgWasmInputBuiltinVisitor(analysis, tirStmt);
-            BuiltinWasmGeneratorVisitor visitor = new BuiltinWasmGeneratorVisitor();
-            StmtSequence seq = builtin.visit(visitor, args);
-        }else{
+//        Builtin builtin = Builtin.getInstance(tirStmt.getFunctionName().getID());
+//        if(builtin == null){
+////            ArgWasmInputBuiltinVisitor args = new ArgWasmInputBuiltinVisitor(analysis, tirStmt);
+////            BuiltinWasmGeneratorVisitor visitor = new BuiltinWasmGeneratorVisitor();
+////        BuiltinWasmGeneratorVisitor    StmtSequence seq = builtin.visit(visitor, args);
+//        }else{
+//
+//        }
+//        return null;
+//    }
 
-        }
-
-        return null;
-    }
-
-    private void convertScalarsIntoMxObject(StmtSequence seq, List<Expr> args, TIRCallStmt tirStmt, TIRCommaSeparatedList arguments) {
-        for(ast.Expr expr: arguments){
-            if(expr instanceof NameExpr){
-                System.out.println("YES: "+ expr.getVarName());
-                BasicMatrixValue bmv = Utils.getBasicMatrixValue(analysis, tirStmt, expr.getVarName());
-                boolean isScalar = bmv.getShape().isScalar();
-                if(isScalar) {
-                    String temp = newTemp();
-                    System.out.println("IT IS A SCALAR: "+expr.getVarName());
-                    // Convert to array
-                    seq.addStmt(new StmtCall(new Opt<>(new Identifier(temp)),"wi.convert_scalar_to_mxarray", new List<Expr>(genExpr(expr))));
-                    args.add(new ExprId(temp));
-                }
-                else  {
-                    System.out.println("IT IS NOT A SCALAR: "+expr.getVarName());
-                    args.add(genExpr(expr));
-                }
-            }else{
-                System.out.println("NO: "+ expr.getVarName());
-                throw new Error("Only named expressions allowed");
-            }
-        }
-    }
-
-    private boolean allScalarArguments(TIRCommaSeparatedList arguments) {
-        return false;
-    }
 
     /**
      * Transform an operator function call into an operator operation.
@@ -596,9 +544,22 @@ public class Generator {
         String src = tirStmt.getArrayName().getID();
             if (isSlicingOperation(tirStmt, tirStmt.getIndices())) {
                 if(useWasm){
+                    boolean isAssignVar = tirStmt.getTargets().size() ==1;
+                    boolean isListTarget = tirStmt.getTargets().size()>1;
+                    String listTarget = (isAssignVar)?
+                            tirStmt.getTargetName().getID():(isListTarget)?newTemp():"";
                     // TODO: (dherre3) add other indexing expressions
-
-                        return null;
+                    VectorBuiltinInputTransformer transformer = new VectorBuiltinInputTransformer(analysis,tirStmt, tirStmt.getIndices());
+                    ResultInputTransformer result = transformer.transform();
+                    StmtSequence seq = result.getStmts();
+                    locals.addAll(result.getLocals());
+                    List<Expr> args = new List<>(new ExprId(tirStmt.getArrayName().getID()),new ExprId(result.getTargetName()));
+                    seq.addStmt(new StmtCall(new Opt<>(new Identifier(listTarget)),
+                            "wi.get_f64",
+                            args));
+                    genAssignTargetsFromResult(seq,tirStmt, tirStmt.getIndices(), "",
+                            listTarget,isListTarget, isAssignVar );
+                    return seq;
                 }else {
                     ExprList indices = new ExprList();
                     for (ast.Expr index : tirStmt.getIndices()) {
@@ -615,96 +576,20 @@ public class Generator {
                 for (ast.Expr index : tirStmt.getIndices()) {
                     indices.addValue(genExpr(index));
                 }
-                if(useWasm){
+                if( useWasm ){
                     return genArrayGetStmtIndicesWasm( tirStmt, dst, src, indices);
-                }else {
+                } else {
                     Expr indexingExpr = computeIndexJS(tirStmt, src, indices);
                     return new StmtGet(dst, src, indexingExpr);
                 }
-
             /*
-            List<Expr> args = new List<>(indices);
-            return new StmtMethod(new Opt<Identifier>(new Identifier(dst)), "mj_get", new ExprId(src), args);
+                List<Expr> args = new List<>(indices);
+                return new StmtMethod(new Opt<Identifier>(new Identifier(dst)), "mj_get", new ExprId(src), args);
             */
             }
-        }
-
-    private Stmt genArraySetStmtIndicesWasm(TIRNode node,  String arrayName, ExprList indices, String val) {
-        BasicMatrixValue bmv = Utils.getBasicMatrixValue(analysis, node, arrayName);
-        // Special case: row or column vector, indexing with only one expression.
-        if ((bmv.getShape().isRowVector() || bmv.getShape().isColVector()) && indices.getNumValue() == 1) {
-            Expr idx = indices.getValue(0);
-            List<Expr> args = new List<Expr>(new ExprId(arrayName), idx, new ExprId(val));
-            return new StmtCall(new Opt<>(), "wi.set_array_index_f64", args);
-        }else {
-            StmtSequence seq = new StmtSequence();
-            String tempArgList = newTemp();
-            List<Expr> input_args_vec = new List<>();
-            input_args_vec.add(new ExprInt(1));
-            input_args_vec.add(new ExprInt(5));
-            seq.addStmt(
-                    new StmtCall(
-                            new Opt<Identifier>(new Identifier(tempArgList)),
-                            "wi.create_mxvector",
-                            input_args_vec
-                    ));
-            // create array for inputs
-            String listArgsTarget = newTemp();
-            input_args_vec = new List<>(new ExprInt(indices.getNumValue()));
-            seq.addStmt(
-                    new StmtCall(
-                            new Opt<Identifier>(new Identifier(listArgsTarget)),
-                            "wi.create_mxvector",
-                            input_args_vec
-                    ));
-
-            for (int i = 1; i < indices.getNumValue(); ++i) {
-                List<Expr> input_args = new List<>();
-                input_args.add(new ExprId(listArgsTarget));
-                input_args.add(new ExprInt(i));
-                input_args.add(indices.getValue(i));
-
-                seq.addStmt(
-                        new StmtCall(
-                                new Opt<>(),
-                                "wi.set_array_index_f64",
-                                input_args
-                        ));
-            }
-            input_args_vec = new List<>(new ExprId(tempArgList),
-                        new ExprInt(1),new ExprId(listArgsTarget));
-            seq.addStmt(
-                    new StmtCall(
-                            new Opt<Identifier>(new Identifier(listArgsTarget)),
-                            "wi.set_array_index_i32",
-                            input_args_vec
-                    ));
-
-            String valTarget = newTemp();
-            List<Expr> val_arr_arg = new List<>(new ExprInt(1));
-            seq.addStmt(
-                    new StmtCall(
-                            new Opt<>(new Identifier(valTarget)),
-                            "wi.create_mxvector",
-                            val_arr_arg
-                    ));
-            seq.addStmt(
-                    new StmtCall(
-                            new Opt<>(),
-                            "wi.set_array_index_f64",
-                            new List<>(new ExprId(valTarget),new ExprId(val))
-                    ));
-            List<Expr> set_args = new List<>(new ExprId(arrayName), new ExprId(listArgsTarget),new ExprId(valTarget));
-            seq.addStmt(
-                    new StmtCall(
-                            new Opt<>(),
-                            "wi.set_f64",
-                            set_args
-                    ));
-            return seq;
-        }
     }
-    private Stmt genArrayGetStmtIndicesWasm(TIRNode node,  String dst, String arrayName, ExprList indices) {
+
+    private Stmt genArrayGetStmtIndicesWasm(TIRArrayGetStmt node,  String dst, String arrayName, ExprList indices) {
         BasicMatrixValue bmv = Utils.getBasicMatrixValue(analysis, node, arrayName);
         // Special case: row or column vector, indexing with only one expression.
         if ((bmv.getShape().isRowVector() || bmv.getShape().isColVector()) && indices.getNumValue() == 1) {
@@ -713,62 +598,75 @@ public class Generator {
             return new StmtCall(new Opt<>(new Identifier(dst)), "wi.get_array_index_f64", args);
         }else {
             StmtSequence seq = new StmtSequence();
-            String tempArgList = newTemp();
-            List<Expr> input_args_vec = new List<>();
-            input_args_vec.add(new ExprInt(1));
-            input_args_vec.add(new ExprInt(5));
-            seq.addStmt(
-                    new StmtCall(
-                            new Opt<Identifier>(new Identifier(tempArgList)),
-                            "wi.create_mxvector",
-                            input_args_vec
-                    ));
-            // create array for inputs
-            String listArgsTarget = newTemp();
-            input_args_vec = new List<>(new ExprInt(indices.getNumValue()));
-            seq.addStmt(
-                    new StmtCall(
-                            new Opt<Identifier>(new Identifier(listArgsTarget)),
-                            "wi.create_mxvector",
-                            input_args_vec
-                    ));
-
-            for (int i = 0; i < indices.getNumValue(); ++i) {
-                List<Expr> input_args = new List<>();
-                input_args.add(new ExprId(listArgsTarget));
-                input_args.add(new ExprInt(i+1));
-                input_args.add(indices.getValue(i));
-
-                seq.addStmt(
-                        new StmtCall(
-                                new Opt<>(),
-                                "wi.set_array_index_f64",
-                                input_args
-                        ));
-            }
-            input_args_vec = new List<>(new ExprId(tempArgList),
-                    new ExprInt(1),new ExprId(listArgsTarget));
-            seq.addStmt(
-                    new StmtCall(
-                            new Opt<Identifier>(),
-                            "wi.set_array_index_i32",
-                            input_args_vec
-                    ));
-            String targetValTemp = newTemp();
-            List<Expr> set_args = new List<>(new ExprId(arrayName), new ExprId(tempArgList));
-            seq.addStmt(
-                    new StmtCall(
-                            new Opt<>(new Identifier(targetValTemp)),
-                            "wi.get_f64",
-                            set_args
-                    ));
-            seq.addStmt(
-                    new StmtCall(
-                            new Opt<>(new Identifier(dst)),
-                            "wi.get_array_index_f64",
-                            new List<>(new ExprId(targetValTemp),new ExprInt(1))
-                    ));
-            return seq;
+            Expr expIndex = computeIndexWasm(node, arrayName,  indices);
+            List<Expr> args = new List<>(new ExprId(arrayName), expIndex);
+            return new StmtCall(new Opt<>(new Identifier(dst)), "wi.get_array_index_f64", args);
+//            String indeces_arr = newTemp();
+//            seq.addStmt(new StmtCall(new Opt<>(new Identifier(indeces_arr)),
+//                    "wi.create_mxvector",new List<>(new ExprInt(node.getIndices().size()))));
+//            int i =1;
+//            for (ast.Expr index : node.getIndices()) {
+//                NameExpr nameExpr = (NameExpr) index;
+//                seq.addStmt(new StmtCall(new Opt<>(),
+//                        "wi.set_array_index_f64",new List<>(
+//                        new ExprId(indeces_arr),
+//                        new ExprInt(i),
+//                        new ExprId(nameExpr.getName().getID())
+//
+//                )));
+//                i++;
+//            }
+//            seq.addStmt(new StmtCall(new Opt<>(new Identifier(dst)),
+//                    "wi.get_array_value_multiple_indeces_f64",
+//                    new List<>(new ExprId(node.getArrayName().getID()),
+//                            new ExprId(indeces_arr))));
+//
+//
+//
+//            String tempArgList = newTemp();
+//            List<Expr> input_args_vec = new List<>();
+//            input_args_vec.add(new ExprInt(1));
+//            input_args_vec.add(new ExprInt(5));
+//            seq.addStmt(
+//                    new StmtCall(
+//                            new Opt<Identifier>(new Identifier(tempArgList)),
+//                            "wi.create_mxvector",
+//                            input_args_vec
+//                    ));
+//            // create array for inputs
+//            String listArgsTarget = newTemp();
+//            input_args_vec = new List<>(new ExprInt(indices.getNumValue()));
+//            seq.addStmt(
+//                    new StmtCall(
+//                            new Opt<Identifier>(new Identifier(listArgsTarget)),
+//                            "wi.create_mxvector",
+//                            input_args_vec
+//                    ));
+//
+//            setWasmDoubleArrayWithValues(indices, seq, listArgsTarget);
+//            input_args_vec = new List<>(new ExprId(tempArgList),
+//                    new ExprInt(1),new ExprId(listArgsTarget));
+//            seq.addStmt(
+//                    new StmtCall(
+//                            new Opt<Identifier>(),
+//                            "wi.set_array_index_i32",
+//                            input_args_vec
+//                    ));
+//            String targetValTemp = newTemp();
+//            List<Expr> set_args = new List<>(new ExprId(arrayName), new ExprId(tempArgList));
+//            seq.addStmt(
+//                    new StmtCall(
+//                            new Opt<>(new Identifier(targetValTemp)),
+//                            "wi.get_f64",
+//                            set_args
+//                    ));
+//            seq.addStmt(
+//                    new StmtCall(
+//                            new Opt<>(new Identifier(dst)),
+//                            "wi.get_array_index_f64",
+//                            new List<>(new ExprId(targetValTemp),new ExprInt(1))
+//                    ));
+//            return seq;
         }
     }
 
@@ -785,7 +683,37 @@ public class Generator {
         String val = tirStmt.getValueName().getID();
         if (isSlicingOperation(tirStmt, tirStmt.getIndices())) {
             if(useWasm){
-                return null;
+                VectorBuiltinInputTransformer transformer = new VectorBuiltinInputTransformer(analysis, tirStmt, tirStmt.getIndices());
+                ResultInputTransformer result = transformer.transform();
+                StmtSequence seq = result.getStmts();
+                locals.addAll(result.getLocals());
+                // Generate values
+
+                // Get shape of rhs
+                BasicMatrixValue bmv = Utils.getBasicMatrixValue(analysis, tirStmt, val);
+                if(!bmv.hasShape()){
+                    throw new Error("Shape information necessary for compilation");
+                }
+                String valArr = "" ;
+                if(bmv.getShape().isScalar()){
+                    valArr = newTemp();
+                    seq.addStmt(new StmtCall(new Opt<>(new Identifier(valArr)),
+                            "wi.create_mxvector",
+                            new List<>(new ExprInt(1))));
+                    seq.addStmt(new StmtCall(new Opt<>(),
+                            "wi.set_array_index_f64",
+                            new List<>(new ExprId(valArr), new ExprInt(1),
+                                    genExpr(tirStmt.getRHS()))));
+                }else{
+                    valArr = ((NameExpr) tirStmt.getRHS()).getName().getID();
+                }
+
+                seq.addStmt(new StmtCall(new Opt<>(),
+                        "wi.set_f64",
+                        new List<>(new ExprId(tirStmt.getArrayName().getID()),
+                                new ExprId(result.getTargetName()) ,
+                                new ExprId(valArr))));
+                return seq;
             }else{
                 ExprList indices = new ExprList();
                 for (ast.Expr index : tirStmt.getIndices()) {
@@ -805,13 +733,54 @@ public class Generator {
 
         }
         else {
-            ExprList indices = new ExprList();
-            for (ast.Expr index : tirStmt.getIndices()) {
-                indices.addValue(genExpr(index));
-            }
+
             if(useWasm){
-                return genArraySetStmtIndicesWasm( tirStmt, arr, indices, val);
+                //set_array_value_multiple_indeces_f64
+            //			wi.set_array_value_multiple_indeces_f64(arr._arr_ptr,values.arr_ptr, 100);
+//                StmtSequence seq = new StmtSequence();
+//                String indeces_arr = newTemp();
+//                seq.addStmt(new StmtCall(new Opt<>(new Identifier(indeces_arr)),
+//                        "wi.create_mxvector",new List<>(new ExprInt(tirStmt.getIndices().size()))));
+//                int i =1;
+//                for (ast.Expr index : tirStmt.getIndices()) {
+//                    NameExpr nameExpr = (NameExpr) index;
+//                    seq.addStmt(new StmtCall(new Opt<>(),
+//                            "wi.set_array_index_f64",new List<>(
+//                                    new ExprId(indeces_arr),
+//                                    new ExprInt(i),
+//                                    new ExprId(nameExpr.getName().getID())
+//
+//                    )));
+//                    i++;
+//                }
+//
+//
+//                seq.addStmt(new StmtCall(new Opt<>(),
+//                            "wi.set_array_value_multiple_indeces_f64",
+//                            new List<>(new ExprId(tirStmt.getArrayName().getID()),
+//                                    new ExprId(indeces_arr) ,
+//                                    genExpr(tirStmt.getRHS()))));
+//                return seq;
+
+                ExprList indices = new ExprList();
+                for (ast.Expr index : tirStmt.getIndices()) {
+                    indices.addValue(genExpr(index));
+                }
+                Expr indexExp = computeIndexWasm(tirStmt, tirStmt.getArrayName().getID(),indices);
+                return new StmtCall(new Opt<>(),
+                        "wi.set_array_index_f64",
+                        new List<>(new ExprId(tirStmt.getArrayName().getID()),
+                                indexExp,
+                                genExpr(tirStmt.getRHS())));
+
+
+
+
             }else {
+                ExprList indices = new ExprList();
+                for (ast.Expr index : tirStmt.getIndices()) {
+                    indices.addValue(genExpr(index));
+                }
 
                 Expr indexExp = computeIndexJS(tirStmt, arr, indices);
                 return new StmtSet(arr, indexExp, val);
@@ -867,7 +836,6 @@ public class Generator {
         String condVar = tirStmt.getCondition().getName().getID();
         BasicMatrixValue bmv = Utils.getBasicMatrixValue(analysis, tirStmt, condVar);
         boolean isScalar = bmv.getShape().isScalar();
-        System.out.printf("VFB: [%s]\n", bmv.getShape());
         return new StmtWhile(
             isScalar ? new ExprId(condVar) : new ExprAny(String.format("mc_forall(%s)", condVar)),
             genStmtList(tirStmt.getStatements())
@@ -900,11 +868,6 @@ public class Generator {
     private Stmt genStaticForStmt(TIRForStmt tirStmt, LoopDirection direction) {
         Binop cmpOp = (direction == LoopDirection.Ascending) ? Binop.Le : Binop.Ge;
         String iterVar = tirStmt.getLoopVarName().getID();
-//        if(useWasm){
-//
-//        }else{
-//
-//        }
         Expr incr = tirStmt.hasIncr() ? new ExprId(tirStmt.getIncName().getID()) : new ExprInt(1);
         StmtSequence body = genStmtList(tirStmt.getStatements());
 
@@ -1141,7 +1104,31 @@ public class Generator {
 
         return stride;
     }
-
+    private Expr computeIndexWasm(TIRNode node, String arrayName, ExprList indices) {
+        BasicMatrixValue bmv = Utils.getBasicMatrixValue(analysis, node, arrayName);
+        // Special case: row or column vector, indexing with only one expression.
+        if ((bmv.getShape().isRowVector() || bmv.getShape().isColVector()) && indices.getNumValue() == 1) {
+            Expr idx = indices.getValue(0);
+            return  idx;
+        }
+        Integer[] stride = computeStride(node, arrayName);
+        Expr indexExp = new ExprOp(Binop.Sub, indices.getValue(0), new ExprInt(1));
+        for (int i = 1; i < indices.getNumValue(); ++i) {
+            Expr strideExp;
+            if (stride[i] != null) {
+                strideExp = new ExprInt(stride[i]);
+            } else {
+                strideExp = new ExprAny(String.format("wi.get_array_stride(%s, %d)", arrayName, i));
+            }
+            indexExp = new ExprOp(
+                    Binop.Add,
+                    indexExp,
+                    new ExprOp(Binop.Mul, strideExp, new ExprOp(Binop.Sub, indices.getValue(i), new ExprInt(1)))
+            );
+        }
+        indexExp = new ExprOp(Binop.Add, indexExp, new ExprInt(1));
+        return indexExp;
+    }
     private Expr computeIndexJS(TIRNode node, String arrayName, ExprList indices) {
         BasicMatrixValue bmv = Utils.getBasicMatrixValue(analysis, node, arrayName);
         // Special case: row or column vector, indexing with only one expression.

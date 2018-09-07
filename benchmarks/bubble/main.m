@@ -1,13 +1,11 @@
 function main(size)
   A = rand(1, size);
-  tic();
+  % tic();
   y = bubble(A);
-  t = toc();
+ % t = toc();
 
-  disp('OUT');
   for i = 1:size
       disp(y(i));
   end
-  disp('TIME');
-  disp(t);
+  %disp(t);
 end

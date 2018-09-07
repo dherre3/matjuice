@@ -33,10 +33,6 @@ aspect Visitor {
         return visitor.visitStmtBlock(this);
     }
 
-    public <T> T StmtExpr.accept(JSVisitor<T> visitor) {
-        return visitor.visitStmtExpr(this);
-    }
-
     public <T> T StmtReturn.accept(JSVisitor<T> visitor) {
         return visitor.visitStmtReturn(this);
     }

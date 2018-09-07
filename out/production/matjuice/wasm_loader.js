@@ -1,8 +1,7 @@
 const fs = require("fs");
-const libjs = require("./lib_wasm.js");
-const file = fs.readFileSync(__dirname+"/builtins.wasm");
+const file = fs.readFileSync("./builtins.wasm");
 
-(async ()=>{
+async function runner(){
     let wi;
     try{
         wi = await WebAssembly.instantiate(file, libjs);

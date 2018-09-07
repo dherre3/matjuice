@@ -9,7 +9,8 @@ n=1024*2^round(scale);
 data=randn(1,2*n);
 
 %'computing the forward transform'
-
+tic();
 out=fft_four1(data,n,1);
-
+t = toc();
+disp(t)
 end

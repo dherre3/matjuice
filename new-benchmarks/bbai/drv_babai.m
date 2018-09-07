@@ -1,8 +1,9 @@
-function drv_babai(scale)
-
-for i = 1 : scale
-	A=randn(10,10);
-	y=randn(10,1);
-	z=babai(A,y);
-end
+function drv_babai(size)
+	R = ones(size);
+	Y = ones(size, 1);
+	tic();
+	[vec] = babai(R, Y)
+	t = toc();
+  disp(t);
+	
 end

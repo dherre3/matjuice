@@ -22,12 +22,12 @@ function printWhos(size, bytes, class_type)
 }
 function printInt(number)
 {
-    console.log("INT:", number);
+    console.log(number);
     return number;
 }
 function printDouble(number)
 {
-	console.log("DOUBLE:", number);
+	console.log(number);
 	return number;
 }
 module.exports = {
@@ -49,7 +49,16 @@ module.exports = {
         randi:(max) => Math.floor(max*Math.random()),
         zeros:()=> 0,
         isnan: isNaN,
-        power:Math.pow
+        power:Math.pow,
+        sin: Math.sin,
+        cos: Math.cos,
+        tan: Math.tan,
+        exp: Math.exp,
+        log: Math.log,
+        log2: Math.log2,
+        log10: Math.log10,
+        pi:Math.PI,
+        e:Math.E
     },
     "test":{
         "assert":assert

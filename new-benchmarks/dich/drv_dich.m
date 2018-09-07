@@ -13,9 +13,10 @@ f1=20;
 f2=180;
 f3=80;
 f4=0;
-
+tic();
 for time=1:scale
   U=dirich(f1, f2, f3, f4, a, b, h, tol, max1);
 end
-
+t = toc();
+disp(t)
 end

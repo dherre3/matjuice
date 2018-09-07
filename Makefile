@@ -3,7 +3,7 @@ GEN_DIR := gen
 SRC_DIR := src
 MATJUICE_JAR := matjuice.jar
 MATJUICE_SH := matjuice.sh
-MCLAB_CORE_PATH ?= $(HOME)/Documents/Recherche/mclab-core/
+MCLAB_CORE_PATH ?= $(HOME)/Documents/Research/Thesis/code/matjuice/mclab-core/
 NATLAB_PATH := $(MCLAB_CORE_PATH)/languages/Natlab
 
 define MATJUICE_SCRIPT
@@ -16,7 +16,7 @@ export MATJUICE_SCRIPT
 
 JSAST_FILES	 := src/matjuice/jsast/Javascript.ast src/matjuice/jsast/JavascriptPretty.jadd
 PRETTY_FILES	 := src/matjuice/pretty/*.java
-SRC_FILES	 := src/matjuice/Main.java src/matjuice/analysis/*.java src/matjuice/transformer/*.java src/matjuice/codegen/*.java src/matjuice/utils/*.java
+SRC_FILES	 := src/matjuice/Main.java src/matjuice/analysis/*.java src/matjuice/transformer/*.java src/matjuice/builtin_input/*.java  src/matjuice/codegen/*.java src/matjuice/utils/*.java
 
 all:
 	mkdir -p $(BUILD_DIR)
@@ -29,6 +29,10 @@ all:
 	jar cf $(MATJUICE_JAR) -C bin matjuice
 	jar uf $(MATJUICE_JAR) -C gen lib.js
 	jar uf $(MATJUICE_JAR) -C lib/ mjapi.js
+	jar uf $(MATJUICE_JAR) -C lib/ builtins.wasm
+	jar uf $(MATJUICE_JAR) -C lib/ lib_wasm.js
+	jar uf $(MATJUICE_JAR) -C lib/ wasm_loader.js
+	jar uf $(MATJUICE_JAR) -C lib/ ndarray.js
 	@echo "$$MATJUICE_SCRIPT" > $(MATJUICE_SH)
 	chmod +x $(MATJUICE_SH)
 

@@ -12,7 +12,8 @@ Nx=25; Ny=20; Nz=15; % Number of cells in each direction.
 nrm=866.0254;
 
 Nt=scale*200; % Number of time steps.
-
+tic();
 [Ex, Ey, Ez, Hx, Hy, Hz, Ets]=fdtd(Lx, Ly, Lz, Nx, Ny, Nz, nrm, Nt);
-
+t = toc();
+disp(t)
 end

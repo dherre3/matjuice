@@ -16,11 +16,10 @@
 
 package matjuice;
 
-import java.io.BufferedReader;
-import java.io.FileWriter;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
+import java.io.*;
+import java.net.URISyntaxException;
+import java.nio.channels.FileChannel;
+import java.nio.file.Path;
 import java.util.*;
 import java.util.function.BiConsumer;
 
@@ -29,7 +28,6 @@ import matjuice.codegen.Generator;
 import matjuice.codegen.FunctionRenamer;
 import matjuice.jsast.Program;
 
-import matwably.transformer.BuiltinInputTransformer;
 import natlab.tame.BasicTamerTool;
 import natlab.tame.callgraph.FunctionCollection;
 import natlab.tame.callgraph.SimpleFunctionCollection;
@@ -114,47 +112,44 @@ public class Main {
         ValueAnalysis<AggrValue<BasicMatrixValue>> analysis = BasicTamerTool.analyze(shapeDesc, fenv);
         Set generated = new HashSet<String>();
         Program program = new Program();
-        String entryPointName = null;
+        String entryPointName = analysis.getMainNode().getFunction().getName();
+        String suffixEntry= "";
         String entryPointShape = null;
 
-        SimpleFunctionCollection callgraph = new SimpleFunctionCollection(fenv);
+//        SimpleFunctionCollection callgraph = new SimpleFunctionCollection(fenv);
         int numFunctions = analysis.getNodeList().size();
         for (int i = 0; i < numFunctions; ++i) {
+
             IntraproceduralValueAnalysis<AggrValue<BasicMatrixValue>> funcAnalysis = analysis.getNodeList().get(i).getAnalysis();
-            if(opts.useWasm){
-                analysis = BasicTamerTool.analyze(shapeDesc, fenv);
-                FunctionReference ref = new FunctionReference(
-                        funcAnalysis.getTree().getName().getID(), fenv.getMainFunctionReference().getFile());
-                System.out.println(ref);
-                System.out.println("GETTING CONTEXT");
-                Context context = fenv.getContext(funcAnalysis.getTree(),
-                        ref.getFile());
-                System.out.println(context);
-                //  Transforms the input create canonical version
-
-                //BuiltinInputTransformer.apply(funcAnalysis.getTree(), analysis.getNodeList().get(i).getAnalysis());
-
-
-//                new StaticFunction(new TIRFunction(), ref, context);
-                TIRFunction function = funcAnalysis.getTree();
-                int a = analysis.getFunctionCollection().getAllFunctions().indexOf(function);
-                System.out.println(a);
-//                StaticFunction stat = new StaticFunction(function, ref,
-//                        context);
-//                StaticFunction func = callgraph.replace(ref,function);
-//                if( func == null){
-//                    throw new Error("NULL REPLACEMENT");
-//                }else{
-//                    System.out.println(func.getAst().getPrettyPrinted());
-//                }
-//                analysis = BasicTamerTool.analyze(callgraph, shapeDesc);
-//                funcAnalysis = analysis.getNodeList().get(i).getAnalysis();
+            if(funcAnalysis.getTree().getName().getID().equals(entryPointName)){
+                suffixEntry = FunctionRenamer.toSuffix(funcAnalysis.getArgs());
+                entryPointName+="_"+suffixEntry;
             }
+            // Fixed point iterator inputs
+
+//            if(opts.useWasm){
+//                boolean transformed = true;
+//                while(transformed){
+//                    TIRFunction function = funcAnalysis.getTree();
+//                    System.out.println(function.getPrettyPrinted());
+//                    transformed = BuiltinInputTransformer.apply(function, funcAnalysis);
+//                    List<StaticFunction> funcList = analysis.getFunctionCollection().getAllFunctions();
+//                    for (StaticFunction temp : funcList) {
+//                        if (temp.getName().equals(function.getName().getID())) {
+//                            temp.setAst(function);
+//                            break;
+//                        }
+//                    }
+//                    analysis = BasicTamerTool.analyze(callgraph, shapeDesc);
+//                    funcAnalysis = analysis.getNodeList().get(i).getAnalysis();
+//                }
+
+//            }
+
             String functionName = funcAnalysis.getTree().getName().getID();
-            String originalFunctionName = functionName;
 
             String suffix = FunctionRenamer.toSuffix(funcAnalysis.getArgs());
-            if (suffix != "") {
+            if (!suffix.equals("")) {
                 functionName += "_" + suffix;
             }
 
@@ -167,11 +162,6 @@ public class Main {
                 totalPtCiTime += gen.getCopyInsertionTime();
             }
 
-            // Treat the first function as the entry point of the program
-            if (i == 0) {
-                entryPointName = functionName;
-                entryPointShape = suffix;
-            }
         }
         endTime = System.currentTimeMillis();
 
@@ -187,32 +177,53 @@ public class Main {
         // Write out the JavaScript program.
         // TODO: Better error messages.
         FileWriter out = null;
+        FileWriter wasmOut = null;
         String[] jsDeps = {
             "mjapi.js",
             "lib.js"
         };
         String[] wasmDeps = {
+                "ndarray.js",
+                "lib_wasm.js",
                 "wasm_loader.js"
+        };
+        String[] wasmFiles = {
+            "builtins.wasm"
         };
 
 
         try {
             out = new FileWriter(javascriptFile);
+            File file = new File(javascriptFile);
+            String path = file.getParentFile().getAbsolutePath();
             if( opts.useWasm ){
                 writeResources(out, wasmDeps);
-//                writeResources(out, jsDeps);
             }else{
                 writeResources(out, jsDeps);
             }
             out.write(String.format("%n%n// BEGINNING OF PROGRAM%n%n"));
             out.write(Pretty.display(program.pp()));
             out.write('\n');
-            out.write(String.format("%s(10);", entryPointName));
+            out.write(String.format("%s(1);", entryPointName));
             out.write('\n');
-            if( opts.useWasm) out.write("})();\n");
+            if( opts.useWasm) {
+                out.write("}\n" +
+                        "runner().then((res)=>{}).catch((err)=>{\n" +
+                        "    throw err;\n" +
+                        "});\n");
+                for (String wasmFile : wasmFiles) {
+                    String wasmPath = combinePaths(path, wasmFile);
+                    File wasmFileObj = getResourceAsFile("/"+ wasmFile);
+                    try (
+                        FileChannel sourceChannel = new FileInputStream(wasmFileObj).getChannel();
+                         FileChannel destChannel = new FileOutputStream(wasmPath).getChannel()) {
+                        destChannel.transferFrom(sourceChannel, 0, sourceChannel.size());
+                    }
+                }
+            }
         }
-        catch (IOException exc) {
-            System.err.println("Error: cannot write to " + javascriptFile);
+        catch (Exception exc) {
+            System.err.println("Error: cannot write to " + exc.getMessage());
         }
         finally {
             try {
@@ -221,7 +232,12 @@ public class Main {
             catch (IOException e) {}
         }
     }
-
+    private static String combinePaths(String path1, String path2)
+    {
+        File file1 = new File(path1);
+        File file2 = new File(file1, path2);
+        return file2.getPath();
+    }
     private static void writeResources(FileWriter out, String[] wasmDeps) throws IOException {
         for (String wasmDep: wasmDeps) {
             InputStream stream = Main.class.getResourceAsStream("/" + wasmDep);
@@ -231,6 +247,31 @@ public class Main {
             }else{
                 System.err.println("Error: cannot write to " + wasmDep);
             }
+        }
+    }
+    private static File getResourceAsFile(String resourcePath) {
+        try {
+            InputStream in = Main.class.getResourceAsStream(resourcePath);
+            if (in == null) {
+                System.err.println("Error: cannot write to " + resourcePath);
+                return null;
+            }
+
+            File tempFile = File.createTempFile(String.valueOf(in.hashCode()), ".tmp");
+            tempFile.deleteOnExit();
+
+            try (FileOutputStream out = new FileOutputStream(tempFile)) {
+                //copy stream
+                byte[] buffer = new byte[1024];
+                int bytesRead;
+                while ((bytesRead = in.read(buffer)) != -1) {
+                    out.write(buffer, 0, bytesRead);
+                }
+            }
+            return tempFile;
+        } catch (IOException e) {
+            e.printStackTrace();
+            return null;
         }
     }
 }

@@ -14,6 +14,8 @@ function PNa=PN_Legendre_vectN(x,n)
 
 PNa=zeros(length(x),n+1);
 PNa(:,1)=1;
+PNa
+size(PNa)
 if n > 0
     PNa(:,2)=x';
 end % if

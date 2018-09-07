@@ -11,10 +11,11 @@ b=1.5; % b=1.5;
 c=5; % c=2;
 m=2300; %321; % n=floor(rand*1389);
 n=2300; %321; % n=floor(rand*529);
-
+tic();
 for time=1:scale
   U=crnich(a, b, c, n, m);
 end
-
+t = toc();
+disp(t);
 end
 

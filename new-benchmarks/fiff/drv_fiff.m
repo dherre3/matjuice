@@ -6,12 +6,13 @@ function drv_fiff(scale)
 a=2.5;
 b=1.5;
 c=0.5;
-n=3500;
-m=3500;
-
+n=1750;
+m=1750;
+tic();
 for time=1:scale
   U=finediff(a, b, c, n, m);
 end
-
+t = toc();
+disp(t)
 end
 

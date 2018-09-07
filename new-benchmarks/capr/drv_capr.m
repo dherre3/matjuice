@@ -11,9 +11,8 @@ d=(0.727561)*6.171;
 n=floor(56.0980*(0.36));
 tol=1.3e-13; % Tolerance.
 rel=0.90; % Relaxation parameter.
-
-for time=1:scale*10
-  cap=capacitor(a, b, c, d, n, tol, rel);
-end
-
+tic();
+cap=capacitor(a, b, c, d, n, tol, rel);
+t = toc();
+disp(t);
 end

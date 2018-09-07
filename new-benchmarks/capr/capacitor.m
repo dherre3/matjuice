@@ -58,7 +58,7 @@ for ii=1:na+1,
 end;
 
 oldcap=0;
-for iter=1:1000,
+for iter=1:1000
     f=seidel(f, mask, n, m, na, mb);
     cap=gauss(n, m, h, f);
     if (abs(cap-oldcap)./cap<tol)

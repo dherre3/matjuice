@@ -32,20 +32,26 @@ BENCHMARKS=(
     nb1d/drv_nb1d.m
     numprime/drv_prime.m
 )
+if [[ $* == *--use-wasm* ]]; then
+    prefix="-wasm"
+else
+    prefix=""
+fi
+#rm -rf $BUILD_DIR
 
-rm -rf $BUILD_DIR
 mkdir -p $BUILD_DIR
 
 for b in ${BENCHMARKS[@]}; do
     basefile=$(basename $b .m)
-    jsdrv=$basefile.js
+    jsdrv=$basefile$prefix.js
     htmlfile=$basefile.html
     echo -n "$b... "
-    $MATJUICE  $b $BUILD_DIR/$jsdrv "DOUBLE&1*1&REAL" > /dev/null 2>&1
+    $MATJUICE  $b $BUILD_DIR/$jsdrv "DOUBLE&1*1&REAL" $* > /dev/null 2>&1
     if [ $? -eq 0 ]; then
         echo "OK"
         echo $HTML_TEMPLATE > $BUILD_DIR/$htmlfile
-        sed -i "s/SOURCE_FILE/$jsdrv/" $BUILD_DIR/$htmlfile
+        temp=$BUILD_DIR/$htmlfile
+        sed -i "s/SOURCE_FILE/$jsdrv/"  $temp
     else
         echo "FAIL"
     fi

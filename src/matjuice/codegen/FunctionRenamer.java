@@ -57,28 +57,38 @@ public class FunctionRenamer {
             "lt", "le", "gt", "ge", "eq", "ne", "length",
             "sin", "cos", "tan", "uminus", "exp", "rdivide", "round", "sqrt",
             "mpower", "floor", "ceil", "power", "abs", "fix", "and", "times",
-            "log", "disp"
+            "log","disp","round","transpose"
     };
+
     private static String[] SHAPE_INPUT = {
             "randn","zeros","eye","rand","ones"
     };
-    private static String[] SHAPE_INPUT_TO_THE_LEFT = {
-        "reshape","randi"
-    };
+
     private static String[] VECTOR_INPUT = {
             "vertcat","horzcat","colon","get","set"
     };
     private static String[] NONSPECIALIZED = {
             "any", "assert"
     };
+    private static String[] SCALAR_OUTPUT = {
+            "length","ndims","isscalar","isempty","isrow","iscolumn","isvector","ismatrix","numel","tic","toc","pi","e"
+    };
+    private static String[] ONE_MATRIX_AND_SHAPE = {
+            "reshape","randi"
+    };
     static {
         // The specialized functions are ordered so that we can run a binary
         // search over them.
         Arrays.sort(SPECIALIZED, (s, t) -> s.compareTo(t));
+        Arrays.sort(SCALAR_OUTPUT, (s, t) -> s.compareTo(t));
         Arrays.sort(NONSPECIALIZED, (s, t) -> s.compareTo(t));
         Arrays.sort(VECTOR_INPUT, Comparator.naturalOrder());
         Arrays.sort(SHAPE_INPUT, Comparator.naturalOrder());
+        Arrays.sort(ONE_MATRIX_AND_SHAPE, Comparator.naturalOrder());
 
+    }
+    public static boolean isScalarOutput(String funcName){
+        return Arrays.binarySearch(SCALAR_OUTPUT, funcName,Comparator.naturalOrder()) >= 0;
     }
     public static boolean isVectorInput(String funcName){
         return Arrays.binarySearch(VECTOR_INPUT, funcName,Comparator.naturalOrder()) >= 0;
@@ -146,5 +156,10 @@ public class FunctionRenamer {
         } else {
             throw new Error("Unsupported redefinition of builtin function " + functionName);
         }
+    }
+
+    public static boolean isOneMatrixAndShapeBuiltin(String name) {
+        return Arrays.binarySearch(ONE_MATRIX_AND_SHAPE, name, Comparator.naturalOrder()) >=0;
+
     }
 }

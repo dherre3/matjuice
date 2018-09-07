@@ -37,6 +37,7 @@ function B1=closure(N)
 %-----------------------------------------------------------------------
 
 % Initialization.
+tic()
 A=zeros(N, N);
 for ii=1:N,
     for jj=1:N,
@@ -49,17 +50,21 @@ for ii=1:N,
 	end;
     end;
 end;
-
+t = toc()
+disp(t)
 B=A;
 
 % Perform actual work.
 %Rename ii1 to ii once VarRenameOnTypeCpnflict is Fixed
+tic()
+
 ii1=N/2;
 while ii1>=1,
       B=B*B;
       ii1=ii1/2;
 end;
-
+t = toc()
+disp(t)
 % temporarily change B -> B1
 B1=B>0;
 

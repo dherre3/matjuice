@@ -10,7 +10,6 @@
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="McLabCore" level="project" />
-    <orderEntry type="library" name="matwably-1.0" level="project" />
   </component>
   <component name="TemplatesService">
     <option name="TEMPLATE_FOLDERS">

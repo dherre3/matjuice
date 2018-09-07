@@ -41,20 +41,20 @@ function  result=fft_four1(data, n, isign)
      wpr=-2.0*wtemp*wtemp;
      wpi=sin(theta);
      wr=1.0;
-     wi=0.0;
+     wi1=0.0;
      for m=2:2:mmax
          for i=m:istep:nn
              j=i+mmax;
-             tempr=wr*data(j-1)-wi*data(j);
-             tempi=wr*data(j)+wi*data(j-1);
+             tempr=wr*data(j-1)-wi1*data(j);
+             tempi=wr*data(j)+wi1*data(j-1);
              data(j-1)=data(i-1)-tempr;
              data(j)=data(i)-tempi;
              data(i-1)=data(i-1)+tempr;
              data(i)=data(i)+tempi;
          end
          wtemp=wr;
-         wr=wtemp*wpr-wi*wpi+wr;
-         wi=wi*wpr+wtemp*wpi+wi;
+         wr=wtemp*wpr-wi1*wpi+wr;
+         wi1=wi1*wpr+wtemp*wpi+wi1;
      end
      mmax=istep;
   end

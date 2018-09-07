@@ -1,7 +1,8 @@
 function  drv_mcpi_p(scale)
-%tic
+tic();
 mcpi_p(scale,50000);
-%toc
+t = toc();
+disp(t);
 end
 
 

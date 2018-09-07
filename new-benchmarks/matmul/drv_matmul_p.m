@@ -11,8 +11,9 @@ n=scale;
 A = rand(m,k);
 B = rand(k,n);
 
-%tic
+tic();
 matmul_p(A,B,m,k,n);
-%toc
+t = toc();
+disp(t);
 end
 

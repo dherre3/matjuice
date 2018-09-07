@@ -1,6 +1,8 @@
 function [y] =  drv_bubble(size)
-A=(randn(1,size));
+A= colon(10000,-1,1);
 A=100*A;
+tic();
 y=bubble(A);
-disp(y)
+t = toc();
+disp(t);
 end
