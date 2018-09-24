@@ -1,4 +1,90 @@
-let memory = WebAssembly.Memory({initial:32767});
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+// declare var this.wi:any;
+class NdArray extends Float64Array {
+    constructor(wi, mxarray) {
+        super(memory.buffer, wi.mxarray_core_get_array_ptr(mxarray), wi.numel(mxarray));
+        this.wi = wi;
+    }
+    get_indices(indices) {
+        if (this.isArrPtr(indices)) {
+            return new NdArray(this.wi, this.wi.get_f64(this.arr_ptr, indices));
+        }
+        else {
+            let indices_arr_ptr = this.wi.create_mxvector(indices.length, 5); // Create mxvector this.with int type
+            indices.forEach((dimArr, indDim) => {
+                let index_arr_ptr = this.wi.create_mxvector(dimArr.length);
+                dimArr.forEach((val, indVal) => {
+                    this.wi.set_array_index_f64(index_arr_ptr, indVal + 1, val);
+                });
+                this.wi.set_array_index_i32(indices_arr_ptr, indDim + 1, index_arr_ptr);
+                return new NdArray(this.wi, this.wi.get_f64(this.arr_ptr, indices_arr_ptr));
+            });
+        }
+    }
+    set_indices(indices, values) {
+        let indices_arr_ptr;
+        let indices_val_arr_ptr;
+        if (this.isArrPtr(indices)) {
+            indices_arr_ptr = indices;
+        }
+        else {
+            indices_arr_ptr = this.wi.create_mxvector(indices.length, 5); // Create mxvector this.with int type
+            indices.forEach((dimArr, indDim) => {
+                let index_arr_ptr = this.wi.create_mxvector(dimArr.length);
+                this.wi.set_array_index_i32(indices_arr_ptr, indDim + 1, index_arr_ptr);
+                dimArr.forEach((val, indVal) => {
+                    this.wi.set_array_index_f64(index_arr_ptr, indVal + 1, val);
+                });
+            });
+        }
+        if (this.isArrPtr(values)) {
+            indices_val_arr_ptr = values;
+        }
+        else {
+            indices_val_arr_ptr = this.wi.create_mxvector(values.length);
+            values.forEach((val, ind) => {
+                this.wi.set_array_index_f64(indices_val_arr_ptr, ind + 1, val);
+            });
+        }
+        this.wi.set_f64(this.arr_ptr, indices_arr_ptr, indices_val_arr_ptr);
+    }
+    numel() {
+        return this.wi.numel(this.arr_ptr);
+    }
+    ndims() {
+        return this.wi.ndims(this.arr_ptr);
+    }
+    length_M() {
+        return this.wi.length_M(this.arr_ptr);
+    }
+    isrow() {
+        return this.wi.isrow(this.arr_ptr);
+    }
+    iscolumn() {
+        return this.wi.iscolumn(this.arr_ptr);
+    }
+    ismatrix() {
+        return this.wi.ismatrix(this.arr_ptr);
+    }
+    isvector() {
+        return this.wi.isvector(this.arr_ptr);
+    }
+    isempty() {
+        return this.wi.isempty(this.arr_ptr);
+    }
+    isArrPtr(x) {
+        return typeof x === "number";
+    }
+    isArrayVector(x) {
+        return Array.isArray(x) && ((x.length > 0 && Array.isArray(x[0])) || true);
+    }
+    isArrayNumber(x) {
+        return Array.isArray(x) && ((x.length > 0 && typeof x[0] === 'number') || true);
+    }
+}
+exports.NdArray = NdArray;
+let memory = new WebAssembly.Memory({initial:32767});
 const { TextDecoder,TextEncoder } = require('util');
 function printError(offset, length) {
     var bytes = new Uint8Array(libjs.js.mem.buffer, offset, length);
@@ -229,7 +315,6 @@ function crnich_SSSSS(a, b, c, n, m){
     var mc_t68 = 0;
     var mc_t69 = 0;
     var mc_t90 = 0;
-    var mc_t150 = 0;
     var mc_t10 = 0;
     var mc_t11 = 0;
     var Va = 0;
@@ -244,15 +329,9 @@ function crnich_SSSSS(a, b, c, n, m){
     var mc_t17 = 0;
     var mc_t18 = 0;
     var mc_t19 = 0;
-    var mc_t145 = 0;
-    var mc_t144 = 0;
-    var mc_t143 = 0;
     var mc_t80 = 0;
-    var mc_t142 = 0;
     var mc_t81 = 0;
-    var mc_t141 = 0;
     var mc_t82 = 0;
-    var mc_t140 = 0;
     var mc_t83 = 0;
     var mc_t84 = 0;
     var i1 = 0;
@@ -261,10 +340,6 @@ function crnich_SSSSS(a, b, c, n, m){
     var mc_t87 = 0;
     var mc_t88 = 0;
     var mc_t89 = 0;
-    var mc_t149 = 0;
-    var mc_t148 = 0;
-    var mc_t147 = 0;
-    var mc_t146 = 0;
 
 
 
@@ -393,69 +468,54 @@ function crnich_SSSSS(a, b, c, n, m){
         mc_t20 = wi.sin_S(mc_t21);
         mc_t3 = mc_t19 + mc_t20;
         mc_t64 = 1;
-        mc_t131 = wi.create_mxvector(2);
-        wi.set_array_index_f64(mc_t131, 1, i1);
-        wi.set_array_index_f64(mc_t131, 2, mc_t64);
-        wi.set_array_value_multiple_indeces_f64(U, mc_t131, mc_t3);
+        wi.set_array_index_f64(U, (((i1-1)+(2300*(mc_t64-1)))+1), mc_t3);
     }
 
     mc_t33 = s1;
     mc_t66 = 1;
-    mc_t132 = wi.create_mxvector(2);
-    wi.set_array_index_f64(mc_t132, 1, mc_t66);
-    wi.set_array_index_f64(mc_t132, 2, n);
-    mc_t34 = wi.ones(mc_t132);
+    mc_t131 = wi.create_mxvector(2);
+    wi.set_array_index_f64(mc_t131, 1, mc_t66);
+    wi.set_array_index_f64(mc_t131, 2, n);
+    mc_t34 = wi.ones(mc_t131);
     Vd = wi.mtimes_SM(mc_t33, mc_t34);
     mc_t67 = 1;
     mc_t68 = 1;
-    mc_t133 = wi.create_mxvector(1);
-    wi.set_array_index_f64(mc_t133, 1, mc_t68);
-    wi.set_array_value_multiple_indeces_f64(Vd, mc_t133, mc_t67);
+    wi.set_array_index_f64(Vd, mc_t68, mc_t67);
     mc_t69 = 1;
-    mc_t134 = wi.create_mxvector(1);
-    wi.set_array_index_f64(mc_t134, 1, n);
-    wi.set_array_value_multiple_indeces_f64(Vd, mc_t134, mc_t69);
+    wi.set_array_index_f64(Vd, n, mc_t69);
     mc_t70 = 1;
     mc_t36 = n - mc_t70;
     mc_t71 = 1;
-    mc_t135 = wi.create_mxvector(2);
-    wi.set_array_index_f64(mc_t135, 1, mc_t71);
-    wi.set_array_index_f64(mc_t135, 2, mc_t36);
-    mc_t35 = wi.ones(mc_t135);
+    mc_t132 = wi.create_mxvector(2);
+    wi.set_array_index_f64(mc_t132, 1, mc_t71);
+    wi.set_array_index_f64(mc_t132, 2, mc_t36);
+    mc_t35 = wi.ones(mc_t132);
     Va = wi.uminus_M(mc_t35);
     mc_t72 = 1;
     mc_t6 = n - mc_t72;
     mc_t73 = 0;
-    mc_t136 = wi.create_mxvector(1);
-    wi.set_array_index_f64(mc_t136, 1, mc_t6);
-    wi.set_array_value_multiple_indeces_f64(Va, mc_t136, mc_t73);
+    wi.set_array_index_f64(Va, mc_t6, mc_t73);
     mc_t74 = 1;
     mc_t38 = n - mc_t74;
     mc_t75 = 1;
-    mc_t137 = wi.create_mxvector(2);
-    wi.set_array_index_f64(mc_t137, 1, mc_t75);
-    wi.set_array_index_f64(mc_t137, 2, mc_t38);
-    mc_t37 = wi.ones(mc_t137);
+    mc_t133 = wi.create_mxvector(2);
+    wi.set_array_index_f64(mc_t133, 1, mc_t75);
+    wi.set_array_index_f64(mc_t133, 2, mc_t38);
+    mc_t37 = wi.ones(mc_t133);
     Vc = wi.uminus_M(mc_t37);
     mc_t76 = 0;
     mc_t77 = 1;
-    mc_t138 = wi.create_mxvector(1);
-    wi.set_array_index_f64(mc_t138, 1, mc_t77);
-    wi.set_array_value_multiple_indeces_f64(Vc, mc_t138, mc_t76);
+    wi.set_array_index_f64(Vc, mc_t77, mc_t76);
     mc_t78 = 1;
-    mc_t139 = wi.create_mxvector(2);
-    wi.set_array_index_f64(mc_t139, 1, mc_t78);
-    wi.set_array_index_f64(mc_t139, 2, n);
-    Vb = wi.zeros(mc_t139);
+    mc_t134 = wi.create_mxvector(2);
+    wi.set_array_index_f64(mc_t134, 1, mc_t78);
+    wi.set_array_index_f64(mc_t134, 2, n);
+    Vb = wi.zeros(mc_t134);
     mc_t79 = 0;
     mc_t80 = 1;
-    mc_t140 = wi.create_mxvector(1);
-    wi.set_array_index_f64(mc_t140, 1, mc_t80);
-    wi.set_array_value_multiple_indeces_f64(Vb, mc_t140, mc_t79);
+    wi.set_array_index_f64(Vb, mc_t80, mc_t79);
     mc_t81 = 0;
-    mc_t141 = wi.create_mxvector(1);
-    wi.set_array_index_f64(mc_t141, 1, n);
-    wi.set_array_value_multiple_indeces_f64(Vb, mc_t141, mc_t81);
+    wi.set_array_index_f64(Vb, n, mc_t81);
 
     mc_t90 = 2;
     for (j1 = mc_t90; j1<=m; j1 = j1+1) {
@@ -467,48 +527,37 @@ function crnich_SSSSS(a, b, c, n, m){
             mc_t49 = i1 - mc_t83;
             mc_t84 = 1;
             mc_t50 = j1 - mc_t84;
-            mc_t142 = wi.create_mxvector(2);
-            wi.set_array_index_f64(mc_t142, 1, mc_t49);
-            wi.set_array_index_f64(mc_t142, 2, mc_t50);
-            mc_t45 = wi.get_array_value_multiple_indeces_f64(U, mc_t142);
+            mc_t45 = wi.get_array_index_f64(U, (((mc_t49-1)+(2300*(mc_t50-1)))+1));
             mc_t85 = 1;
             mc_t47 = i1 + mc_t85;
             mc_t86 = 1;
             mc_t48 = j1 - mc_t86;
-            mc_t143 = wi.create_mxvector(2);
-            wi.set_array_index_f64(mc_t143, 1, mc_t47);
-            wi.set_array_index_f64(mc_t143, 2, mc_t48);
-            mc_t46 = wi.get_array_value_multiple_indeces_f64(U, mc_t143);
+            mc_t46 = wi.get_array_index_f64(U, (((mc_t47-1)+(2300*(mc_t48-1)))+1));
             mc_t39 = mc_t45 + mc_t46;
             mc_t41 = s2;
             mc_t43 = i1;
             mc_t87 = 1;
             mc_t44 = j1 - mc_t87;
-            mc_t144 = wi.create_mxvector(2);
-            wi.set_array_index_f64(mc_t144, 1, mc_t43);
-            wi.set_array_index_f64(mc_t144, 2, mc_t44);
-            mc_t42 = wi.get_array_value_multiple_indeces_f64(U, mc_t144);
+            mc_t42 = wi.get_array_index_f64(U, (((mc_t43-1)+(2300*(mc_t44-1)))+1));
             mc_t40 = mc_t41 * mc_t42;
             mc_t4 = mc_t39 + mc_t40;
-            mc_t145 = wi.create_mxvector(1);
-            wi.set_array_index_f64(mc_t145, 1, i1);
-            wi.set_array_value_multiple_indeces_f64(Vb, mc_t145, mc_t4);
+            wi.set_array_index_f64(Vb, i1, mc_t4);
         }
         X = tridiagonal_MMMMS(Va, Vd, Vc, Vb, n);
         mc_t5 = wi.transpose_M(X);
         mc_t89 = 1;
-        mc_t146 = wi.create_mxvector(2, 5);
-        mc_t147 = wi.convert_scalar_to_mxarray(mc_t89);
-        wi.set_array_index_i32(mc_t146, 1, mc_t147);
-        mc_t148 = wi.convert_scalar_to_mxarray(n);
-        wi.set_array_index_i32(mc_t146, 2, mc_t148);
-        mc_t7 = wi.colon(mc_t146);
+        mc_t135 = wi.create_mxvector(2, 5);
+        mc_t136 = wi.convert_scalar_to_mxarray(mc_t89);
+        wi.set_array_index_i32(mc_t135, 1, mc_t136);
+        mc_t137 = wi.convert_scalar_to_mxarray(n);
+        wi.set_array_index_i32(mc_t135, 2, mc_t137);
+        mc_t7 = wi.colon(mc_t135);
         mc_t8 = j1;
-        mc_t149 = wi.create_mxvector(2, 5);
-        wi.set_array_index_i32(mc_t149, 1, mc_t7);
-        mc_t150 = wi.convert_scalar_to_mxarray(mc_t8);
-        wi.set_array_index_i32(mc_t149, 2, mc_t150);
-        wi.set_f64(U, mc_t149, mc_t5);
+        mc_t138 = wi.create_mxvector(2, 5);
+        wi.set_array_index_i32(mc_t138, 1, mc_t7);
+        mc_t139 = wi.convert_scalar_to_mxarray(mc_t8);
+        wi.set_array_index_i32(mc_t138, 2, mc_t139);
+        wi.set_f64(U, mc_t138, mc_t5);
     }
 
     return U;
@@ -543,7 +592,9 @@ function drv_crni_S(scale){
 
     wi.tic();
     mc_t1 = 1;
-    U = crnich_SSSSS(a, b, c, n, m);
+    for (time = mc_t1; time<=scale; time = time+1) {
+        U = crnich_SSSSS(a, b, c, n, m);
+    }
     t = wi.toc();
     wi.disp_S(t);
     return;
@@ -552,16 +603,11 @@ function drv_crni_S(scale){
 function tridiagonal_MMMMS(A, D, C, B, n){
     var mc_t112 = 0;
     var mc_t111 = 0;
-    var mc_t155 = 0;
     var mc_t110 = 0;
-    var mc_t154 = 0;
     var mult = 0;
     var mc_t91 = 0;
-    var mc_t153 = 0;
     var mc_t92 = 0;
-    var mc_t152 = 0;
     var mc_t93 = 0;
-    var mc_t151 = 0;
     var mc_t94 = 0;
     var mc_t95 = 0;
     var mc_t96 = 0;
@@ -582,6 +628,7 @@ function tridiagonal_MMMMS(A, D, C, B, n){
     var mc_t100 = 0;
     var mc_t121 = 0;
     var mc_t120 = 0;
+    var mc_t140 = 0;
     var mc_t109 = 0;
     var mc_t108 = 0;
     var mc_t107 = 0;
@@ -666,9 +713,7 @@ function tridiagonal_MMMMS(A, D, C, B, n){
         mc_t102 = wi.get_array_index_f64(C, mc_t103);
         mc_t100 = mc_t101 * mc_t102;
         mc_t91 = mc_t99 - mc_t100;
-        mc_t151 = wi.create_mxvector(1);
-        wi.set_array_index_f64(mc_t151, 1, k);
-        wi.set_array_value_multiple_indeces_f64(D, mc_t151, mc_t91);
+        wi.set_array_index_f64(D, k, mc_t91);
         mc_t104 = wi.get_array_index_f64(B, k);
         mc_t106 = mult;
         mc_t123 = 1;
@@ -676,22 +721,18 @@ function tridiagonal_MMMMS(A, D, C, B, n){
         mc_t107 = wi.get_array_index_f64(B, mc_t108);
         mc_t105 = mc_t106 * mc_t107;
         mc_t92 = mc_t104 - mc_t105;
-        mc_t152 = wi.create_mxvector(1);
-        wi.set_array_index_f64(mc_t152, 1, k);
-        wi.set_array_value_multiple_indeces_f64(B, mc_t152, mc_t92);
+        wi.set_array_index_f64(B, k, mc_t92);
     }
 
     mc_t125 = 1;
-    mc_t153 = wi.create_mxvector(2);
-    wi.set_array_index_f64(mc_t153, 1, mc_t125);
-    wi.set_array_index_f64(mc_t153, 2, n);
-    X = wi.zeros(mc_t153);
+    mc_t140 = wi.create_mxvector(2);
+    wi.set_array_index_f64(mc_t140, 1, mc_t125);
+    wi.set_array_index_f64(mc_t140, 2, n);
+    X = wi.zeros(mc_t140);
     mc_t109 = wi.get_array_index_f64(B, n);
     mc_t110 = wi.get_array_index_f64(D, n);
     mc_t93 = mc_t109 / mc_t110;
-    mc_t154 = wi.create_mxvector(1);
-    wi.set_array_index_f64(mc_t154, 1, n);
-    wi.set_array_value_multiple_indeces_f64(X, mc_t154, mc_t93);
+    wi.set_array_index_f64(X, n, mc_t93);
 
     mc_t126 = 1;
     mc_t118 = n - mc_t126;
@@ -708,19 +749,8 @@ function tridiagonal_MMMMS(A, D, C, B, n){
         mc_t111 = mc_t113 - mc_t114;
         mc_t112 = wi.get_array_index_f64(D, k);
         mc_t94 = mc_t111 / mc_t112;
-        mc_t155 = wi.create_mxvector(1);
-        wi.set_array_index_f64(mc_t155, 1, k);
-
-
-
-        wi.set_array_value_multiple_indeces_f64(X, mc_t155, mc_t94);
+        wi.set_array_index_f64(X, k, mc_t94);
     }
-A = ones(3,7,2);
-A.set([[3,7,2],[3,2],[2]],[2]);
-
-    A = randn(3,7,2);
-    A(1:2,[1,2],2);
-
 
 
 

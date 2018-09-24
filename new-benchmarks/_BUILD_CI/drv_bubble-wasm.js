@@ -1,4 +1,90 @@
-let memory = WebAssembly.Memory({initial:32767});
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+// declare var this.wi:any;
+class NdArray extends Float64Array {
+    constructor(wi, mxarray) {
+        super(memory.buffer, wi.mxarray_core_get_array_ptr(mxarray), wi.numel(mxarray));
+        this.wi = wi;
+    }
+    get_indices(indices) {
+        if (this.isArrPtr(indices)) {
+            return new NdArray(this.wi, this.wi.get_f64(this.arr_ptr, indices));
+        }
+        else {
+            let indices_arr_ptr = this.wi.create_mxvector(indices.length, 5); // Create mxvector this.with int type
+            indices.forEach((dimArr, indDim) => {
+                let index_arr_ptr = this.wi.create_mxvector(dimArr.length);
+                dimArr.forEach((val, indVal) => {
+                    this.wi.set_array_index_f64(index_arr_ptr, indVal + 1, val);
+                });
+                this.wi.set_array_index_i32(indices_arr_ptr, indDim + 1, index_arr_ptr);
+                return new NdArray(this.wi, this.wi.get_f64(this.arr_ptr, indices_arr_ptr));
+            });
+        }
+    }
+    set_indices(indices, values) {
+        let indices_arr_ptr;
+        let indices_val_arr_ptr;
+        if (this.isArrPtr(indices)) {
+            indices_arr_ptr = indices;
+        }
+        else {
+            indices_arr_ptr = this.wi.create_mxvector(indices.length, 5); // Create mxvector this.with int type
+            indices.forEach((dimArr, indDim) => {
+                let index_arr_ptr = this.wi.create_mxvector(dimArr.length);
+                this.wi.set_array_index_i32(indices_arr_ptr, indDim + 1, index_arr_ptr);
+                dimArr.forEach((val, indVal) => {
+                    this.wi.set_array_index_f64(index_arr_ptr, indVal + 1, val);
+                });
+            });
+        }
+        if (this.isArrPtr(values)) {
+            indices_val_arr_ptr = values;
+        }
+        else {
+            indices_val_arr_ptr = this.wi.create_mxvector(values.length);
+            values.forEach((val, ind) => {
+                this.wi.set_array_index_f64(indices_val_arr_ptr, ind + 1, val);
+            });
+        }
+        this.wi.set_f64(this.arr_ptr, indices_arr_ptr, indices_val_arr_ptr);
+    }
+    numel() {
+        return this.wi.numel(this.arr_ptr);
+    }
+    ndims() {
+        return this.wi.ndims(this.arr_ptr);
+    }
+    length_M() {
+        return this.wi.length_M(this.arr_ptr);
+    }
+    isrow() {
+        return this.wi.isrow(this.arr_ptr);
+    }
+    iscolumn() {
+        return this.wi.iscolumn(this.arr_ptr);
+    }
+    ismatrix() {
+        return this.wi.ismatrix(this.arr_ptr);
+    }
+    isvector() {
+        return this.wi.isvector(this.arr_ptr);
+    }
+    isempty() {
+        return this.wi.isempty(this.arr_ptr);
+    }
+    isArrPtr(x) {
+        return typeof x === "number";
+    }
+    isArrayVector(x) {
+        return Array.isArray(x) && ((x.length > 0 && Array.isArray(x[0])) || true);
+    }
+    isArrayNumber(x) {
+        return Array.isArray(x) && ((x.length > 0 && typeof x[0] === 'number') || true);
+    }
+}
+exports.NdArray = NdArray;
+let memory = new WebAssembly.Memory({initial:32767});
 const { TextDecoder,TextEncoder } = require('util');
 function printError(offset, length) {
     var bytes = new Uint8Array(libjs.js.mem.buffer, offset, length);
@@ -20,7 +106,6 @@ function printWhos(size, bytes, class_type)
             name_class = "double";
     }   
 }
-
 function printInt(number)
 {
     console.log(number);
@@ -145,18 +230,16 @@ async function runner(){
 
 function bubble_M(A){
     var mc_t9 = 0;
-    var mc_t7 = 0;
     var temp = 0;
+    var mc_t7 = 0;
     var mc_t8 = 0;
-    var mc_t5 = 0;
-    var mc_t6 = 0;
-    var mc_t20 = 0;
     var i = 0;
+    var mc_t20 = 0;
     var j = 0;
-    var mc_t10 = 0;
     var mc_t21 = 0;
-    var mc_t11 = 0;
+    var mc_t10 = 0;
     var mc_t22 = 0;
+    var mc_t11 = 0;
     var mc_t12 = 0;
     var mc_t13 = 0;
     var n = 0;
@@ -167,42 +250,31 @@ function bubble_M(A){
     var mc_t18 = 0;
     var mc_t19 = 0;
     var x = 0;
-    var Afloat = new Float64Array(memory.buffer, wi.mxarray_core_get_array_ptr(A), wi.numel(A));
-    // A = wi.clone(A);
+    A = wi.clone(A);
     n = wi.length_M(A);
-    mc_t13 = 1;
-    mc_t12 = n - mc_t13;
-    mc_t20 = 1;
-    for (j = mc_t20; j<=mc_t12; j = j+1) {
+    mc_t15 = 1;
+    mc_t14 = n - mc_t15;
+    mc_t22 = 1;
+    for (j = mc_t22; j<=mc_t14; j = j+1) {
 
-        mc_t14 = 1;
-        mc_t11 = n - mc_t14;
-        mc_t19 = 1;
-        for (i = mc_t19; i<=mc_t11; i = i+1) {
-            mc_t7 = Afloat[i-1];
-            // mc_t7 = wi.get_array_index_f64(A, i);
-            mc_t15 = 1;
-            mc_t9 = i + mc_t15;
-            // mc_t8 = wi.get_array_index_f64(A, mc_t9);
-            mc_t8 = Afloat[mc_t9-1];
-            mc_t18 = mc_t7 > mc_t8;
-            if (mc_t18) {
-                // temp = wi.get_array_index_f64(A, i);
-                temp = Afloat[i-1]
-                mc_t16 = 1;
-                mc_t10 = i + mc_t16;
-                // mc_t5 = wi.get_array_index_f64(A, mc_t10);
-                mc_t5 = Afloat[ mc_t10 - 1 ];
-                // mc_t21 = wi.create_mxvector(1);
-                // wi.set_array_index_f64(mc_t21, 1, i);
-                // wi.set_array_value_multiple_indeces_f64(A, mc_t21, mc_t5);
-                Afloat[i-1] = mc_t5;
-                mc_t17 = 1;
-                mc_t6 = i + mc_t17;
-                // mc_t22 = wi.create_mxvector(1);
-                // wi.set_array_index_f64(mc_t22, 1, mc_t6);
-                Afloat[mc_t6-1] = temp;
-                // wi.set_array_value_multiple_indeces_f64(A, mc_t22, temp);
+        mc_t16 = 1;
+        mc_t13 = n - mc_t16;
+        mc_t21 = 1;
+        for (i = mc_t21; i<=mc_t13; i = i+1) {
+            mc_t8 = wi.get_array_index_f64(A, i);
+            mc_t17 = 1;
+            mc_t11 = i + mc_t17;
+            mc_t9 = wi.get_array_index_f64(A, mc_t11);
+            mc_t20 = mc_t8 > mc_t9;
+            if (mc_t20) {
+                temp = wi.get_array_index_f64(A, i);
+                mc_t18 = 1;
+                mc_t12 = i + mc_t18;
+                mc_t7 = wi.get_array_index_f64(A, mc_t12);
+                wi.set_array_index_f64(A, i, mc_t7);
+                mc_t19 = 1;
+                mc_t10 = i + mc_t19;
+                wi.set_array_index_f64(A, mc_t10, temp);
             }
         }
     }
@@ -214,37 +286,37 @@ function bubble_M(A){
 function drv_bubble_S(size){
     var A = 0;
     var t = 0;
+    var mc_t3 = 0;
+    var mc_t4 = 0;
     var mc_t1 = 0;
     var mc_t2 = 0;
     var y = 0;
     var mc_t0 = 0;
     var mc_t23 = 0;
-    mc_t0 = 1;
-    mc_t1 = 10000;
-    mc_t23 = wi.create_mxvector(2);
-    wi.set_array_index_f64(mc_t23, 1, mc_t0);
-    wi.set_array_index_f64(mc_t23, 2, mc_t1);
-    A = wi.randn(mc_t23);
-    wi.tic();
-    for(var i = 0;i<10;i++){
-        mc_t2 = 100000000;
-        A = wi.mtimes_SM(mc_t2, A);
-
-    }
-    t = wi.toc();
-    wi.disp_S(t);
-
-    mc_t2 = 100000;
-    A = wi.mtimes_SM(mc_t2, A);
+    var mc_t24 = 0;
+    var mc_t25 = 0;
+    var mc_t26 = 0;
+    mc_t1 = 1;
+    mc_t0 = -mc_t1;
+    mc_t2 = 10000;
+    mc_t3 = 1;
+    mc_t23 = wi.create_mxvector(3, 5);
+    mc_t24 = wi.convert_scalar_to_mxarray(mc_t2);
+    wi.set_array_index_i32(mc_t23, 1, mc_t24);
+    mc_t25 = wi.convert_scalar_to_mxarray(mc_t0);
+    wi.set_array_index_i32(mc_t23, 2, mc_t25);
+    mc_t26 = wi.convert_scalar_to_mxarray(mc_t3);
+    wi.set_array_index_i32(mc_t23, 3, mc_t26);
+    A = wi.colon(mc_t23);
+    mc_t4 = 100;
+    A = wi.mtimes_SM(mc_t4, A);
     wi.tic();
     y = bubble_M(A);
     t = wi.toc();
     wi.disp_S(t);
-    wi.disp_S(A);
-
     return y;
 }
-drv_bubble_S(10);
+drv_bubble_S(1);
 }
 runner().then((res)=>{}).catch((err)=>{
     throw err;

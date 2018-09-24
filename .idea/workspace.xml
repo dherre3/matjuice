@@ -10,180 +10,110 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.5">
-      <split-first>
-        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file leaf-file-name="get_array-js.js" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/get_array-js.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="2238">
-                  <caret line="1384" column="42" lean-forward="true" selection-start-line="1384" selection-start-column="42" selection-end-line="1384" selection-end-column="42" />
-                  <folding>
-                    <element signature="n#!!doc" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="wasm_loader.js" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/resources/wasm_loader.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="90">
-                  <caret line="6" column="44" lean-forward="true" selection-start-line="6" selection-start-column="44" selection-end-line="6" selection-end-column="44" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/matjuice/Main.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="385">
-                  <caret line="185" column="29" lean-forward="false" selection-start-line="185" selection-start-column="29" selection-end-line="185" selection-end-column="29" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="Makefile" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/Makefile">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="15">
-                  <caret line="1" column="14" lean-forward="true" selection-start-line="1" selection-start-column="14" selection-end-line="1" selection-end-column="14" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="lib_wasm.js" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/resources/lib_wasm.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="510">
-                  <caret line="34" column="21" lean-forward="true" selection-start-line="34" selection-start-column="21" selection-end-line="34" selection-end-column="21" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="Generator.java" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/matjuice/codegen/Generator.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="127">
-                  <caret line="1101" column="13" lean-forward="true" selection-start-line="1101" selection-start-column="13" selection-end-line="1101" selection-end-column="13" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="drv_bubble-wasm.js" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/new-benchmarks/_BUILD_CI/drv_bubble-wasm.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="124">
-                  <caret line="223" column="33" lean-forward="false" selection-start-line="223" selection-start-column="33" selection-end-line="223" selection-end-column="33" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="drv_bubble-wasm.js" pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/nc/drv_bubble-wasm.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="153">
-                  <caret line="256" column="5" lean-forward="true" selection-start-line="256" selection-start-column="5" selection-end-line="256" selection-end-column="5" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="drv_bubble.js" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/new-benchmarks/_BUILD_CI/drv_bubble.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="19995">
-                  <caret line="1337" column="33" lean-forward="false" selection-start-line="1337" selection-start-column="33" selection-end-line="1337" selection-end-column="33" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-        </leaf>
-      </split-first>
-      <split-second>
-        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file leaf-file-name="drv_bubble.js" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/new-benchmarks/_BUILD_CI/drv_bubble.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="394">
-                  <caret line="1340" column="0" lean-forward="false" selection-start-line="1340" selection-start-column="0" selection-end-line="1341" selection-end-column="0" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="drv_babai.js" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/new-benchmarks/_BUILD_CI/drv_babai.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="20655">
-                  <caret line="1381" column="23" lean-forward="false" selection-start-line="1381" selection-start-column="23" selection-end-line="1381" selection-end-column="23" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="get_array.js" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/get_array.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="1101">
-                  <caret line="328" column="8" lean-forward="false" selection-start-line="328" selection-start-column="8" selection-end-line="328" selection-end-column="8" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="drv_capr.js" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/new-benchmarks/_BUILD_CI/drv_capr.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="-2155">
-                  <caret line="1713" column="64" lean-forward="false" selection-start-line="1713" selection-start-column="64" selection-end-line="1713" selection-end-column="64" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="get_array.m" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/tests/programs/get_array.m">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="15">
-                  <caret line="1" column="16" lean-forward="false" selection-start-line="1" selection-start-column="8" selection-end-line="1" selection-end-column="16" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="lib.es5.d.ts" pinned="false" current-in-tab="true">
-            <entry file="file://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external/lib.es5.d.ts">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="-56740">
-                  <caret line="262" column="4" lean-forward="false" selection-start-line="262" selection-start-column="4" selection-end-line="262" selection-end-column="4" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="drv_bubble-js.js" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/nc/drv_bubble-js.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="500">
-                  <caret line="1345" column="13" lean-forward="true" selection-start-line="1345" selection-start-column="13" selection-end-line="1345" selection-end-column="13" />
-                  <folding>
-                    <element signature="n#!!doc" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-        </leaf>
-      </split-second>
-    </splitter>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="Generator.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/matjuice/codegen/Generator.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="190">
+              <caret line="604" column="45" lean-forward="false" selection-start-line="604" selection-start-column="45" selection-end-line="604" selection-end-column="45" />
+              <folding>
+                <element signature="e#26973#26979#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ExprOp.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/gen/matjuice/jsast/ExprOp.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="217">
+              <caret line="46" column="9" lean-forward="false" selection-start-line="46" selection-start-column="9" selection-end-line="46" selection-end-column="9" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="OperatorRenamer.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/matjuice/codegen/OperatorRenamer.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="465">
+              <caret line="39" column="67" lean-forward="false" selection-start-line="39" selection-start-column="67" selection-end-line="39" selection-end-column="67" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Binop.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/matjuice/jsast/Binop.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="75">
+              <caret line="6" column="4" lean-forward="false" selection-start-line="6" selection-start-column="4" selection-end-line="6" selection-end-column="4" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ShapeBuiltinInputTransformer.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/matjuice/builtin_input/ShapeBuiltinInputTransformer.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="717">
+              <caret line="79" column="64" lean-forward="false" selection-start-line="79" selection-start-column="64" selection-end-line="79" selection-end-column="64" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="VectorBuiltinInputTransformer.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/matjuice/builtin_input/VectorBuiltinInputTransformer.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="375">
+              <caret line="71" column="61" lean-forward="false" selection-start-line="71" selection-start-column="61" selection-end-line="71" selection-end-column="61" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="OneMatrixAndShapeBuiltinInputTransformer.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/matjuice/builtin_input/OneMatrixAndShapeBuiltinInputTransformer.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="345">
+              <caret line="34" column="0" lean-forward="false" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ResultInputTransformer.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/matjuice/builtin_input/ResultInputTransformer.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="270">
+              <caret line="28" column="12" lean-forward="false" selection-start-line="28" selection-start-column="12" selection-end-line="28" selection-end-column="12" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AbstractBuiltinInputTransformer.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/matjuice/builtin_input/AbstractBuiltinInputTransformer.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="225">
+              <caret line="33" column="35" lean-forward="false" selection-start-line="33" selection-start-column="35" selection-end-line="33" selection-end-column="35" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="FunctionRenamer.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/matjuice/codegen/FunctionRenamer.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="239">
+              <caret line="63" column="47" lean-forward="false" selection-start-line="63" selection-start-column="47" selection-end-line="63" selection-end-column="47" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -194,20 +124,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>copy</find>
-      <find>isShapeB</find>
-      <find>sq_dev</find>
-      <find>floor</find>
-      <find>:</find>
-      <find>randn</find>
-      <find>rand</find>
-      <find>while</find>
-      <find>disp</find>
-      <find>Ex</find>
-      <find>wi.set_f64(Ex</find>
-      <find>./bui</find>
-      <find>set_f64</find>
-      <find>transpose_M</find>
       <find>mc_transpose_M</find>
       <find>code</find>
       <find>wi.</find>
@@ -224,6 +140,20 @@
       <find>set_array_index_f64_no_check</find>
       <find>set_array_index_f64</find>
       <find>set_array_index_f64_</find>
+      <find>get_array_value_multiple_indeces_f64</find>
+      <find>arr_ptr</find>
+      <find>getFunction</find>
+      <find>get</find>
+      <find>genCallStmtDefaultInputWasm</find>
+      <find>newTemp</find>
+      <find>isAssig</find>
+      <find>toS</find>
+      <find>genCallSt</find>
+      <find>stmts</find>
+      <find>genStmt</find>
+      <find>genAssignTargetsFromResult</find>
+      <find>getArrayGet</find>
+      <find>computerInd</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -248,7 +178,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/new-benchmarks/clos/drv_clos.m" />
         <option value="$PROJECT_DIR$/new-benchmarks/crni/drv_crni.m" />
         <option value="$PROJECT_DIR$/new-benchmarks/fiff/drv_fiff.m" />
         <option value="$PROJECT_DIR$/new-benchmarks/fft/drv_fft.m" />
@@ -286,19 +215,20 @@
         <option value="$PROJECT_DIR$/tests/programs/array_get.m" />
         <option value="$PROJECT_DIR$/new-benchmarks/_BUILD_CI/drv_crni-wasm.js" />
         <option value="$PROJECT_DIR$/new-benchmarks/_BUILD_CI/drv_bubble-wasm.js" />
-        <option value="$PROJECT_DIR$/new-benchmarks/_BUILD_CI/drv_babai-wasm.js" />
-        <option value="$PROJECT_DIR$/new-benchmarks/_BUILD_CI/drv_babai.js" />
         <option value="$PROJECT_DIR$/new-benchmarks/_BUILD_CI/drv_capr-wasm.js" />
         <option value="$PROJECT_DIR$/src/resources/lib_wasm.js" />
         <option value="$PROJECT_DIR$/tests/programs/get_array.m" />
         <option value="$PROJECT_DIR$/get_array-js.js" />
         <option value="$PROJECT_DIR$/get_array.js" />
-        <option value="$PROJECT_DIR$/src/matjuice/codegen/Generator.java" />
         <option value="$PROJECT_DIR$/nc/drv_bubble-js.js" />
         <option value="$PROJECT_DIR$/src/matjuice/Main.java" />
         <option value="$PROJECT_DIR$/Makefile" />
         <option value="$PROJECT_DIR$/new-benchmarks/_BUILD_CI/drv_bubble.js" />
         <option value="$PROJECT_DIR$/nc/drv_bubble-wasm.js" />
+        <option value="$PROJECT_DIR$/new-benchmarks/_BUILD_CI/drv_babai.js" />
+        <option value="$PROJECT_DIR$/new-benchmarks/_BUILD_CI/drv_babai-wasm.js" />
+        <option value="$PROJECT_DIR$/src/matjuice/codegen/FunctionRenamer.java" />
+        <option value="$PROJECT_DIR$/src/matjuice/codegen/Generator.java" />
       </list>
     </option>
   </component>
@@ -318,9 +248,8 @@
     <handled-path value="$PROJECT_DIR$/node_modules" />
   </component>
   <component name="ProjectFrameBounds" fullScreen="true">
-    <option name="x" value="1280" />
-    <option name="width" value="1920" />
-    <option name="height" value="1080" />
+    <option name="width" value="1440" />
+    <option name="height" value="900" />
   </component>
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
@@ -337,9 +266,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="AndroidView" />
+      <pane id="PackagesPane" />
       <pane id="Scratches" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -356,13 +284,28 @@
               <item name="matjuice" type="b2602c69:ProjectViewProjectNode" />
               <item name="matjuice" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="matjuice" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="matjuice" type="b2602c69:ProjectViewProjectNode" />
+              <item name="matjuice" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="matjuice" type="462c0819:PsiDirectoryNode" />
+              <item name="builtin_input" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="matjuice" type="b2602c69:ProjectViewProjectNode" />
+              <item name="matjuice" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="matjuice" type="462c0819:PsiDirectoryNode" />
+              <item name="codegen" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
+      <pane id="Scope" />
+      <pane id="AndroidView" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -373,20 +316,20 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/new-benchmarks/_BUILD_CI" />
-    <property name="SearchEverywhereHistoryKey" value="drv&#9;FILE&#9;file:///Users/davidherrera/Documents/Research/Thesis/code/matjuice/nc/drv_bubble-wasm.js&#10;Main&#9;FILE&#9;file:///Users/davidherrera/Documents/Research/Thesis/code/matjuice/src/matjuice/Main.java&#10;bub&#9;FILE&#9;file:///Users/davidherrera/Documents/Research/Thesis/code/matjuice/nc/drv_bubble-wasm.js&#10;drv_bubble-wasm.&#9;FILE&#9;file:///Users/davidherrera/Documents/Research/Thesis/code/matjuice/nc/drv_bubble-wasm.js&#10;drv_bu&#9;FILE&#9;file:///Users/davidherrera/Documents/Research/Thesis/code/matjuice/new-benchmarks/_BUILD_CI/drv_bubble-wasm.js&#10;get_array-js&#9;FILE&#9;file:///Users/davidherrera/Documents/Research/Thesis/code/matjuice/get_array-js.js&#10;get&#9;FILE&#9;file:///Users/davidherrera/Documents/Research/Thesis/code/matjuice/tests/programs/get_array.m&#10;Generat&#9;PSI&#9;JAVA://matjuice.codegen.Generator&#10;babai&#9;FILE&#9;file:///Users/davidherrera/Documents/Research/Thesis/code/matjuice/new-benchmarks/bbai/babai.m&#10;drv_bab&#9;FILE&#9;file:///Users/davidherrera/Documents/Research/Thesis/code/matjuice/new-benchmarks/bbai/drv_babai.m&#10;dr&#9;FILE&#9;file:///Users/davidherrera/Documents/Research/Thesis/code/matjuice/new-benchmarks/_BUILD_CI/drv_bubble-wasm.js&#10;drv_bub&#9;FILE&#9;file:///Users/davidherrera/Documents/Research/Thesis/code/matjuice/new-benchmarks/_BUILD_CI/drv_bubble-wasm.js&#10;res&#9;FILE&#9;file:///Users/davidherrera/Documents/Research/Thesis/code/matjuice/new-benchmarks/results-v8.9.4.csv&#10;run&#9;null&#9;null&#10;closure&#9;FILE&#9;file:///Users/davidherrera/Documents/Research/Thesis/code/matjuice/new-benchmarks/clos/closure.m&#10;drv_clos&#9;FILE&#9;file:///Users/davidherrera/Documents/Research/Thesis/code/matjuice/new-benchmarks/clos/drv_clos.m&#10;drv_cl&#9;FILE&#9;file:///Users/davidherrera/Documents/Research/Thesis/code/matjuice/nc/drv_clos.js&#10;get_ar&#9;FILE&#9;file:///Users/davidherrera/Documents/Research/Thesis/code/matjuice/compiled/get_array.js&#10;Gen&#9;FILE&#9;file:///Users/davidherrera/Documents/Research/Thesis/code/matjuice/src/matjuice/codegen/Generator.java&#10;Ve&#9;FILE&#9;file:///Users/davidherrera/Documents/Research/Thesis/code/matjuice/src/matjuice/builtin_input/VectorBuiltinInputTransformer.java&#10;lib&#9;FILE&#9;file:///Users/davidherrera/Documents/Research/Thesis/code/matjuice/src/resources/lib_wasm.js&#10;create&#9;FILE&#9;file:///Users/davidherrera/Documents/Research/Thesis/code/matjuice/new-benchmarks/createlhs/createlhs.m&#10;Gene&#9;FILE&#9;file:///Users/davidherrera/Documents/Research/Thesis/code/matjuice/src/matjuice/codegen/Generator.java&#10;drv_&#9;FILE&#9;file:///Users/davidherrera/Documents/Research/Thesis/code/matjuice/nc/drv_lgdr.js&#10;drv_mc&#9;FILE&#9;file:///Users/davidherrera/Documents/Research/Thesis/code/matjuice/nc/drv_mcpi.js&#10;StmtExpr&#9;PSI&#9;JAVA://matjuice.jsast.StmtExpr&#10;Geme&#9;PSI&#9;JAVA://com.sun.tools.internal.ws.resources.GeneratorMessages&#10;Fun&#9;FILE&#9;file:///Users/davidherrera/Documents/Research/Thesis/code/matjuice/src/matjuice/codegen/FunctionRenamer.java&#10;drv_ca&#9;FILE&#9;file:///Users/davidherrera/Documents/Research/Thesis/code/matjuice/nc/drv_capr.js&#10;main&#9;FILE&#9;file:///Users/davidherrera/Documents/Research/Thesis/code/matjuice/src/matjuice/Main.java&#10;mak&#9;FILE&#9;file:///Users/davidherrera/Documents/Research/Thesis/code/matjuice/benchmarks/make_change_dyn/make_change.m&#10;make_&#9;FILE&#9;file:///Users/davidherrera/Documents/Research/Thesis/code/matjuice/benchmarks/make_change_dyn/make_change.m&#10;ins&#9;FILE&#9;file:///Users/davidherrera/Documents/Research/Thesis/code/matjuice/benchmarks/insertion_sort/insertion_sort.m&#10;inser&#9;FILE&#9;file:///Users/davidherrera/Documents/Research/Thesis/code/matjuice/compiled-benchmarks/insertion_sort.js&#10;in&#9;FILE&#9;file:///Users/davidherrera/Documents/Research/Thesis/code/matjuice/benchmarks/insertion_sort/insertion_sort.m&#10;.m&#9;FILE&#9;file:///Users/davidherrera/Documents/Research/Thesis/code/matjuice/benchmarks/insertion_sort/insertion_sort.m&#10;Cond&#9;FILE&#9;file:///Users/davidherrera/Documents/Research/Thesis/code/matjuice/mclab-core/languages/Natlab/src/natlab/toolkits/rewrite/simplification/ConditionalSimplification.java&#10;Con&#9;FILE&#9;file:///Users/davidherrera/Documents/Research/Thesis/code/matjuice/mclab-core/languages/Natlab/src/natlab/toolkits/rewrite/simplification/ConditionalSimplification.java&#10;Functi&#9;FILE&#9;file:///Users/davidherrera/Documents/Research/Thesis/code/matjuice/src/matjuice/codegen/FunctionRenamer.java&#10;insert&#9;FILE&#9;file:///Users/davidherrera/Documents/Research/Thesis/code/matjuice/compiled-benchmarks/insertion_sort.js&#10;Funct&#9;FILE&#9;file:///Users/davidherrera/Documents/Research/Thesis/code/matjuice/src/matjuice/codegen/FunctionRenamer.java&#10;fft&#9;FILE&#9;file:///Users/davidherrera/Documents/Research/Thesis/code/matjuice/compiled-benchmarks/fft.js&#10;li&#9;FILE&#9;file:///Users/davidherrera/Documents/Research/Thesis/code/matjuice/src/resources/lib_wasm.js&#10;Func&#9;FILE&#9;file:///Users/davidherrera/Documents/Research/Thesis/code/matjuice/src/matjuice/codegen/FunctionRenamer.java&#10;d&#9;FILE&#9;file:///Users/davidherrera/Documents/Research/Thesis/code/matjuice/compiled-benchmarks/drv_babai.js&#10;Vec&#9;FILE&#9;file:///Users/davidherrera/Documents/Research/Thesis/code/matjuice/src/matjuice/builtin_input/VectorBuiltinInputTransformer.java&#10;BAB&#9;FILE&#9;file:///Users/davidherrera/Documents/Research/Thesis/code/matjuice/new-benchmarks/bbai/babai.m&#10;bab&#9;FILE&#9;file:///Users/davidherrera/Documents/Research/Thesis/code/matjuice/new-benchmarks/bbai/babai.m&#10;Shape&#9;FILE&#9;file:///Users/davidherrera/Documents/Research/Thesis/code/matjuice/src/matjuice/builtin_input/ShapeBuiltinInputTransformer.java&#10;Abstr&#9;FILE&#9;file:///Users/davidherrera/Documents/Research/Thesis/code/matjuice/src/matjuice/builtin_input/AbstractBuiltinInputTransformer.java" />
+    <property name="SearchEverywhereHistoryKey" value="Gen&#9;FILE&#9;file:///Users/davidherrera/Documents/Research/Thesis/code/matjuice/src/matjuice/codegen/Generator.java&#10;F&#9;FILE&#9;file:///Users/davidherrera/Documents/Research/Thesis/code/matjuice/src/matjuice/codegen/FunctionRenamer.java&#10;Vec&#9;PSI&#9;JAVA://matjuice.builtin_input.VectorBuiltinInputTransformer&#10;Gene&#9;FILE&#9;file:///Users/davidherrera/Documents/Research/Thesis/code/matjuice/src/matjuice/codegen/Generator.java&#10;S&#9;FILE&#9;file:///Users/davidherrera/Documents/Research/Thesis/code/matjuice/src/matjuice/builtin_input/ShapeBuiltinInputTransformer.java&#10;Shape&#9;PSI&#9;JAVA://matjuice.builtin_input.ShapeBuiltinInputTransformer&#10;genTar&#9;PSI&#9;JAVA://matjuice.codegen.Generator#genAssignTargetsFromResult&#10;Fu&#9;FILE&#9;file:///Users/davidherrera/Documents/Research/Thesis/code/matjuice/src/matjuice/codegen/FunctionRenamer.java&#10;Functio&#9;FILE&#9;file:///Users/davidherrera/Documents/Research/Thesis/code/matjuice/src/matjuice/codegen/FunctionRenamer.java&#10;Builtin&#9;PSI&#9;JAVA://matjuice.codegen.wasm_builtin.BuiltinWasmGeneratorVisitor&#10;FunctionRe&#9;PSI&#9;JAVA://matjuice.codegen.FunctionRenamer&#10;Ge&#9;FILE&#9;file:///Users/davidherrera/Documents/Research/Thesis/code/matjuice/src/matjuice/codegen/Generator.java&#10;drv&#9;FILE&#9;file:///Users/davidherrera/Documents/Research/Thesis/code/matjuice/new-benchmarks/_BUILD_CI/drv_babai.js&#10;Ba&#9;FILE&#9;file:///Users/davidherrera/Documents/Research/Thesis/code/matjuice/new-benchmarks/bbai/babai.m&#10;Main&#9;FILE&#9;file:///Users/davidherrera/Documents/Research/Thesis/code/matjuice/src/matjuice/Main.java&#10;bub&#9;FILE&#9;file:///Users/davidherrera/Documents/Research/Thesis/code/matjuice/nc/drv_bubble-wasm.js&#10;drv_bubble-wasm.&#9;FILE&#9;file:///Users/davidherrera/Documents/Research/Thesis/code/matjuice/nc/drv_bubble-wasm.js&#10;drv_bu&#9;FILE&#9;file:///Users/davidherrera/Documents/Research/Thesis/code/matjuice/new-benchmarks/_BUILD_CI/drv_bubble-wasm.js&#10;get_array-js&#9;FILE&#9;file:///Users/davidherrera/Documents/Research/Thesis/code/matjuice/get_array-js.js&#10;get&#9;FILE&#9;file:///Users/davidherrera/Documents/Research/Thesis/code/matjuice/tests/programs/get_array.m&#10;Generat&#9;PSI&#9;JAVA://matjuice.codegen.Generator&#10;babai&#9;FILE&#9;file:///Users/davidherrera/Documents/Research/Thesis/code/matjuice/new-benchmarks/bbai/babai.m&#10;drv_bab&#9;FILE&#9;file:///Users/davidherrera/Documents/Research/Thesis/code/matjuice/new-benchmarks/bbai/drv_babai.m&#10;dr&#9;FILE&#9;file:///Users/davidherrera/Documents/Research/Thesis/code/matjuice/new-benchmarks/_BUILD_CI/drv_bubble-wasm.js&#10;drv_bub&#9;FILE&#9;file:///Users/davidherrera/Documents/Research/Thesis/code/matjuice/new-benchmarks/_BUILD_CI/drv_bubble-wasm.js&#10;res&#9;FILE&#9;file:///Users/davidherrera/Documents/Research/Thesis/code/matjuice/new-benchmarks/results-v8.9.4.csv&#10;run&#9;null&#9;null&#10;closure&#9;FILE&#9;file:///Users/davidherrera/Documents/Research/Thesis/code/matjuice/new-benchmarks/clos/closure.m&#10;drv_clos&#9;FILE&#9;file:///Users/davidherrera/Documents/Research/Thesis/code/matjuice/new-benchmarks/clos/drv_clos.m&#10;drv_cl&#9;FILE&#9;file:///Users/davidherrera/Documents/Research/Thesis/code/matjuice/nc/drv_clos.js&#10;get_ar&#9;FILE&#9;file:///Users/davidherrera/Documents/Research/Thesis/code/matjuice/compiled/get_array.js&#10;Ve&#9;FILE&#9;file:///Users/davidherrera/Documents/Research/Thesis/code/matjuice/src/matjuice/builtin_input/VectorBuiltinInputTransformer.java&#10;lib&#9;FILE&#9;file:///Users/davidherrera/Documents/Research/Thesis/code/matjuice/src/resources/lib_wasm.js&#10;create&#9;FILE&#9;file:///Users/davidherrera/Documents/Research/Thesis/code/matjuice/new-benchmarks/createlhs/createlhs.m&#10;drv_&#9;FILE&#9;file:///Users/davidherrera/Documents/Research/Thesis/code/matjuice/nc/drv_lgdr.js&#10;drv_mc&#9;FILE&#9;file:///Users/davidherrera/Documents/Research/Thesis/code/matjuice/nc/drv_mcpi.js&#10;StmtExpr&#9;PSI&#9;JAVA://matjuice.jsast.StmtExpr&#10;Geme&#9;PSI&#9;JAVA://com.sun.tools.internal.ws.resources.GeneratorMessages&#10;Fun&#9;FILE&#9;file:///Users/davidherrera/Documents/Research/Thesis/code/matjuice/src/matjuice/codegen/FunctionRenamer.java&#10;drv_ca&#9;FILE&#9;file:///Users/davidherrera/Documents/Research/Thesis/code/matjuice/nc/drv_capr.js&#10;main&#9;FILE&#9;file:///Users/davidherrera/Documents/Research/Thesis/code/matjuice/src/matjuice/Main.java&#10;mak&#9;FILE&#9;file:///Users/davidherrera/Documents/Research/Thesis/code/matjuice/benchmarks/make_change_dyn/make_change.m&#10;make_&#9;FILE&#9;file:///Users/davidherrera/Documents/Research/Thesis/code/matjuice/benchmarks/make_change_dyn/make_change.m&#10;ins&#9;FILE&#9;file:///Users/davidherrera/Documents/Research/Thesis/code/matjuice/benchmarks/insertion_sort/insertion_sort.m&#10;inser&#9;FILE&#9;file:///Users/davidherrera/Documents/Research/Thesis/code/matjuice/compiled-benchmarks/insertion_sort.js&#10;in&#9;FILE&#9;file:///Users/davidherrera/Documents/Research/Thesis/code/matjuice/benchmarks/insertion_sort/insertion_sort.m&#10;.m&#9;FILE&#9;file:///Users/davidherrera/Documents/Research/Thesis/code/matjuice/benchmarks/insertion_sort/insertion_sort.m&#10;Cond&#9;FILE&#9;file:///Users/davidherrera/Documents/Research/Thesis/code/matjuice/mclab-core/languages/Natlab/src/natlab/toolkits/rewrite/simplification/ConditionalSimplification.java&#10;Con&#9;FILE&#9;file:///Users/davidherrera/Documents/Research/Thesis/code/matjuice/mclab-core/languages/Natlab/src/natlab/toolkits/rewrite/simplification/ConditionalSimplification.java&#10;Functi&#9;FILE&#9;file:///Users/davidherrera/Documents/Research/Thesis/code/matjuice/src/matjuice/codegen/FunctionRenamer.java" />
     <property name="extract.method.default.visibility" value="private" />
     <property name="settings.editor.selected.configurable" value="Settings.JavaScript" />
     <property name="JavaScriptWeakerCompletionTypeGuess" value="false" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/src/resources" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/new-benchmarks/_BUILD_CI" />
+      <recent name="$PROJECT_DIR$/lib" />
       <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/nc" />
       <recent name="$PROJECT_DIR$/compiled" />
-      <recent name="$PROJECT_DIR$/lib" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/resources" />
     </key>
   </component>
@@ -599,20 +542,20 @@
       <workItem from="1534099413966" duration="16706000" />
       <workItem from="1535328034289" duration="131746000" />
       <workItem from="1536162658500" duration="11592000" />
+      <workItem from="1537538383283" duration="24371000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="255321000" />
+    <option name="totallyTimeSpent" value="282568000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1280" y="0" width="1920" height="1080" extended-state="0" />
+    <frame x="0" y="0" width="1280" height="800" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Tool Output" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.328" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.328" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -620,10 +563,10 @@
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4514563" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.33592233" sideWeight="0.49791667" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.09466667" sideWeight="0.49791667" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.13854167" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2078125" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="ANTLR Preview" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="SciView" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
@@ -637,6 +580,7 @@
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.328" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3291262" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
@@ -686,139 +630,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/new-benchmarks/run.sh">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/new-benchmarks/bubble/drv_bubble.m">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" column="6" lean-forward="false" selection-start-line="3" selection-start-column="6" selection-end-line="3" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/new-benchmarks/_BUILD_CI/drv_lgdr.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="1750" column="33" lean-forward="false" selection-start-line="1750" selection-start-column="33" selection-end-line="1750" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/new-benchmarks/_BUILD_CI/drv_fdtd.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="111">
-          <caret line="1047" column="9" lean-forward="false" selection-start-line="1047" selection-start-column="9" selection-end-line="1047" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/new-benchmarks/_BUILD_CI/drv_fdtd-wasm.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="220">
-          <caret line="1559" column="14" lean-forward="true" selection-start-line="1559" selection-start-column="14" selection-end-line="1559" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/new-benchmarks/_BUILD_CI/drv_fft-wasm.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="6120">
-          <caret line="408" column="15" lean-forward="false" selection-start-line="408" selection-start-column="15" selection-end-line="408" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/new-benchmarks/_BUILD_CI/drv_matmul_p-wasm.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="189">
-          <caret line="234" column="18" lean-forward="false" selection-start-line="234" selection-start-column="18" selection-end-line="234" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/new-benchmarks/_BUILD_CI/drv_matmul_p.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="324">
-          <caret line="1356" column="18" lean-forward="false" selection-start-line="1356" selection-start-column="18" selection-end-line="1356" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/new-benchmarks/_BUILD_CI/drv_mcpi_p-wasm.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-786">
-          <caret line="149" column="0" lean-forward="false" selection-start-line="149" selection-start-column="0" selection-end-line="149" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/new-benchmarks/clos/drv_clos.m">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" column="7" lean-forward="false" selection-start-line="11" selection-start-column="7" selection-end-line="11" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/new-benchmarks/clos/closure.m">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-778">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/nc/drv_clos.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1736">
-          <caret line="177" column="9" lean-forward="false" selection-start-line="177" selection-start-column="9" selection-end-line="177" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/lib_wasm.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="17" lean-forward="true" selection-start-line="0" selection-start-column="17" selection-end-line="0" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/new-benchmarks/run.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="606">
-          <caret line="60" column="57" lean-forward="true" selection-start-line="60" selection-start-column="57" selection-end-line="60" selection-end-column="57" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/new-benchmarks/results-1.csv">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" column="14" lean-forward="false" selection-start-line="8" selection-start-column="14" selection-end-line="8" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/new-benchmarks/plot.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="127">
-          <caret line="34" column="8" lean-forward="true" selection-start-line="34" selection-start-column="8" selection-end-line="34" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/new-benchmarks/_BUILD_CI/drv_clos.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="99">
-          <caret line="1307" column="4" lean-forward="false" selection-start-line="1307" selection-start-column="4" selection-end-line="1307" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/new-benchmarks/_BUILD_CI/drv_collatz.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-369">
-          <caret line="1306" column="40" lean-forward="true" selection-start-line="1306" selection-start-column="40" selection-end-line="1306" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/new-benchmarks/_BUILD_CI/drv_collatz-wasm.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1050">
-          <caret line="209" column="14" lean-forward="true" selection-start-line="209" selection-start-column="14" selection-end-line="209" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/new-benchmarks/_BUILD_CI/drv_crni.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="206">
@@ -858,7 +669,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-2099">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -873,7 +683,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -881,15 +690,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
           <caret line="4" column="43" lean-forward="false" selection-start-line="4" selection-start-column="43" selection-end-line="4" selection-end-column="43" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/new-benchmarks/bbai/babai.m">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -897,15 +697,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
           <caret line="8" column="3" lean-forward="false" selection-start-line="8" selection-start-column="3" selection-end-line="8" selection-end-column="3" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/new-benchmarks/_BUILD_CI/drv_babai-wasm.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4110">
-          <caret line="274" column="27" lean-forward="false" selection-start-line="274" selection-start-column="27" selection-end-line="274" selection-end-column="27" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -913,15 +704,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="6810">
           <caret line="454" column="9" lean-forward="false" selection-start-line="454" selection-start-column="9" selection-end-line="454" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/new-benchmarks/_BUILD_CI/drv_babai.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="20655">
-          <caret line="1381" column="23" lean-forward="false" selection-start-line="1381" selection-start-column="23" selection-end-line="1381" selection-end-column="23" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -929,7 +711,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-2155">
           <caret line="1713" column="64" lean-forward="false" selection-start-line="1713" selection-start-column="64" selection-end-line="1713" selection-end-column="64" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -937,7 +718,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -945,7 +725,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="510">
           <caret line="34" column="21" lean-forward="true" selection-start-line="34" selection-start-column="21" selection-end-line="34" selection-end-column="21" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -953,7 +732,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="15">
           <caret line="1" column="16" lean-forward="false" selection-start-line="1" selection-start-column="8" selection-end-line="1" selection-end-column="16" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -961,7 +739,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="465">
           <caret line="31" column="42" lean-forward="false" selection-start-line="31" selection-start-column="42" selection-end-line="31" selection-end-column="42" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -969,7 +746,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1101">
           <caret line="328" column="8" lean-forward="false" selection-start-line="328" selection-start-column="8" selection-end-line="328" selection-end-column="8" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -977,9 +753,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2238">
           <caret line="1384" column="42" lean-forward="true" selection-start-line="1384" selection-start-column="42" selection-end-line="1384" selection-end-column="42" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -987,15 +760,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="124">
           <caret line="223" column="33" lean-forward="false" selection-start-line="223" selection-start-column="33" selection-end-line="223" selection-end-column="33" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/matjuice/codegen/Generator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="127">
-          <caret line="1101" column="13" lean-forward="true" selection-start-line="1101" selection-start-column="13" selection-end-line="1101" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1003,9 +767,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="500">
           <caret line="1345" column="13" lean-forward="true" selection-start-line="1345" selection-start-column="13" selection-end-line="1345" selection-end-column="13" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1013,22 +774,23 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
           <caret line="6" column="44" lean-forward="true" selection-start-line="6" selection-start-column="44" selection-end-line="6" selection-end-column="44" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/matjuice/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="385">
-          <caret line="185" column="29" lean-forward="false" selection-start-line="185" selection-start-column="29" selection-end-line="185" selection-end-column="29" />
-          <folding />
+        <state relative-caret-position="2145">
+          <caret line="187" column="29" lean-forward="false" selection-start-line="187" selection-start-column="29" selection-end-line="187" selection-end-column="29" />
+          <folding>
+            <marker date="1536361241012" expanded="true" signature="10502:10518" ph="{...}" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Makefile">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" column="14" lean-forward="true" selection-start-line="1" selection-start-column="14" selection-end-line="1" selection-end-column="14" />
+        <state relative-caret-position="300">
+          <caret line="20" column="4" lean-forward="false" selection-start-line="20" selection-start-column="4" selection-end-line="20" selection-end-column="4" />
           <folding />
         </state>
       </provider>
@@ -1037,7 +799,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="19995">
           <caret line="1337" column="33" lean-forward="false" selection-start-line="1337" selection-start-column="33" selection-end-line="1337" selection-end-column="33" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1045,13 +806,12 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external/lib.es5.d.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-56740">
+        <state relative-caret-position="15">
           <caret line="262" column="4" lean-forward="false" selection-start-line="262" selection-start-column="4" selection-end-line="262" selection-end-column="4" />
           <folding />
         </state>
@@ -1061,7 +821,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
           <caret line="8" column="572" lean-forward="false" selection-start-line="8" selection-start-column="572" selection-end-line="8" selection-end-column="572" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1069,7 +828,188 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
           <caret line="256" column="5" lean-forward="true" selection-start-line="256" selection-start-column="5" selection-end-line="256" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/matjuice/jsast/JavascriptPretty.jadd">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="186">
+          <caret line="20" column="22" lean-forward="false" selection-start-line="20" selection-start-column="22" selection-end-line="20" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/matjuice/jsast/JavascriptTameFunction.jadd">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="375">
+          <caret line="25" column="53" lean-forward="false" selection-start-line="25" selection-start-column="53" selection-end-line="25" selection-end-column="53" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/builtins.wasm">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="16" column="14" lean-forward="true" selection-start-line="16" selection-start-column="14" selection-end-line="16" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/new-benchmarks/_BUILD_CI/builtins.wasm">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="19" column="2" lean-forward="true" selection-start-line="19" selection-start-column="2" selection-end-line="19" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/ndarray.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" column="5" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="86" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/new-benchmarks/bbai/babai.m">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="18" column="3" lean-forward="false" selection-start-line="18" selection-start-column="3" selection-end-line="18" selection-end-column="3" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/new-benchmarks/_BUILD_CI/drv_babai.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="20040">
+          <caret line="1340" column="26" lean-forward="false" selection-start-line="1340" selection-start-column="26" selection-end-line="1340" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/new-benchmarks/_BUILD_CI/drv_babai-wasm.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2529">
+          <caret line="341" column="18" lean-forward="false" selection-start-line="341" selection-start-column="18" selection-end-line="341" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/matjuice/jsast/JavascriptVisitor.jadd">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="660">
+          <caret line="44" column="44" lean-forward="false" selection-start-line="44" selection-start-column="44" selection-end-line="44" selection-end-column="44" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/matjuice/jsast/Javascript.ast">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="570">
+          <caret line="38" column="15" lean-forward="false" selection-start-line="38" selection-start-column="15" selection-end-line="38" selection-end-column="15" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/matjuice/codegen/wasm_builtin/BuiltinWasmGeneratorVisitor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="6" column="13" lean-forward="false" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/new-benchmarks/build.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="870">
+          <caret line="58" column="0" lean-forward="false" selection-start-line="58" selection-start-column="0" selection-end-line="58" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/matjuice/builtin_input/NoInputTransformer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="23" column="13" lean-forward="false" selection-start-line="23" selection-start-column="13" selection-end-line="23" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/matjuice/builtin_input/OneMatrixAndShapeBuiltinInputTransformer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="34" column="0" lean-forward="false" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/matjuice/builtin_input/AbstractBuiltinInputTransformer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="33" column="35" lean-forward="false" selection-start-line="33" selection-start-column="35" selection-end-line="33" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/matjuice/builtin_input/ResultInputTransformer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="28" column="12" lean-forward="false" selection-start-line="28" selection-start-column="12" selection-end-line="28" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/matjuice/builtin_input/ShapeBuiltinInputTransformer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="717">
+          <caret line="79" column="64" lean-forward="false" selection-start-line="79" selection-start-column="64" selection-end-line="79" selection-end-column="64" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/matjuice/builtin_input/VectorBuiltinInputTransformer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="375">
+          <caret line="71" column="61" lean-forward="false" selection-start-line="71" selection-start-column="61" selection-end-line="71" selection-end-column="61" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/matjuice/codegen/FunctionRenamer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="239">
+          <caret line="63" column="47" lean-forward="false" selection-start-line="63" selection-start-column="47" selection-end-line="63" selection-end-column="47" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/matjuice/jsast/Binop.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="6" column="4" lean-forward="false" selection-start-line="6" selection-start-column="4" selection-end-line="6" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/matjuice/codegen/OperatorRenamer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="465">
+          <caret line="39" column="67" lean-forward="false" selection-start-line="39" selection-start-column="67" selection-end-line="39" selection-end-column="67" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gen/matjuice/jsast/ExprOp.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="217">
+          <caret line="46" column="9" lean-forward="false" selection-start-line="46" selection-start-column="9" selection-end-line="46" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/matjuice/codegen/Generator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="190">
+          <caret line="604" column="45" lean-forward="false" selection-start-line="604" selection-start-column="45" selection-end-line="604" selection-end-column="45" />
+          <folding>
+            <element signature="e#26973#26979#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

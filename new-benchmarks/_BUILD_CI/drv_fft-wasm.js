@@ -1,4 +1,90 @@
-let memory = WebAssembly.Memory({initial:32767});
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+// declare var this.wi:any;
+class NdArray extends Float64Array {
+    constructor(wi, mxarray) {
+        super(memory.buffer, wi.mxarray_core_get_array_ptr(mxarray), wi.numel(mxarray));
+        this.wi = wi;
+    }
+    get_indices(indices) {
+        if (this.isArrPtr(indices)) {
+            return new NdArray(this.wi, this.wi.get_f64(this.arr_ptr, indices));
+        }
+        else {
+            let indices_arr_ptr = this.wi.create_mxvector(indices.length, 5); // Create mxvector this.with int type
+            indices.forEach((dimArr, indDim) => {
+                let index_arr_ptr = this.wi.create_mxvector(dimArr.length);
+                dimArr.forEach((val, indVal) => {
+                    this.wi.set_array_index_f64(index_arr_ptr, indVal + 1, val);
+                });
+                this.wi.set_array_index_i32(indices_arr_ptr, indDim + 1, index_arr_ptr);
+                return new NdArray(this.wi, this.wi.get_f64(this.arr_ptr, indices_arr_ptr));
+            });
+        }
+    }
+    set_indices(indices, values) {
+        let indices_arr_ptr;
+        let indices_val_arr_ptr;
+        if (this.isArrPtr(indices)) {
+            indices_arr_ptr = indices;
+        }
+        else {
+            indices_arr_ptr = this.wi.create_mxvector(indices.length, 5); // Create mxvector this.with int type
+            indices.forEach((dimArr, indDim) => {
+                let index_arr_ptr = this.wi.create_mxvector(dimArr.length);
+                this.wi.set_array_index_i32(indices_arr_ptr, indDim + 1, index_arr_ptr);
+                dimArr.forEach((val, indVal) => {
+                    this.wi.set_array_index_f64(index_arr_ptr, indVal + 1, val);
+                });
+            });
+        }
+        if (this.isArrPtr(values)) {
+            indices_val_arr_ptr = values;
+        }
+        else {
+            indices_val_arr_ptr = this.wi.create_mxvector(values.length);
+            values.forEach((val, ind) => {
+                this.wi.set_array_index_f64(indices_val_arr_ptr, ind + 1, val);
+            });
+        }
+        this.wi.set_f64(this.arr_ptr, indices_arr_ptr, indices_val_arr_ptr);
+    }
+    numel() {
+        return this.wi.numel(this.arr_ptr);
+    }
+    ndims() {
+        return this.wi.ndims(this.arr_ptr);
+    }
+    length_M() {
+        return this.wi.length_M(this.arr_ptr);
+    }
+    isrow() {
+        return this.wi.isrow(this.arr_ptr);
+    }
+    iscolumn() {
+        return this.wi.iscolumn(this.arr_ptr);
+    }
+    ismatrix() {
+        return this.wi.ismatrix(this.arr_ptr);
+    }
+    isvector() {
+        return this.wi.isvector(this.arr_ptr);
+    }
+    isempty() {
+        return this.wi.isempty(this.arr_ptr);
+    }
+    isArrPtr(x) {
+        return typeof x === "number";
+    }
+    isArrayVector(x) {
+        return Array.isArray(x) && ((x.length > 0 && Array.isArray(x[0])) || true);
+    }
+    isArrayNumber(x) {
+        return Array.isArray(x) && ((x.length > 0 && typeof x[0] === 'number') || true);
+    }
+}
+exports.NdArray = NdArray;
+let memory = new WebAssembly.Memory({initial:32767});
 const { TextDecoder,TextEncoder } = require('util');
 function printError(offset, length) {
     var bytes = new Uint8Array(libjs.js.mem.buffer, offset, length);
@@ -143,45 +229,91 @@ async function runner(){
 // BEGINNING OF PROGRAM
 
 function fft_four1_MSS(data, n, isign){
+    var mc_t70 = 0;
+    var mc_t71 = 0;
+    var mc_t72 = 0;
+    var mc_t73 = 0;
+    var tempi = 0;
+    var mc_t74 = 0;
     var wtemp = 0;
     var mc_t30 = 0;
+    var mc_t75 = 0;
     var mc_t31 = 0;
+    var mc_t76 = 0;
     var mc_t32 = 0;
+    var mc_t77 = 0;
     var mc_t33 = 0;
+    var mc_t78 = 0;
     var mc_t34 = 0;
+    var tempr = 0;
     var theta = 0;
+    var mc_t79 = 0;
     var mc_t35 = 0;
     var mc_t36 = 0;
     var mc_t37 = 0;
     var mc_t38 = 0;
     var mc_t39 = 0;
+    var mc_t60 = 0;
+    var mc_t61 = 0;
+    var mc_t62 = 0;
+    var mc_t63 = 0;
+    var mc_t64 = 0;
     var mc_t20 = 0;
+    var mc_t65 = 0;
     var mc_t21 = 0;
+    var mc_t66 = 0;
     var mc_t22 = 0;
+    var mc_t67 = 0;
     var mc_t23 = 0;
+    var mc_t68 = 0;
     var mc_t24 = 0;
+    var mc_t69 = 0;
     var mc_t25 = 0;
     var mc_t26 = 0;
     var mc_t27 = 0;
     var mc_t28 = 0;
+    var wpi = 0;
     var mc_t29 = 0;
+    var wpr = 0;
+    var nn = 0;
     var mc_t50 = 0;
     var mc_t51 = 0;
     var istep = 0;
     var mc_t52 = 0;
     var mc_t53 = 0;
+    var mc_t10 = 0;
     var mc_t54 = 0;
+    var mc_t11 = 0;
     var mc_t55 = 0;
+    var mc_t12 = 0;
     var mc_t56 = 0;
+    var mc_t13 = 0;
     var mc_t57 = 0;
+    var mc_t14 = 0;
     var mc_t58 = 0;
+    var mc_t15 = 0;
     var mc_t59 = 0;
+    var mc_t16 = 0;
     var result = 0;
+    var mc_t17 = 0;
+    var wi = 0;
+    var mc_t18 = 0;
+    var mc_t19 = 0;
+    var wr = 0;
+    var mc_t80 = 0;
+    var mmax = 0;
+    var mc_t81 = 0;
+    var mc_t82 = 0;
+    var mc_t83 = 0;
     var mc_t40 = 0;
+    var mc_t84 = 0;
+    var mc_t85 = 0;
     var mc_t41 = 0;
     var i = 0;
+    var mc_t86 = 0;
     var mc_t42 = 0;
     var j = 0;
+    var mc_t87 = 0;
     var mc_t43 = 0;
     var mc_t44 = 0;
     var mc_t45 = 0;
@@ -191,60 +323,6 @@ function fft_four1_MSS(data, n, isign){
     var mc_t48 = 0;
     var mc_t49 = 0;
     var t = 0;
-    var mc_t70 = 0;
-    var mc_t71 = 0;
-    var mc_t72 = 0;
-    var mc_t73 = 0;
-    var tempi = 0;
-    var mc_t74 = 0;
-    var mc_t75 = 0;
-    var mc_t76 = 0;
-    var mc_t77 = 0;
-    var mc_t78 = 0;
-    var tempr = 0;
-    var mc_t79 = 0;
-    var mc_t60 = 0;
-    var mc_t61 = 0;
-    var mc_t62 = 0;
-    var mc_t63 = 0;
-    var mc_t64 = 0;
-    var mc_t65 = 0;
-    var mc_t66 = 0;
-    var mc_t67 = 0;
-    var mc_t68 = 0;
-    var mc_t69 = 0;
-    var wpi = 0;
-    var wpr = 0;
-    var nn = 0;
-    var mc_t90 = 0;
-    var mc_t91 = 0;
-    var mc_t92 = 0;
-    var mc_t93 = 0;
-    var mc_t94 = 0;
-    var mc_t95 = 0;
-    var mc_t10 = 0;
-    var mc_t11 = 0;
-    var mc_t12 = 0;
-    var mc_t13 = 0;
-    var mc_t14 = 0;
-    var mc_t15 = 0;
-    var mc_t16 = 0;
-    var mc_t17 = 0;
-    var wi1 = 0;
-    var mc_t18 = 0;
-    var mc_t19 = 0;
-    var wr = 0;
-    var mc_t80 = 0;
-    var mmax = 0;
-    var mc_t81 = 0;
-    var mc_t82 = 0;
-    var mc_t83 = 0;
-    var mc_t84 = 0;
-    var mc_t85 = 0;
-    var mc_t86 = 0;
-    var mc_t87 = 0;
-    var mc_t88 = 0;
-    var mc_t89 = 0;
     data = wi.clone(data);
 
 
@@ -277,23 +355,15 @@ function fft_four1_MSS(data, n, isign){
             mc_t10 = wi.get_array_index_f64(data, mc_t22);
             mc_t67 = 1;
             mc_t16 = j - mc_t67;
-            mc_t88 = wi.create_mxvector(1);
-            wi.set_array_index_f64(mc_t88, 1, mc_t16);
-            wi.set_array_value_multiple_indeces_f64(data, mc_t88, mc_t10);
+            wi.set_array_index_f64(data, mc_t16, mc_t10);
             mc_t68 = 1;
             mc_t17 = i - mc_t68;
-            mc_t89 = wi.create_mxvector(1);
-            wi.set_array_index_f64(mc_t89, 1, mc_t17);
-            wi.set_array_value_multiple_indeces_f64(data, mc_t89, t);
+            wi.set_array_index_f64(data, mc_t17, t);
 
             t = wi.get_array_index_f64(data, j);
             mc_t11 = wi.get_array_index_f64(data, i);
-            mc_t90 = wi.create_mxvector(1);
-            wi.set_array_index_f64(mc_t90, 1, j);
-            wi.set_array_value_multiple_indeces_f64(data, mc_t90, mc_t11);
-            mc_t91 = wi.create_mxvector(1);
-            wi.set_array_index_f64(mc_t91, 1, i);
-            wi.set_array_value_multiple_indeces_f64(data, mc_t91, t);
+            wi.set_array_index_f64(data, j, mc_t11);
+            wi.set_array_index_f64(data, i, t);
         }
         m = n;
         mc_t70 = 2;
@@ -339,7 +409,7 @@ function fft_four1_MSS(data, n, isign){
         wpr = mc_t28 * mc_t29;
         wpi = wi.sin_S(theta);
         wr = 1.0000000000000000000;
-        wi1 = 0.0000000000000000000;
+        wi = 0.0000000000000000000;
         mc_t85 = 2;
         mc_t86 = 2;
         for (m = mc_t85; m<=mmax; m = m+mc_t86) {
@@ -350,14 +420,14 @@ function fft_four1_MSS(data, n, isign){
                 mc_t38 = j - mc_t79;
                 mc_t37 = wi.get_array_index_f64(data, mc_t38);
                 mc_t32 = mc_t36 * mc_t37;
-                mc_t34 = wi1;
+                mc_t34 = wi;
                 mc_t35 = wi.get_array_index_f64(data, j);
                 mc_t33 = mc_t34 * mc_t35;
                 tempr = mc_t32 - mc_t33;
                 mc_t44 = wr;
                 mc_t45 = wi.get_array_index_f64(data, j);
                 mc_t39 = mc_t44 * mc_t45;
-                mc_t41 = wi1;
+                mc_t41 = wi;
                 mc_t80 = 1;
                 mc_t43 = j - mc_t80;
                 mc_t42 = wi.get_array_index_f64(data, mc_t43);
@@ -370,15 +440,11 @@ function fft_four1_MSS(data, n, isign){
                 mc_t12 = mc_t46 - mc_t47;
                 mc_t82 = 1;
                 mc_t18 = j - mc_t82;
-                mc_t92 = wi.create_mxvector(1);
-                wi.set_array_index_f64(mc_t92, 1, mc_t18);
-                wi.set_array_value_multiple_indeces_f64(data, mc_t92, mc_t12);
+                wi.set_array_index_f64(data, mc_t18, mc_t12);
                 mc_t49 = wi.get_array_index_f64(data, i);
                 mc_t50 = tempi;
                 mc_t13 = mc_t49 - mc_t50;
-                mc_t93 = wi.create_mxvector(1);
-                wi.set_array_index_f64(mc_t93, 1, j);
-                wi.set_array_value_multiple_indeces_f64(data, mc_t93, mc_t13);
+                wi.set_array_index_f64(data, j, mc_t13);
                 mc_t83 = 1;
                 mc_t53 = i - mc_t83;
                 mc_t51 = wi.get_array_index_f64(data, mc_t53);
@@ -386,27 +452,23 @@ function fft_four1_MSS(data, n, isign){
                 mc_t14 = mc_t51 + mc_t52;
                 mc_t84 = 1;
                 mc_t19 = i - mc_t84;
-                mc_t94 = wi.create_mxvector(1);
-                wi.set_array_index_f64(mc_t94, 1, mc_t19);
-                wi.set_array_value_multiple_indeces_f64(data, mc_t94, mc_t14);
+                wi.set_array_index_f64(data, mc_t19, mc_t14);
                 mc_t54 = wi.get_array_index_f64(data, i);
                 mc_t55 = tempi;
                 mc_t15 = mc_t54 + mc_t55;
-                mc_t95 = wi.create_mxvector(1);
-                wi.set_array_index_f64(mc_t95, 1, i);
-                wi.set_array_value_multiple_indeces_f64(data, mc_t95, mc_t15);
+                wi.set_array_index_f64(data, i, mc_t15);
             }
             wtemp = wr;
             mc_t58 = wtemp * wpr;
-            mc_t59 = wi1 * wpi;
+            mc_t59 = wi * wpi;
             mc_t56 = mc_t58 - mc_t59;
             mc_t57 = wr;
             wr = mc_t56 + mc_t57;
-            mc_t62 = wi1 * wpr;
+            mc_t62 = wi * wpr;
             mc_t63 = wtemp * wpi;
             mc_t60 = mc_t62 + mc_t63;
-            mc_t61 = wi1;
-            wi1 = mc_t60 + mc_t61;
+            mc_t61 = wi;
+            wi = mc_t60 + mc_t61;
         }
         mmax = istep;
         mc_t87 = nn > mmax;
@@ -423,9 +485,9 @@ function drv_fft_S(scale){
     var mc_t3 = 0;
     var mc_t4 = 0;
     var mc_t1 = 0;
-    var mc_t96 = 0;
     var mc_t2 = 0;
     var mc_t0 = 0;
+    var mc_t88 = 0;
     var n = 0;
     var out = 0;
     var t = 0;
@@ -443,10 +505,10 @@ function drv_fft_S(scale){
     mc_t5 = 2;
     mc_t2 = mc_t5 * n;
     mc_t6 = 1;
-    mc_t96 = wi.create_mxvector(2);
-    wi.set_array_index_f64(mc_t96, 1, mc_t6);
-    wi.set_array_index_f64(mc_t96, 2, mc_t2);
-    data = wi.randn(mc_t96);
+    mc_t88 = wi.create_mxvector(2);
+    wi.set_array_index_f64(mc_t88, 1, mc_t6);
+    wi.set_array_index_f64(mc_t88, 2, mc_t2);
+    data = wi.randn(mc_t88);
 
 
     wi.tic();

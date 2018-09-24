@@ -1335,7 +1335,9 @@ function babai_MM(R, y){
     mc_t23 = 1;
     z_hat = mc_zeros(n, mc_t23);
     mc_t6 = y[(n-1)];
+    mc_tic();
     mc_t7 = R[((n-1)+(R.mj_stride()[1]*(n-1)))];
+    // console.log("WHAT", mc_toc());
     mc_t5 = mc_t6 / mc_t7;
     mc_t3 = mc_round_S(mc_t5);
     z_hat[(n-1)] = mc_t3;
@@ -1366,6 +1368,7 @@ function babai_MM(R, y){
         mc_t4 = mc_round_S(ck);
         z_hat[(k-1)] = mc_t4;
     }
+
     return z_hat;
 }
 
@@ -1379,12 +1382,9 @@ function drv_babai_S(size){
     mc_t0 = 1;
     Y = mc_ones(size, mc_t0);
     mc_tic();
-    for(var i =0; i<200;i++) {
-        vec = babai_MM(R, Y);
-    }
+    vec = babai_MM(R, Y);
     t = mc_toc();
     mc_disp_S(t);
-
     return;
 }
-drv_babai_S(10);
+drv_babai_S(100);
