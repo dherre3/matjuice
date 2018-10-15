@@ -48,7 +48,6 @@ public class Generator {
     private Set<String> locals;
     private IntraproceduralValueAnalysis<AggrValue<BasicMatrixValue>> analysis;
     private boolean doCopyInsertion;
-    private boolean doCanonicalInput;
     private long startTime = 0;
     private long endTime = 0;
     private boolean verbose = false;
@@ -58,7 +57,6 @@ public class Generator {
         this.analysis = analysis;
         this.doCopyInsertion = doCopyInsertion;
         this.useWasm = useWasm;
-        this.doCanonicalInput = true; //TODO(dherre3): Pass as option
     }
 
     public double getCopyInsertionTime() {
@@ -1081,8 +1079,7 @@ public class Generator {
                 return LoopDirection.Descending;
             else
                 return LoopDirection.Unknown;
-        }
-        else {
+        }else {
             return LoopDirection.Unknown;
         }
     }

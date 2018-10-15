@@ -1,0 +1,15 @@
+benchmark,mean,std,kernel_time_mean,kernel_time_std
+drv_clos-wasm,8.0439,0.4133,7.8444,0.4073
+drv_collatz-wasm,4.1322,0.0741,3.9614,0.0784
+drv_crni-wasm,5.4532,0.1802,5.2484,0.1783
+drv_dich-wasm,21.4056,0.9539,21.2094,0.9493
+drv_fdtd-wasm,10.1333,0.2017,9.8722,0.1955
+drv_fft-wasm,0.7643,0.032,0.4391,0.0185
+drv_fiff-wasm,8.0338,1.2137,7.8176,1.2106
+drv_lgdr-wasm,0.8081,0.0888,0.5941,0.0717
+drv_matmul_p-wasm,0.3144,0.0242,0.0946,0.0115
+drv_mcpi_p-wasm,0.384,0.0695,0.1631,0.0614
+drv_prime-wasm,2.0545,0.3047,1.8349,0.2838
+drv_babai-wasm,0.6589,0.111,0.4283,0.1164
+drv_bubble-wasm,3.2577,0.1978,3.0593,0.1949
+drv_capr-wasm,4.7566,0.7679,4.5739,0.7558

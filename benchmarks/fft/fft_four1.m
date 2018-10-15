@@ -7,7 +7,7 @@ function  result=fft_four1(data, n, isign)
 % imaginary parts are stored in contigous locations in the array data;
 % size of data is 2 * n (the number of complex numbers in the data points).
 % isign: is a flag whose value is either 1 or -1; if isign is 1, forward
-% transform is computed and backward transform otherwise.
+% transform is computed and backward transform otherwisse.
 
 
   %if (n<2) || bitand(n, n-1) 
@@ -41,20 +41,20 @@ function  result=fft_four1(data, n, isign)
      wpr=-2.0*wtemp*wtemp;
      wpi=sin(theta);
      wr=1.0;
-     wi1=0.0;
+     wis=0.0;
      for m=2:2:mmax
          for i=m:istep:nn
              j=i+mmax;
-             tempr=wr*data(j-1)-wi1*data(j);
-             tempi=wr*data(j)+wi1*data(j-1);
+             tempr=wr*data(j-1)-wis*data(j);
+             tempi=wr*data(j)+wis*data(j-1);
              data(j-1)=data(i-1)-tempr;
              data(j)=data(i)-tempi;
              data(i-1)=data(i-1)+tempr;
              data(i)=data(i)+tempi;
          end
          wtemp=wr;
-         wr=wtemp*wpr-wi1*wpi+wr;
-         wi1=wi1*wpr+wtemp*wpi+wi1;
+         wr=wtemp*wpr-wis*wpi+wr;
+         wis=wis*wpr+wtemp*wpi+wis;
      end
      mmax=istep;
   end

@@ -195,6 +195,7 @@ public class Main {
         try {
             out = new FileWriter(javascriptFile);
             File file = new File(javascriptFile);
+
             String path = file.getParentFile().getAbsolutePath();
             if( opts.useWasm ){
                 writeResources(out, wasmDeps);
@@ -218,6 +219,9 @@ public class Main {
                         FileChannel sourceChannel = new FileInputStream(wasmFileObj).getChannel();
                          FileChannel destChannel = new FileOutputStream(wasmPath).getChannel()) {
                         destChannel.transferFrom(sourceChannel, 0, sourceChannel.size());
+                    }catch (Exception e){
+                        System.err.println(e.getMessage());
+
                     }
                 }
             }

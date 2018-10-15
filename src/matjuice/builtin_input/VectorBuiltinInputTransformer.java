@@ -11,12 +11,39 @@ import natlab.tame.valueanalysis.basicmatrix.BasicMatrixValue;
 import natlab.tame.valueanalysis.components.shape.DimValue;
 import natlab.toolkits.rewrite.TempFactory;
 
+import java.util.ArrayList;
+
 public class VectorBuiltinInputTransformer extends AbstractBuiltinInputTransformer<ResultInputTransformer> {
     public VectorBuiltinInputTransformer(IntraproceduralValueAnalysis<AggrValue<BasicMatrixValue>> analysis, TIRNode stmt,
                                          TIRCommaSeparatedList arguments) {
         super(analysis, stmt,arguments );
     }
+    public static void main(String[] args){
+        System.out.println(generateParenthesis(4));
+    }
 
+    public static java.util.List<String> generateParenthesis(int n) {
+        java.util.List<String> res = new ArrayList<>();
+        if(n == 0) return res;
+        java.util.List<String> nLess = generateParenthesis(n-1);
+        if(nLess.isEmpty()) {
+            res.add("()");
+            return res;
+        }
+        for(String str: nLess){
+            res.add( "(" + str + ")" );
+            String str2 = "()" + str;
+            String str3 = str + "()";
+            if(!str2.equals(str3)){
+                res.add( str2);
+                res.add( str3);
+            }else{
+                res.add( str2);
+            }
+
+        }
+        return res;
+    }
     @Override
     public boolean isInForm() {
         return false; // Not all are Shape transformation of inputs
@@ -63,11 +90,12 @@ public class VectorBuiltinInputTransformer extends AbstractBuiltinInputTransform
                     String arrayName = (stmt instanceof TIRArrayGetStmt)?
                             ((TIRArrayGetStmt) stmt).getArrayName().getID():
                             ((TIRArraySetStmt) stmt).getArrayName().getID();
-
                     BasicMatrixValue bmv = Utils.getBasicMatrixValue(valueAnalysis, stmt,arrayName);
                     if(!bmv.hasShape()){
                         throw new Error("Could not get value shape for array name: "+arrayName);
                     }
+                    java.util.ArrayList<String> l = new ArrayList<>();
+
                     java.util.List<DimValue> dimValues = bmv.getShape().getDimensions();
                     int val = dimValues.get(i-1).getIntValue();
                     String name = TempFactory.genFreshTempString();
