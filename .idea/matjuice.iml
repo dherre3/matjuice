@@ -6,7 +6,7 @@
       <sourceFolder url="file://$MODULE_DIR$/src" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/gen" isTestSource="false" generated="true" />
     </content>
-    <orderEntry type="jdk" jdkName="Python 3.6.3 (~/anaconda3/bin/python)" jdkType="Python SDK" />
+    <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="McLabCore" level="project" />
   </component>

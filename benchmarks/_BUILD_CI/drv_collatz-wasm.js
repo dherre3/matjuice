@@ -250,6 +250,7 @@ function drv_collatz_S(scale){
     }
     t = wi.toc();
     wi.disp_S(t);
+    wi.disp_S(max_num);
     return;
 }
 
@@ -257,40 +258,40 @@ function collatz_S(n){
     var mc_t9 = 0;
     var mc_t7 = 0;
     var mc_t8 = 0;
-    var mc_t6 = 0;
-    var mc_t4 = 0;
+    var mc_t5 = 0;
     var mc_t10 = 0;
     var mc_t11 = 0;
     var mc_t12 = 0;
     var mc_t13 = 0;
     var mc_t14 = 0;
     var mc_t15 = 0;
+    var mc_t16 = 0;
     var y = 0;
     y = 0;
-    mc_t15 = 1;
-    mc_t14 = n > mc_t15;
-    while (mc_t14) {
-        mc_t7 = 2;
-        mc_t4 = wi.mod_SS(n, mc_t7);
-        mc_t12 = 0;
-        mc_t11 = mc_t4 === mc_t12;
-        if (mc_t11) {
-            mc_t8 = 2;
-            n = n / mc_t8;
+    mc_t16 = 1;
+    mc_t15 = n > mc_t16;
+    while (mc_t15) {
+        mc_t8 = 2;
+        mc_t5 = wi.mod_SS(n, mc_t8);
+        mc_t13 = 0;
+        mc_t12 = mc_t5 === mc_t13;
+        if (mc_t12) {
+            mc_t9 = 2;
+            n = n / mc_t9;
         } else {
-            mc_t9 = 3;
-            mc_t6 = mc_t9 * n;
-            mc_t10 = 1;
-            n = mc_t6 + mc_t10;
+            mc_t10 = 3;
+            mc_t7 = mc_t10 * n;
+            mc_t11 = 1;
+            n = mc_t7 + mc_t11;
         }
-        mc_t13 = 1;
-        y = y + mc_t13;
-        mc_t15 = 1;
-        mc_t14 = n > mc_t15;
+        mc_t14 = 1;
+        y = y + mc_t14;
+        mc_t16 = 1;
+        mc_t15 = n > mc_t16;
     }
     return y;
 }
-drv_collatz_S(1000000);
+drv_collatz_S(1);
 }
 runner().then((res)=>{}).catch((err)=>{
     throw err;

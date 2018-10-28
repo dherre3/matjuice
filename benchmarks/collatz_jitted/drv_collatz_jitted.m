@@ -1,6 +1,9 @@
-function drv_collatz(scale)
+function drv_collatz_jitted(scale)
     max_length = 0;
     max_num = 0;
+    for i = 1:10
+        length = collatz(i);
+    end
     tic();
     for i = 1:scale
         length = collatz(i);

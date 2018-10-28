@@ -1292,26 +1292,32 @@ function mc_not(v) {
 
 // BEGINNING OF PROGRAM
 
-function drv_collatz_S(scale){
+function drv_collatz_jitted_S(scale){
     var t = 0;
-    var length = 0;
+    var mc_t3 = 0;
+    var mc_t4 = 0;
     var mc_t1 = 0;
-    var mc_t2 = 0;
+    var length = 0;
     var i = 0;
+    var mc_t0 = 0;
     var max_num = 0;
     var max_length = 0;
     max_length = 0;
     max_num = 0;
-    mc_tic();
-    mc_t2 = 1;
-    for (i = mc_t2; i<=scale; i = i+1) {
+    mc_t0 = 1;
+    mc_t1 = 10;
+    for (i = mc_t0; i<=mc_t1; i = i+1) {
         length = collatz_S(i);
-        mc_t1 = length > max_length;
-        if (mc_t1) {
+    }
+    mc_tic();
+    mc_t4 = 1;
+    for (i = mc_t4; i<=scale; i = i+1) {
+        length = collatz_S(i);
+        mc_t3 = length > max_length;
+        if (mc_t3) {
             max_length = length;
             max_num = i;
         }
-        console.log(i);
     }
     t = mc_toc();
     mc_disp_S(t);
@@ -1322,8 +1328,6 @@ function drv_collatz_S(scale){
 function collatz_S(n){
     var mc_t9 = 0;
     var mc_t7 = 0;
-    var mc_t8 = 0;
-    var mc_t5 = 0;
     var mc_t10 = 0;
     var mc_t11 = 0;
     var mc_t12 = 0;
@@ -1331,29 +1335,31 @@ function collatz_S(n){
     var mc_t14 = 0;
     var mc_t15 = 0;
     var mc_t16 = 0;
+    var mc_t17 = 0;
+    var mc_t18 = 0;
     var y = 0;
     y = 0;
-    mc_t16 = 1;
-    mc_t15 = n > mc_t16;
-    while (mc_t15) {
-        mc_t8 = 2;
-        mc_t5 = mc_mod_SS(n, mc_t8);
-        mc_t13 = 0;
-        mc_t12 = mc_t5 === mc_t13;
-        if (mc_t12) {
-            mc_t9 = 2;
-            n = n / mc_t9;
+    mc_t18 = 1;
+    mc_t17 = n > mc_t18;
+    while (mc_t17) {
+        mc_t10 = 2;
+        mc_t7 = mc_mod_SS(n, mc_t10);
+        mc_t15 = 0;
+        mc_t14 = mc_t7 === mc_t15;
+        if (mc_t14) {
+            mc_t11 = 2;
+            n = n / mc_t11;
         } else {
-            mc_t10 = 3;
-            mc_t7 = mc_t10 * n;
-            mc_t11 = 1;
-            n = mc_t7 + mc_t11;
+            mc_t12 = 3;
+            mc_t9 = mc_t12 * n;
+            mc_t13 = 1;
+            n = mc_t9 + mc_t13;
         }
-        mc_t14 = 1;
-        y = y + mc_t14;
         mc_t16 = 1;
-        mc_t15 = n > mc_t16;
+        y = y + mc_t16;
+        mc_t18 = 1;
+        mc_t17 = n > mc_t18;
     }
     return y;
 }
-drv_collatz_S(1000000);
+drv_collatz_jitted_S(1000000);

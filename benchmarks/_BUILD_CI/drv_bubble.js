@@ -1295,18 +1295,20 @@ function mc_not(v) {
 function drv_bubble_S(size){
     var A = 0;
     var t = 0;
-    var mc_t3 = 0;
+    var mc_t4 = 0;
     var mc_t1 = 0;
+    var mc_t2 = 0;
     var i = 0;
     var y = 0;
     var mc_t0 = 0;
-    mc_t0 = 1;
-    A = mc_rand(size, mc_t0);
-    mc_t1 = 10000;
-    A = mc_mtimes_SM(mc_t1, A);
+    mc_t0 = 300;
+    mc_t1 = 1;
+    A = mc_rand(mc_t0, mc_t1);
+    mc_t2 = 10000;
+    A = mc_mtimes_SM(mc_t2, A);
     mc_tic();
-    mc_t3 = 1;
-    for (i = mc_t3; i<=size; i = i+1) {
+    mc_t4 = 1;
+    for (i = mc_t4; i<=size; i = i+1) {
         y = bubble_M(A);
     }
     t = mc_toc();
@@ -1319,10 +1321,10 @@ function bubble_M(A){
     var mc_t7 = 0;
     var temp = 0;
     var mc_t8 = 0;
-    var mc_t5 = 0;
     var mc_t6 = 0;
     var mc_t20 = 0;
     var i = 0;
+    var mc_t21 = 0;
     var j = 0;
     var mc_t10 = 0;
     var mc_t11 = 0;
@@ -1338,29 +1340,29 @@ function bubble_M(A){
     var x = 0;
     A = A.mj_clone();
     n = mc_length_M(A);
-    mc_t13 = 1;
-    mc_t12 = n - mc_t13;
-    mc_t20 = 1;
-    for (j = mc_t20; j<=mc_t12; j = j+1) {
+    mc_t14 = 1;
+    mc_t13 = n - mc_t14;
+    mc_t21 = 1;
+    for (j = mc_t21; j<=mc_t13; j = j+1) {
 
-        mc_t14 = 1;
-        mc_t11 = n - mc_t14;
-        mc_t19 = 1;
-        for (i = mc_t19; i<=mc_t11; i = i+1) {
-            mc_t7 = A[(i-1)];
-            mc_t15 = 1;
-            mc_t9 = i + mc_t15;
-            mc_t8 = A[(mc_t9-1)];
-            mc_t18 = mc_t7 > mc_t8;
-            if (mc_t18) {
+        mc_t15 = 1;
+        mc_t12 = n - mc_t15;
+        mc_t20 = 1;
+        for (i = mc_t20; i<=mc_t12; i = i+1) {
+            mc_t6 = A[(i-1)];
+            mc_t16 = 1;
+            mc_t10 = i + mc_t16;
+            mc_t7 = A[(mc_t10-1)];
+            mc_t19 = mc_t6 > mc_t7;
+            if (mc_t19) {
                 temp = A[(i-1)];
-                mc_t16 = 1;
-                mc_t10 = i + mc_t16;
-                mc_t5 = A[(mc_t10-1)];
-                A[(i-1)] = mc_t5;
                 mc_t17 = 1;
-                mc_t6 = i + mc_t17;
-                A[(mc_t6-1)] = temp;
+                mc_t11 = i + mc_t17;
+                mc_t8 = A[(mc_t11-1)];
+                A[(i-1)] = mc_t8;
+                mc_t18 = 1;
+                mc_t9 = i + mc_t18;
+                A[(mc_t9-1)] = temp;
             }
         }
     }

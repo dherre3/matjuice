@@ -228,34 +228,6 @@ async function runner(){
 
 // BEGINNING OF PROGRAM
 
-function drv_bubble_S(size){
-    var A = 0;
-    var t = 0;
-    var mc_t4 = 0;
-    var mc_t1 = 0;
-    var mc_t2 = 0;
-    var i = 0;
-    var y = 0;
-    var mc_t0 = 0;
-    var mc_t22 = 0;
-    mc_t0 = 300;
-    mc_t1 = 1;
-    mc_t22 = wi.create_mxvector(2);
-    wi.set_array_index_f64(mc_t22, 1, mc_t0);
-    wi.set_array_index_f64(mc_t22, 2, mc_t1);
-    A = wi.rand(mc_t22);
-    mc_t2 = 10000;
-    A = wi.mtimes_SM(mc_t2, A);
-    wi.tic();
-    mc_t4 = 1;
-    for (i = mc_t4; i<=size; i = i+1) {
-        y = bubble_M(A);
-    }
-    t = wi.toc();
-    wi.disp_S(t);
-    return;
-}
-
 function bubble_M(A){
     var mc_t9 = 0;
     var mc_t7 = 0;
@@ -310,7 +282,35 @@ function bubble_M(A){
 
     return x;
 }
-drv_bubble_S(300);
+
+function drv_bubble_S(size){
+    var A = 0;
+    var t = 0;
+    var mc_t4 = 0;
+    var mc_t1 = 0;
+    var mc_t2 = 0;
+    var i = 0;
+    var y = 0;
+    var mc_t0 = 0;
+    var mc_t22 = 0;
+    mc_t0 = 3000;
+    mc_t1 = 1;
+    mc_t22 = wi.create_mxvector(2);
+    wi.set_array_index_f64(mc_t22, 1, mc_t0);
+    wi.set_array_index_f64(mc_t22, 2, mc_t1);
+    A = wi.rand(mc_t22);
+    mc_t2 = 10000;
+    A = wi.mtimes_SM(mc_t2, A);
+    wi.tic();
+    mc_t4 = 1;
+    for (i = mc_t4; i<=size; i = i+1) {
+        y = bubble_M(A);
+    }
+    t = wi.toc();
+    wi.disp_S(t);
+    return;
+}
+drv_bubble_S(1);
 }
 runner().then((res)=>{}).catch((err)=>{
     throw err;

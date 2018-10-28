@@ -27,9 +27,9 @@ BENCHMARKS=(
     nb1d/drv_nb1d.m
     numprime/drv_prime.m
 )
-rm -rf $BUILD_DIR
+#rm -rf $BUILD_DIR
 
-mkdir -p $BUILD_DIR
+#mkdir -p $BUILD_DIR
 
 for b in ${BENCHMARKS[@]}; do
     basefile=$(basename $b .m)

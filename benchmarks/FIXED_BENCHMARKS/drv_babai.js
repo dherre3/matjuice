@@ -1292,38 +1292,9 @@ function mc_not(v) {
 
 // BEGINNING OF PROGRAM
 
-function drv_collatz_S(scale){
-    var t = 0;
-    var length = 0;
-    var mc_t1 = 0;
-    var mc_t2 = 0;
-    var i = 0;
-    var max_num = 0;
-    var max_length = 0;
-    max_length = 0;
-    max_num = 0;
-    mc_tic();
-    mc_t2 = 1;
-    for (i = mc_t2; i<=scale; i = i+1) {
-        length = collatz_S(i);
-        mc_t1 = length > max_length;
-        if (mc_t1) {
-            max_length = length;
-            max_num = i;
-        }
-        console.log(i);
-    }
-    t = mc_toc();
-    mc_disp_S(t);
-    mc_disp_S(max_num);
-    return;
-}
-
-function collatz_S(n){
-    var mc_t9 = 0;
-    var mc_t7 = 0;
-    var mc_t8 = 0;
-    var mc_t5 = 0;
+function babai_MM(R, y){
+    var mc_t30 = 0;
+    var mc_t31 = 0;
     var mc_t10 = 0;
     var mc_t11 = 0;
     var mc_t12 = 0;
@@ -1331,29 +1302,97 @@ function collatz_S(n){
     var mc_t14 = 0;
     var mc_t15 = 0;
     var mc_t16 = 0;
-    var y = 0;
-    y = 0;
-    mc_t16 = 1;
-    mc_t15 = n > mc_t16;
-    while (mc_t15) {
-        mc_t8 = 2;
-        mc_t5 = mc_mod_SS(n, mc_t8);
-        mc_t13 = 0;
-        mc_t12 = mc_t5 === mc_t13;
-        if (mc_t12) {
-            mc_t9 = 2;
-            n = n / mc_t9;
-        } else {
-            mc_t10 = 3;
-            mc_t7 = mc_t10 * n;
-            mc_t11 = 1;
-            n = mc_t7 + mc_t11;
-        }
-        mc_t14 = 1;
-        y = y + mc_t14;
-        mc_t16 = 1;
-        mc_t15 = n > mc_t16;
+    var mc_t17 = 0;
+    var mc_t18 = 0;
+    var mc_t19 = 0;
+    var mc_t9 = 0;
+    var par = 0;
+    var mc_t7 = 0;
+    var mc_t8 = 0;
+    var mc_t6 = 0;
+    var ck = 0;
+    var mc_t20 = 0;
+    var mc_t21 = 0;
+    var k = 0;
+    var mc_t22 = 0;
+    var mc_t23 = 0;
+    var mc_t24 = 0;
+    var n = 0;
+    var mc_t25 = 0;
+    var mc_t26 = 0;
+    var mc_t27 = 0;
+    var mc_t28 = 0;
+    var mc_t29 = 0;
+    var z_hat = 0;
+
+
+
+
+
+
+
+    n = mc_length_M(y);
+    mc_t26 = 1;
+    z_hat = mc_zeros(n, mc_t26);
+    mc_t9 = y[(n-1)];
+    mc_t10 = R[((n-1)+(1000*(n-1)))];
+    mc_t8 = mc_t9 / mc_t10;
+    mc_t6 = mc_round_S(mc_t8);
+    z_hat[(n-1)] = mc_t6;
+    mc_t27 = 1;
+    mc_t24 = n - mc_t27;
+    mc_t28 = 1;
+    mc_t25 = -mc_t28;
+    mc_t31 = 1;
+    for (k = mc_t24; k>=mc_t31; k = k+mc_t25) {
+        mc_t16 = k;
+        mc_t29 = 1;
+        mc_t18 = k + mc_t29;
+        mc_t19 = n;
+        mc_t17 = mc_colon(mc_t18, mc_t19);
+        mc_t11 = mc_slice_get(R, [mc_t16, mc_t17]);
+        mc_t30 = 1;
+        mc_t14 = k + mc_t30;
+        mc_t15 = n;
+        mc_t13 = mc_colon(mc_t14, mc_t15);
+        mc_t12 = mc_slice_get(z_hat, [mc_t13]);
+        par = mc_mtimes_MM(mc_t11, mc_t12);
+
+        mc_t22 = y[(k-1)];
+        mc_t23 = par;
+        mc_t20 = mc_t22 - mc_t23;
+        mc_t21 = R[((k-1)+(1000*(k-1)))];
+        ck = mc_t20 / mc_t21;
+        mc_t7 = mc_round_S(ck);
+        z_hat[(k-1)] = mc_t7;
     }
-    return y;
+
+    return z_hat;
 }
-drv_collatz_S(1000000);
+
+function drv_babai_S(size){
+    var R = 0;
+    var t = 0;
+    var vec = 0;
+    var mc_t4 = 0;
+    var mc_t1 = 0;
+    var mc_t2 = 0;
+    var Y = 0;
+    var i = 0;
+    var mc_t0 = 0;
+    mc_t0 = 1000;
+    R = mc_randn(mc_t0);
+    mc_t1 = 1000;
+    mc_t2 = 1;
+    Y = mc_randn(mc_t1, mc_t2);
+    mc_tic();
+    mc_t4 = 1;
+    for (i = mc_t4; i<=size; i = i+1) {
+        vec = babai_MM(R, Y);
+    }
+    t = mc_toc();
+    mc_disp_S(t);
+
+    return;
+}
+drv_babai_S(1);

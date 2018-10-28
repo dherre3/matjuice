@@ -91,9 +91,9 @@ public class VectorBuiltinInputTransformer extends AbstractBuiltinInputTransform
                             ((TIRArrayGetStmt) stmt).getArrayName().getID():
                             ((TIRArraySetStmt) stmt).getArrayName().getID();
                     BasicMatrixValue bmv = Utils.getBasicMatrixValue(valueAnalysis, stmt,arrayName);
-                    if(!bmv.hasShape()){
-                        throw new Error("Could not get value shape for array name: "+arrayName);
-                    }
+                    if(!bmv.hasShape())
+                        throw new Error( "Could not get value shape"+
+                                "for array name: " + arrayName );
                     java.util.ArrayList<String> l = new ArrayList<>();
 
                     java.util.List<DimValue> dimValues = bmv.getShape().getDimensions();

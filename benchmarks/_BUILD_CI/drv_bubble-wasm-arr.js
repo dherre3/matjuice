@@ -255,61 +255,67 @@ function drv_bubble_S(size){
     wi.disp_S(t);
     return;
 }
-
 function bubble_M(A){
-    var mc_t9 = 0;
-    var mc_t7 = 0;
-    var temp = 0;
-    var mc_t8 = 0;
-    var mc_t6 = 0;
-    var mc_t20 = 0;
-    var i = 0;
-    var mc_t21 = 0;
-    var j = 0;
-    var mc_t10 = 0;
-    var mc_t11 = 0;
-    var mc_t12 = 0;
-    var mc_t13 = 0;
-    var n = 0;
-    var mc_t14 = 0;
-    var mc_t15 = 0;
-    var mc_t16 = 0;
-    var mc_t17 = 0;
-    var mc_t18 = 0;
-    var mc_t19 = 0;
-    var x = 0;
-    A = wi.clone(A);
-    n = wi.length_M(A);
-    mc_t14 = 1;
-    mc_t13 = n - mc_t14;
-    mc_t21 = 1;
-    for (j = mc_t21; j<=mc_t13; j = j+1) {
+        var mc_t9 = 0;
+        var mc_t7 = 0;
+        var temp = 0;
+        var mc_t8 = 0;
+        var mc_t6 = 0;
+        var mc_t20 = 0;
+        var i = 0;
+        var mc_t21 = 0;
+        var j = 0;
+        var mc_t10 = 0;
+        var mc_t11 = 0;
+        var mc_t12 = 0;
+        var mc_t13 = 0;
+        var n = 0;
+        var mc_t14 = 0;
+        var mc_t15 = 0;
+        var mc_t16 = 0;
+        var mc_t17 = 0;
+        var mc_t18 = 0;
+        var mc_t19 = 0;
+        var x = 0;
+        A = wi.clone(A);
+        n = wi.length_M(A);
+        let A_view = new Float64Array(wi.mem.buffer, wi.mxarray_core_get_array_ptr(A), wi.numel(A));
+        mc_t14 = 1;
+        mc_t13 = n - mc_t14;
+        mc_t21 = 1;
+        for (j = mc_t21; j<=mc_t13; j = j+1) {
 
-        mc_t15 = 1;
-        mc_t12 = n - mc_t15;
-        mc_t20 = 1;
-        for (i = mc_t20; i<=mc_t12; i = i+1) {
-            mc_t6 = wi.get_array_index_f64(A, i);
-            mc_t16 = 1;
-            mc_t10 = i + mc_t16;
-            mc_t7 = wi.get_array_index_f64(A, mc_t10);
-            mc_t19 = mc_t6 > mc_t7;
-            if (mc_t19) {
-                temp = wi.get_array_index_f64(A, i);
-                mc_t17 = 1;
-                mc_t11 = i + mc_t17;
-                mc_t8 = wi.get_array_index_f64(A, mc_t11);
-                wi.set_array_index_f64(A, i, mc_t8);
-                mc_t18 = 1;
-                mc_t9 = i + mc_t18;
-                wi.set_array_index_f64(A, mc_t9, temp);
+            mc_t15 = 1;
+            mc_t12 = n - mc_t15;
+            mc_t20 = 1;
+            for (i = mc_t20; i<=mc_t12; i = i+1) {
+                // mc_t6 = wi.get_array_index_f64(A, i);
+                mc_t6 = A_view[i-1];
+                mc_t16 = 1;
+                mc_t10 = i + mc_t16;
+                // mc_t7 = wi.get_array_index_f64(A, mc_t10);
+                mc_t7 = A_view[mc_t10-1];
+                mc_t19 = mc_t6 > mc_t7;
+                if (mc_t19) {
+                    // temp = wi.get_array_index_f64(A, i);
+                    temp = A_view[i-1];
+                    mc_t17 = 1;
+                    mc_t11 = i + mc_t17;
+                    // mc_t8 = wi.get_array_index_f64(A, mc_t11);
+                    mc_t8 = A_view[mc_t11-1];
+                    // wi.set_array_index_f64(A, i, mc_t8);
+                    A_view[i-1] = mc_t8;
+                    mc_t18 = 1;
+                    mc_t9 = i + mc_t18;
+                    A_view[mc_t9-1] = temp;
+                    // wi.set_array_index_f64(A, mc_t9, temp);
+                }
             }
         }
+        x = A;
+        return x;
     }
-    x = A;
 
-    return x;
-}
 drv_bubble_S(300);
 }
 runner().then((res)=>{}).catch((err)=>{

@@ -228,89 +228,77 @@ async function runner(){
 
 // BEGINNING OF PROGRAM
 
-function drv_bubble_S(size){
-    var A = 0;
+function drv_collatz_jitted_S(scale){
     var t = 0;
+    var mc_t3 = 0;
     var mc_t4 = 0;
     var mc_t1 = 0;
-    var mc_t2 = 0;
+    var length = 0;
     var i = 0;
-    var y = 0;
     var mc_t0 = 0;
-    var mc_t22 = 0;
-    mc_t0 = 300;
-    mc_t1 = 1;
-    mc_t22 = wi.create_mxvector(2);
-    wi.set_array_index_f64(mc_t22, 1, mc_t0);
-    wi.set_array_index_f64(mc_t22, 2, mc_t1);
-    A = wi.rand(mc_t22);
-    mc_t2 = 10000;
-    A = wi.mtimes_SM(mc_t2, A);
+    var max_num = 0;
+    var max_length = 0;
+    max_length = 0;
+    max_num = 0;
+    mc_t0 = 1;
+    mc_t1 = 10;
+    for (i = mc_t0; i<=mc_t1; i = i+1) {
+        length = collatz_S(i);
+    }
     wi.tic();
     mc_t4 = 1;
-    for (i = mc_t4; i<=size; i = i+1) {
-        y = bubble_M(A);
+    for (i = mc_t4; i<=scale; i = i+1) {
+        length = collatz_S(i);
+        mc_t3 = length > max_length;
+        if (mc_t3) {
+            max_length = length;
+            max_num = i;
+        }
     }
     t = wi.toc();
     wi.disp_S(t);
+    wi.disp_S(max_num);
     return;
 }
 
-function bubble_M(A){
+function collatz_S(n){
     var mc_t9 = 0;
     var mc_t7 = 0;
-    var temp = 0;
-    var mc_t8 = 0;
-    var mc_t6 = 0;
-    var mc_t20 = 0;
-    var i = 0;
-    var mc_t21 = 0;
-    var j = 0;
     var mc_t10 = 0;
     var mc_t11 = 0;
     var mc_t12 = 0;
     var mc_t13 = 0;
-    var n = 0;
     var mc_t14 = 0;
     var mc_t15 = 0;
     var mc_t16 = 0;
     var mc_t17 = 0;
     var mc_t18 = 0;
-    var mc_t19 = 0;
-    var x = 0;
-    A = wi.clone(A);
-    n = wi.length_M(A);
-    mc_t14 = 1;
-    mc_t13 = n - mc_t14;
-    mc_t21 = 1;
-    for (j = mc_t21; j<=mc_t13; j = j+1) {
-
-        mc_t15 = 1;
-        mc_t12 = n - mc_t15;
-        mc_t20 = 1;
-        for (i = mc_t20; i<=mc_t12; i = i+1) {
-            mc_t6 = wi.get_array_index_f64(A, i);
-            mc_t16 = 1;
-            mc_t10 = i + mc_t16;
-            mc_t7 = wi.get_array_index_f64(A, mc_t10);
-            mc_t19 = mc_t6 > mc_t7;
-            if (mc_t19) {
-                temp = wi.get_array_index_f64(A, i);
-                mc_t17 = 1;
-                mc_t11 = i + mc_t17;
-                mc_t8 = wi.get_array_index_f64(A, mc_t11);
-                wi.set_array_index_f64(A, i, mc_t8);
-                mc_t18 = 1;
-                mc_t9 = i + mc_t18;
-                wi.set_array_index_f64(A, mc_t9, temp);
-            }
+    var y = 0;
+    y = 0;
+    mc_t18 = 1;
+    mc_t17 = n > mc_t18;
+    while (mc_t17) {
+        mc_t10 = 2;
+        mc_t7 = wi.mod_SS(n, mc_t10);
+        mc_t15 = 0;
+        mc_t14 = mc_t7 === mc_t15;
+        if (mc_t14) {
+            mc_t11 = 2;
+            n = n / mc_t11;
+        } else {
+            mc_t12 = 3;
+            mc_t9 = mc_t12 * n;
+            mc_t13 = 1;
+            n = mc_t9 + mc_t13;
         }
+        mc_t16 = 1;
+        y = y + mc_t16;
+        mc_t18 = 1;
+        mc_t17 = n > mc_t18;
     }
-    x = A;
-
-    return x;
+    return y;
 }
-drv_bubble_S(300);
+drv_collatz_jitted_S(1000000);
 }
 runner().then((res)=>{}).catch((err)=>{
     throw err;

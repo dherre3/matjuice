@@ -228,89 +228,157 @@ async function runner(){
 
 // BEGINNING OF PROGRAM
 
-function drv_bubble_S(size){
-    var A = 0;
+function babai_MM(R, y){
+    var mc_t30 = 0;
+    var mc_t31 = 0;
+    var mc_t10 = 0;
+    var mc_t32 = 0;
+    var mc_t11 = 0;
+    var mc_t33 = 0;
+    var mc_t12 = 0;
+    var mc_t34 = 0;
+    var mc_t13 = 0;
+    var mc_t35 = 0;
+    var mc_t14 = 0;
+    var mc_t36 = 0;
+    var mc_t15 = 0;
+    var mc_t37 = 0;
+    var mc_t16 = 0;
+    var mc_t38 = 0;
+    var mc_t17 = 0;
+    var mc_t39 = 0;
+    var mc_t18 = 0;
+    var mc_t19 = 0;
+    var mc_t9 = 0;
+    var par = 0;
+    var mc_t7 = 0;
+    var mc_t8 = 0;
+    var mc_t6 = 0;
+    var mc_t40 = 0;
+    var ck = 0;
+    var mc_t41 = 0;
+    var mc_t20 = 0;
+    var mc_t21 = 0;
+    var k = 0;
+    var mc_t22 = 0;
+    var mc_t23 = 0;
+    var mc_t24 = 0;
+    var n = 0;
+    var mc_t25 = 0;
+    var mc_t26 = 0;
+    var mc_t27 = 0;
+    var mc_t28 = 0;
+    var mc_t29 = 0;
+    var z_hat = 0;
+
+
+
+    let y_view = new Float64Array(wi.mem.buffer, wi.mxarray_core_get_array_ptr(y), wi.numel(y));
+    let R_view = new Float64Array(wi.mem.buffer, wi.mxarray_core_get_array_ptr(R), wi.numel(R));
+
+
+
+    n = wi.length_M(y);
+    mc_t26 = 1;
+    mc_t32 = wi.create_mxvector(2);
+    wi.set_array_index_f64(mc_t32, 1, n);
+    wi.set_array_index_f64(mc_t32, 2, mc_t26);
+    z_hat = wi.zeros(mc_t32);
+    let z_hat_view = new Float64Array(wi.mem.buffer, wi.mxarray_core_get_array_ptr(z_hat), wi.numel(z_hat));
+    // mc_t9 = wi.get_array_index_f64(y, n);
+    mc_t9 = y_view[n-1];
+    // mc_t10 = wi.get_array_index_f64(R, (((n-1)+(1000*(n-1)))+1));
+    mc_t10 = R_view[(n-1)+(1000*(n-1))];
+
+    mc_t8 = mc_t9 / mc_t10;
+    mc_t6 = wi.round_S(mc_t8);
+    z_hat_view[n-1] = mc_t6;
+    // wi.set_array_index_f64(z_hat, n, mc_t6);
+    mc_t27 = 1;
+    mc_t24 = n - mc_t27;
+    mc_t28 = 1;
+    mc_t25 = -mc_t28;
+    mc_t31 = 1;
+    for (k = mc_t24; k>=mc_t31; k = k+mc_t25) {
+        mc_t16 = k;
+        mc_t29 = 1;
+        mc_t18 = k + mc_t29;
+        mc_t19 = n;
+        mc_t33 = wi.create_mxvector(2, 5);
+        mc_t34 = wi.convert_scalar_to_mxarray(mc_t18);
+        wi.set_array_index_i32(mc_t33, 1, mc_t34);
+        mc_t35 = wi.convert_scalar_to_mxarray(mc_t19);
+        wi.set_array_index_i32(mc_t33, 2, mc_t35);
+        mc_t17 = wi.colon(mc_t33);
+        mc_t36 = wi.create_mxvector(2, 5);
+        mc_t37 = wi.convert_scalar_to_mxarray(mc_t16);
+        wi.set_array_index_i32(mc_t36, 1, mc_t37);
+        wi.set_array_index_i32(mc_t36, 2, mc_t17);
+        mc_t11 = wi.get_f64(R, mc_t36);
+        mc_t30 = 1;
+        mc_t14 = k + mc_t30;
+        mc_t15 = n;
+        mc_t38 = wi.create_mxvector(2, 5);
+        mc_t39 = wi.convert_scalar_to_mxarray(mc_t14);
+        wi.set_array_index_i32(mc_t38, 1, mc_t39);
+        mc_t40 = wi.convert_scalar_to_mxarray(mc_t15);
+        wi.set_array_index_i32(mc_t38, 2, mc_t40);
+        mc_t13 = wi.colon(mc_t38);
+        mc_t41 = wi.create_mxvector(1, 5);
+        wi.set_array_index_i32(mc_t41, 1, mc_t13);
+        mc_t12 = wi.get_f64(z_hat, mc_t41);
+        par = wi.mtimes_MM(mc_t11, mc_t12);
+        par = wi.get_array_index_f64(par, 1);
+
+        // mc_t22 = wi.get_array_index_f64(y, k);
+        mc_t22 = y_view[k-1];
+        mc_t23 = par;
+        mc_t20 = mc_t22 - mc_t23;
+        // mc_t21 = wi.get_array_index_f64(R, (((k-1)+(1000*(k-1)))+1));
+        mc_t21 = R_view[((k-1)+(1000*(k-1)))];
+        ck = mc_t20 / mc_t21;
+        mc_t7 = wi.round_S(ck);
+        z_hat_view[k-1] = mc_t7;
+        // wi.set_array_index_f64(z_hat, k, mc_t7);
+    }
+
+    return z_hat;
+}
+
+function drv_babai_S(size){
+    var R = 0;
     var t = 0;
+    var vec = 0;
     var mc_t4 = 0;
     var mc_t1 = 0;
     var mc_t2 = 0;
+    var Y = 0;
     var i = 0;
-    var y = 0;
+    var mc_t42 = 0;
+    var mc_t43 = 0;
     var mc_t0 = 0;
-    var mc_t22 = 0;
-    mc_t0 = 300;
-    mc_t1 = 1;
-    mc_t22 = wi.create_mxvector(2);
-    wi.set_array_index_f64(mc_t22, 1, mc_t0);
-    wi.set_array_index_f64(mc_t22, 2, mc_t1);
-    A = wi.rand(mc_t22);
-    mc_t2 = 10000;
-    A = wi.mtimes_SM(mc_t2, A);
+    mc_t0 = 1000;
+    mc_t42 = wi.create_mxvector(2);
+    wi.set_array_index_f64(mc_t42, 1, mc_t0);
+    wi.set_array_index_f64(mc_t42, 2, mc_t0);
+    R = wi.randn(mc_t42);
+    mc_t1 = 1000;
+    mc_t2 = 1;
+    mc_t43 = wi.create_mxvector(2);
+    wi.set_array_index_f64(mc_t43, 1, mc_t1);
+    wi.set_array_index_f64(mc_t43, 2, mc_t2);
+    Y = wi.randn(mc_t43);
     wi.tic();
     mc_t4 = 1;
     for (i = mc_t4; i<=size; i = i+1) {
-        y = bubble_M(A);
+        vec = babai_MM(R, Y);
     }
     t = wi.toc();
     wi.disp_S(t);
+
     return;
 }
-
-function bubble_M(A){
-    var mc_t9 = 0;
-    var mc_t7 = 0;
-    var temp = 0;
-    var mc_t8 = 0;
-    var mc_t6 = 0;
-    var mc_t20 = 0;
-    var i = 0;
-    var mc_t21 = 0;
-    var j = 0;
-    var mc_t10 = 0;
-    var mc_t11 = 0;
-    var mc_t12 = 0;
-    var mc_t13 = 0;
-    var n = 0;
-    var mc_t14 = 0;
-    var mc_t15 = 0;
-    var mc_t16 = 0;
-    var mc_t17 = 0;
-    var mc_t18 = 0;
-    var mc_t19 = 0;
-    var x = 0;
-    A = wi.clone(A);
-    n = wi.length_M(A);
-    mc_t14 = 1;
-    mc_t13 = n - mc_t14;
-    mc_t21 = 1;
-    for (j = mc_t21; j<=mc_t13; j = j+1) {
-
-        mc_t15 = 1;
-        mc_t12 = n - mc_t15;
-        mc_t20 = 1;
-        for (i = mc_t20; i<=mc_t12; i = i+1) {
-            mc_t6 = wi.get_array_index_f64(A, i);
-            mc_t16 = 1;
-            mc_t10 = i + mc_t16;
-            mc_t7 = wi.get_array_index_f64(A, mc_t10);
-            mc_t19 = mc_t6 > mc_t7;
-            if (mc_t19) {
-                temp = wi.get_array_index_f64(A, i);
-                mc_t17 = 1;
-                mc_t11 = i + mc_t17;
-                mc_t8 = wi.get_array_index_f64(A, mc_t11);
-                wi.set_array_index_f64(A, i, mc_t8);
-                mc_t18 = 1;
-                mc_t9 = i + mc_t18;
-                wi.set_array_index_f64(A, mc_t9, temp);
-            }
-        }
-    }
-    x = A;
-
-    return x;
-}
-drv_bubble_S(300);
+drv_babai_S(1);
 }
 runner().then((res)=>{}).catch((err)=>{
     throw err;
