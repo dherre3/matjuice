@@ -14,106 +14,319 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="build.sh" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/benchmarks/build.sh">
+      <file leaf-file-name="CopyAnalysis.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/mclab-core/languages/Natlab/src/natlab/toolkits/analysis/core/CopyAnalysis.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="160">
-              <caret line="24" column="19" lean-forward="false" selection-start-line="24" selection-start-column="19" selection-end-line="24" selection-end-column="19" />
+            <state relative-caret-position="-372">
+              <caret line="21" column="33" lean-forward="false" selection-start-line="21" selection-start-column="29" selection-end-line="21" selection-end-column="33" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="drv_collatz.m" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/benchmarks/collatz/drv_collatz.m">
+      <file leaf-file-name="CopyInsertion.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/matjuice/transformer/CopyInsertion.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
-              <caret line="8" column="24" lean-forward="false" selection-start-line="8" selection-start-column="24" selection-end-line="8" selection-end-column="24" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="drv_collatz_jitted.m" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/benchmarks/collatz_jitted/drv_collatz_jitted.m">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="16" column="5" lean-forward="false" selection-start-line="16" selection-start-column="5" selection-end-line="16" selection-end-column="17" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="drv_collatz.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/benchmarks/_BUILD_CI/drv_collatz.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="220">
-              <caret line="1313" column="23" lean-forward="false" selection-start-line="1313" selection-start-column="23" selection-end-line="1313" selection-end-column="23" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="collatz.m" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/benchmarks/collatz/collatz.m">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="10" column="3" lean-forward="false" selection-start-line="10" selection-start-column="3" selection-end-line="10" selection-end-column="3" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="drv_collatz_jitted.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/benchmarks/_BUILD_CI/drv_collatz_jitted.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="362">
-              <caret line="1364" column="28" lean-forward="false" selection-start-line="1364" selection-start-column="21" selection-end-line="1364" selection-end-column="28" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="drv_bubble-wasm.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/benchmarks/_BUILD_CI/drv_bubble-wasm.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="4680">
-              <caret line="312" column="16" lean-forward="false" selection-start-line="312" selection-start-column="16" selection-end-line="312" selection-end-column="16" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="drv_bubble-wasm-arr.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/benchmarks/_BUILD_CI/drv_bubble-wasm-arr.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="256" column="1" lean-forward="false" selection-start-line="256" selection-start-column="1" selection-end-line="256" selection-end-column="1" />
+            <state relative-caret-position="102">
+              <caret line="68" column="0" lean-forward="false" selection-start-line="68" selection-start-column="0" selection-end-line="68" selection-end-column="0" />
               <folding>
-                <element signature="n#!!block;n#bubble_M#0;n#!!block;n#runner#0" expanded="false" />
+                <element signature="e#5304#5305#0" expanded="true" />
+                <element signature="e#5350#5351#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="drv_bubble-wasm-arr.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/benchmarks/FIXED_BENCHMARKS/drv_bubble-wasm-arr.js">
+      <file leaf-file-name="Generator.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/matjuice/codegen/Generator.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="190">
-              <caret line="230" column="0" lean-forward="false" selection-start-line="230" selection-start-column="0" selection-end-line="290" selection-end-column="0" />
+            <state relative-caret-position="2100">
+              <caret line="180" column="29" lean-forward="false" selection-start-line="180" selection-start-column="29" selection-end-line="180" selection-end-column="29" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="LivenessAnalysis.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/mclab-core/languages/Natlab/src/natlab/toolkits/analysis/core/LivenessAnalysis.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-889">
+              <caret line="22" column="9" lean-forward="false" selection-start-line="22" selection-start-column="9" selection-end-line="22" selection-end-column="9" />
               <folding>
-                <element signature="n#!!block;n#bubble_M#0;n#!!block;n#runner#0" expanded="false" />
+                <element signature="e#522#523#0" expanded="true" />
+                <element signature="e#543#544#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="drv_bubble.m" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/benchmarks/bubble/drv_bubble.m">
+      <file leaf-file-name="UseDefDefUseChain.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/mclab-core/languages/Natlab/src/natlab/toolkits/analysis/core/UseDefDefUseChain.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="9" column="3" lean-forward="false" selection-start-line="9" selection-start-column="3" selection-end-line="9" selection-end-column="3" />
+            <state relative-caret-position="-61">
+              <caret line="112" column="2" lean-forward="false" selection-start-line="112" selection-start-column="2" selection-end-line="112" selection-end-column="2" />
+              <folding>
+                <element signature="e#1920#1921#0" expanded="true" />
+                <element signature="e#1951#1952#0" expanded="true" />
+                <element signature="e#2703#2704#0" expanded="true" />
+                <element signature="e#2734#2735#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="NodeFinder.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/mclab-core/languages/Natlab/src/natlab/utils/NodeFinder.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="255">
+              <caret line="25" column="13" lean-forward="false" selection-start-line="25" selection-start-column="13" selection-end-line="25" selection-end-column="13" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PointsToAnalysis.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/matjuice/analysis/PointsToAnalysis.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1155">
+              <caret line="92" column="20" lean-forward="false" selection-start-line="92" selection-start-column="16" selection-end-line="92" selection-end-column="20" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ThreeAddressToIR.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/mclab-core/languages/Natlab/src/natlab/tame/simplification/ThreeAddressToIR.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1635">
+              <caret line="202" column="7" lean-forward="false" selection-start-line="202" selection-start-column="7" selection-end-line="202" selection-end-column="7" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="NameExpr.class" pinned="false" current-in-tab="false">
+        <entry file="jar://$PROJECT_DIR$/mclab-core/languages/Natlab/McLabCore.jar!/ast/NameExpr.class">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="90">
+              <caret line="21" column="13" lean-forward="false" selection-start-line="21" selection-start-column="13" selection-end-line="21" selection-end-column="13" />
+              <folding>
+                <marker date="1556908323838" expanded="false" signature="0:104" ph="/.../" />
+                <marker date="1556908323838" expanded="false" signature="127:555" ph="..." />
+                <marker date="1556908323838" expanded="true" signature="1109:1372" ph="{...}" />
+                <marker date="1556908323838" expanded="true" signature="1426:2117" ph="{...}" />
+                <marker date="1556908323838" expanded="false" signature="2164:2175" ph=" { " />
+                <marker date="1556908323838" expanded="false" signature="2199:2205" ph=" }" />
+                <marker date="1556908323838" expanded="false" signature="2237:2248" ph=" { " />
+                <marker date="1556908323838" expanded="false" signature="2283:2289" ph=" }" />
+                <marker date="1556908323838" expanded="true" signature="2313:2320" ph="{}" />
+                <marker date="1556908323838" expanded="false" signature="2353:2364" ph=" { " />
+                <marker date="1556908323838" expanded="false" signature="2395:2401" ph=" }" />
+                <marker date="1556908323838" expanded="false" signature="2433:2444" ph=" { " />
+                <marker date="1556908323838" expanded="false" signature="2467:2473" ph=" }" />
+                <marker date="1556908323838" expanded="false" signature="2506:2517" ph=" { " />
+                <marker date="1556908323838" expanded="false" signature="2526:2532" ph=" }" />
+                <marker date="1556908323838" expanded="false" signature="2569:2580" ph=" { " />
+                <marker date="1556908323838" expanded="false" signature="2593:2599" ph=" }" />
+                <marker date="1556908323838" expanded="false" signature="2633:2644" ph=" { " />
+                <marker date="1556908323838" expanded="false" signature="2667:2673" ph=" }" />
+                <marker date="1556908323838" expanded="false" signature="2713:2724" ph=" { " />
+                <marker date="1556908323838" expanded="false" signature="2753:2759" ph=" }" />
+                <marker date="1556908323838" expanded="false" signature="2796:2807" ph=" { " />
+                <marker date="1556908323838" expanded="false" signature="2833:2839" ph=" }" />
+                <marker date="1556908323838" expanded="true" signature="2903:2980" ph="{...}" />
+                <marker date="1556908323838" expanded="true" signature="3009:3418" ph="{...}" />
+                <marker date="1556908323838" expanded="true" signature="3424:3442" ph="/**...*/" />
+                <marker date="1556908323838" expanded="false" signature="3473:3484" ph=" { " />
+                <marker date="1556908323838" expanded="false" signature="3518:3524" ph=" }" />
+                <marker date="1556908323838" expanded="true" signature="3568:3972" ph="{...}" />
+                <marker date="1556908323838" expanded="true" signature="4005:4087" ph="{...}" />
+                <marker date="1556908323838" expanded="false" signature="4133:4144" ph=" { " />
+                <marker date="1556908323838" expanded="false" signature="4172:4178" ph=" }" />
+                <marker date="1556908323838" expanded="false" signature="4214:4225" ph=" { " />
+                <marker date="1556908323838" expanded="false" signature="4248:4254" ph=" }" />
+                <marker date="1556908323838" expanded="true" signature="4260:4295" ph="@{...}" />
+                <marker date="1556908323838" expanded="false" signature="4321:4332" ph=" { " />
+                <marker date="1556908323838" expanded="false" signature="4362:4368" ph=" }" />
+                <marker date="1556908323838" expanded="false" signature="4406:4417" ph=" { " />
+                <marker date="1556908323838" expanded="false" signature="4458:4464" ph=" }" />
+                <marker date="1556908323838" expanded="true" signature="4537:5097" ph="{...}" />
+                <marker date="1556908323838" expanded="true" signature="5150:5602" ph="{...}" />
+                <marker date="1556908323838" expanded="true" signature="5665:6310" ph="{...}" />
+                <marker date="1556908323838" expanded="true" signature="6376:6909" ph="{...}" />
+                <marker date="1556908323838" expanded="true" signature="6970:7436" ph="{...}" />
+                <marker date="1556908323838" expanded="true" signature="7484:7975" ph="{...}" />
+                <marker date="1556908323838" expanded="true" signature="8043:8586" ph="{...}" />
+                <marker date="1556908323838" expanded="false" signature="8618:8629" ph=" { " />
+                <marker date="1556908323838" expanded="false" signature="8654:8660" ph=" }" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Function.class" pinned="false" current-in-tab="false">
+        <entry file="jar://$PROJECT_DIR$/mclab-core/languages/Natlab/McLabCore.jar!/ast/Function.class">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="90">
+              <caret line="25" column="13" lean-forward="false" selection-start-line="25" selection-start-column="13" selection-end-line="25" selection-end-column="13" />
+              <folding>
+                <marker date="1556908323838" expanded="false" signature="0:104" ph="/.../" />
+                <marker date="1556908323838" expanded="false" signature="127:674" ph="..." />
+                <marker date="1556908323838" expanded="true" signature="1553:2033" ph="{...}" />
+                <marker date="1556908323838" expanded="false" signature="2080:2091" ph=" { " />
+                <marker date="1556908323838" expanded="false" signature="2115:2121" ph=" }" />
+                <marker date="1556908323838" expanded="true" signature="2145:2152" ph="{}" />
+                <marker date="1556908323838" expanded="true" signature="2186:2423" ph="{...}" />
+                <marker date="1556908323838" expanded="true" signature="2552:2751" ph="{...}" />
+                <marker date="1556908323838" expanded="false" signature="2784:2795" ph=" { " />
+                <marker date="1556908323838" expanded="false" signature="2804:2810" ph=" }" />
+                <marker date="1556908323838" expanded="false" signature="2847:2858" ph=" { " />
+                <marker date="1556908323838" expanded="false" signature="2871:2877" ph=" }" />
+                <marker date="1556908323838" expanded="true" signature="2912:2983" ph="{...}" />
+                <marker date="1556908323838" expanded="false" signature="3023:3034" ph=" { " />
+                <marker date="1556908323838" expanded="false" signature="3063:3069" ph=" }" />
+                <marker date="1556908323838" expanded="false" signature="3106:3117" ph=" { " />
+                <marker date="1556908323838" expanded="false" signature="3143:3149" ph=" }" />
+                <marker date="1556908323838" expanded="true" signature="3213:3290" ph="{...}" />
+                <marker date="1556908323838" expanded="true" signature="3319:3728" ph="{...}" />
+                <marker date="1556908323838" expanded="true" signature="3734:3752" ph="/**...*/" />
+                <marker date="1556908323838" expanded="false" signature="3783:3794" ph=" { " />
+                <marker date="1556908323838" expanded="false" signature="3828:3834" ph=" }" />
+                <marker date="1556908323838" expanded="true" signature="3878:4282" ph="{...}" />
+                <marker date="1556908323838" expanded="true" signature="4315:4397" ph="{...}" />
+                <marker date="1556908323838" expanded="false" signature="4443:4454" ph=" { " />
+                <marker date="1556908323838" expanded="false" signature="4482:4488" ph=" }" />
+                <marker date="1556908323838" expanded="false" signature="4541:4552" ph=" { " />
+                <marker date="1556908323838" expanded="false" signature="4575:4581" ph=" }" />
+                <marker date="1556908323838" expanded="false" signature="4617:4628" ph=" { " />
+                <marker date="1556908323838" expanded="false" signature="4675:4681" ph=" }" />
+                <marker date="1556908323838" expanded="false" signature="4728:4739" ph=" { " />
+                <marker date="1556908323838" expanded="false" signature="4808:4814" ph=" }" />
+                <marker date="1556908323838" expanded="false" signature="4856:4867" ph=" { " />
+                <marker date="1556908323838" expanded="false" signature="4921:4927" ph=" }" />
+                <marker date="1556908323838" expanded="false" signature="4964:4975" ph=" { " />
+                <marker date="1556908323838" expanded="false" signature="5027:5033" ph=" }" />
+                <marker date="1556908323838" expanded="true" signature="5077:5238" ph="{...}" />
+                <marker date="1556908323838" expanded="true" signature="5293:5387" ph="{...}" />
+                <marker date="1556908323838" expanded="true" signature="5441:5530" ph="{...}" />
+                <marker date="1556908323838" expanded="true" signature="5536:5582" ph="@{...}" />
+                <marker date="1556908323838" expanded="true" signature="5626:5726" ph="{...}" />
+                <marker date="1556908323838" expanded="false" signature="5781:5792" ph=" { " />
+                <marker date="1556908323838" expanded="false" signature="5833:5839" ph=" }" />
+                <marker date="1556908323838" expanded="false" signature="5880:5891" ph=" { " />
+                <marker date="1556908323838" expanded="false" signature="5924:5930" ph=" }" />
+                <marker date="1556908323838" expanded="false" signature="5982:5993" ph=" { " />
+                <marker date="1556908323838" expanded="false" signature="6037:6043" ph=" }" />
+                <marker date="1556908323838" expanded="false" signature="6079:6090" ph=" { " />
+                <marker date="1556908323838" expanded="false" signature="6113:6119" ph=" }" />
+                <marker date="1556908323838" expanded="true" signature="6125:6160" ph="@{...}" />
+                <marker date="1556908323838" expanded="false" signature="6186:6197" ph=" { " />
+                <marker date="1556908323838" expanded="false" signature="6227:6233" ph=" }" />
+                <marker date="1556908323838" expanded="false" signature="6271:6282" ph=" { " />
+                <marker date="1556908323838" expanded="false" signature="6323:6329" ph=" }" />
+                <marker date="1556908323838" expanded="false" signature="6381:6392" ph=" { " />
+                <marker date="1556908323838" expanded="false" signature="6415:6421" ph=" }" />
+                <marker date="1556908323838" expanded="false" signature="6456:6467" ph=" { " />
+                <marker date="1556908323838" expanded="false" signature="6513:6519" ph=" }" />
+                <marker date="1556908323838" expanded="false" signature="6565:6576" ph=" { " />
+                <marker date="1556908323838" expanded="false" signature="6644:6650" ph=" }" />
+                <marker date="1556908323838" expanded="false" signature="6691:6702" ph=" { " />
+                <marker date="1556908323838" expanded="false" signature="6755:6761" ph=" }" />
+                <marker date="1556908323838" expanded="false" signature="6797:6808" ph=" { " />
+                <marker date="1556908323838" expanded="false" signature="6859:6865" ph=" }" />
+                <marker date="1556908323838" expanded="true" signature="6908:7067" ph="{...}" />
+                <marker date="1556908323838" expanded="true" signature="7121:7214" ph="{...}" />
+                <marker date="1556908323838" expanded="true" signature="7267:7355" ph="{...}" />
+                <marker date="1556908323838" expanded="true" signature="7361:7406" ph="@{...}" />
+                <marker date="1556908323838" expanded="true" signature="7449:7549" ph="{...}" />
+                <marker date="1556908323838" expanded="false" signature="7603:7614" ph=" { " />
+                <marker date="1556908323838" expanded="false" signature="7655:7661" ph=" }" />
+                <marker date="1556908323838" expanded="false" signature="7701:7712" ph=" { " />
+                <marker date="1556908323838" expanded="false" signature="7744:7750" ph=" }" />
+                <marker date="1556908323838" expanded="false" signature="7801:7812" ph=" { " />
+                <marker date="1556908323838" expanded="false" signature="7855:7861" ph=" }" />
+                <marker date="1556908323838" expanded="false" signature="7921:7932" ph=" { " />
+                <marker date="1556908323838" expanded="false" signature="7955:7961" ph=" }" />
+                <marker date="1556908323838" expanded="false" signature="7997:8008" ph=" { " />
+                <marker date="1556908323838" expanded="false" signature="8055:8061" ph=" }" />
+                <marker date="1556908323838" expanded="false" signature="8108:8119" ph=" { " />
+                <marker date="1556908323838" expanded="false" signature="8188:8194" ph=" }" />
+                <marker date="1556908323838" expanded="false" signature="8243:8254" ph=" { " />
+                <marker date="1556908323838" expanded="false" signature="8315:8321" ph=" }" />
+                <marker date="1556908323838" expanded="false" signature="8358:8369" ph=" { " />
+                <marker date="1556908323838" expanded="false" signature="8421:8427" ph=" }" />
+                <marker date="1556908323838" expanded="true" signature="8478:8639" ph="{...}" />
+                <marker date="1556908323838" expanded="true" signature="8701:8795" ph="{...}" />
+                <marker date="1556908323838" expanded="true" signature="8856:8945" ph="{...}" />
+                <marker date="1556908323838" expanded="true" signature="8951:8997" ph="@{...}" />
+                <marker date="1556908323838" expanded="true" signature="9048:9148" ph="{...}" />
+                <marker date="1556908323838" expanded="false" signature="9210:9221" ph=" { " />
+                <marker date="1556908323838" expanded="false" signature="9262:9268" ph=" }" />
+                <marker date="1556908323838" expanded="false" signature="9316:9327" ph=" { " />
+                <marker date="1556908323838" expanded="false" signature="9360:9366" ph=" }" />
+                <marker date="1556908323838" expanded="false" signature="9425:9436" ph=" { " />
+                <marker date="1556908323838" expanded="false" signature="9480:9486" ph=" }" />
+                <marker date="1556908323838" expanded="false" signature="9532:9543" ph=" { " />
+                <marker date="1556908323838" expanded="false" signature="9566:9572" ph=" }" />
+                <marker date="1556908323838" expanded="false" signature="9601:9612" ph=" { " />
+                <marker date="1556908323838" expanded="false" signature="9652:9658" ph=" }" />
+                <marker date="1556908323838" expanded="false" signature="9698:9709" ph=" { " />
+                <marker date="1556908323838" expanded="false" signature="9771:9777" ph=" }" />
+                <marker date="1556908323838" expanded="false" signature="9812:9823" ph=" { " />
+                <marker date="1556908323838" expanded="false" signature="9870:9876" ph=" }" />
+                <marker date="1556908323838" expanded="false" signature="9906:9917" ph=" { " />
+                <marker date="1556908323838" expanded="false" signature="9962:9968" ph=" }" />
+                <marker date="1556908323838" expanded="true" signature="10005:10152" ph="{...}" />
+                <marker date="1556908323838" expanded="true" signature="10200:10287" ph="{...}" />
+                <marker date="1556908323838" expanded="true" signature="10334:10416" ph="{...}" />
+                <marker date="1556908323838" expanded="true" signature="10422:10461" ph="@{...}" />
+                <marker date="1556908323838" expanded="true" signature="10498:10598" ph="{...}" />
+                <marker date="1556908323838" expanded="false" signature="10646:10657" ph=" { " />
+                <marker date="1556908323838" expanded="false" signature="10698:10704" ph=" }" />
+                <marker date="1556908323838" expanded="false" signature="10738:10749" ph=" { " />
+                <marker date="1556908323838" expanded="false" signature="10775:10781" ph=" }" />
+                <marker date="1556908323838" expanded="false" signature="10826:10837" ph=" { " />
+                <marker date="1556908323838" expanded="false" signature="10874:10880" ph=" }" />
+                <marker date="1556908323838" expanded="false" signature="10940:10951" ph=" { " />
+                <marker date="1556908323838" expanded="false" signature="10974:10980" ph=" }" />
+                <marker date="1556908323838" expanded="false" signature="11019:11030" ph=" { " />
+                <marker date="1556908323838" expanded="false" signature="11080:11086" ph=" }" />
+                <marker date="1556908323838" expanded="true" signature="11137:11225" ph="{...}" />
+                <marker date="1556908323838" expanded="false" signature="11274:11285" ph=" { " />
+                <marker date="1556908323838" expanded="false" signature="11346:11352" ph=" }" />
+                <marker date="1556908323838" expanded="false" signature="11392:11403" ph=" { " />
+                <marker date="1556908323838" expanded="false" signature="11458:11464" ph=" }" />
+                <marker date="1556908323838" expanded="true" signature="11515:11682" ph="{...}" />
+                <marker date="1556908323838" expanded="true" signature="11744:11841" ph="{...}" />
+                <marker date="1556908323838" expanded="true" signature="11902:11994" ph="{...}" />
+                <marker date="1556908323838" expanded="true" signature="12000:12049" ph="@{...}" />
+                <marker date="1556908323838" expanded="true" signature="12100:12200" ph="{...}" />
+                <marker date="1556908323838" expanded="false" signature="12262:12273" ph=" { " />
+                <marker date="1556908323838" expanded="false" signature="12314:12320" ph=" }" />
+                <marker date="1556908323838" expanded="false" signature="12368:12379" ph=" { " />
+                <marker date="1556908323838" expanded="false" signature="12415:12421" ph=" }" />
+                <marker date="1556908323838" expanded="false" signature="12480:12491" ph=" { " />
+                <marker date="1556908323838" expanded="false" signature="12538:12544" ph=" }" />
+                <marker date="1556908323838" expanded="true" signature="12617:13393" ph="{...}" />
+                <marker date="1556908323838" expanded="true" signature="13518:16846" ph="{...}" />
+                <marker date="1556908323838" expanded="true" signature="16883:17005" ph="{...}" />
+                <marker date="1556908323838" expanded="true" signature="17067:18077" ph="{...}" />
+                <marker date="1556908323838" expanded="false" signature="18132:18143" ph=" { " />
+                <marker date="1556908323838" expanded="false" signature="18198:18204" ph=" }" />
+                <marker date="1556908323838" expanded="true" signature="18269:19408" ph="{...}" />
+                <marker date="1556908323838" expanded="true" signature="18269:19424" ph="{...}" />
+                <marker date="1556908323838" expanded="true" signature="19462:20578" ph="{...}" />
+                <marker date="1556908323838" expanded="true" signature="20625:21366" ph="{...}" />
+                <marker date="1556908323838" expanded="true" signature="21432:22221" ph="{...}" />
+                <marker date="1556908323838" expanded="true" signature="22282:23005" ph="{...}" />
+                <marker date="1556908323838" expanded="true" signature="23073:25615" ph="{...}" />
+                <marker date="1556908323838" expanded="true" signature="25679:26186" ph="{...}" />
+                <marker date="1556908323838" expanded="true" signature="26263:26832" ph="{...}" />
+                <marker date="1556908323838" expanded="true" signature="26936:27200" ph="{...}" />
+                <marker date="1556908323838" expanded="true" signature="27324:27589" ph="{...}" />
+                <marker date="1556908323838" expanded="false" signature="27621:27632" ph=" { " />
+                <marker date="1556908323838" expanded="false" signature="27657:27663" ph=" }" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -129,36 +342,36 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>none</find>
-      <find>genForStmt</find>
-      <find>NonMoving</find>
-      <find>increasing</find>
-      <find>genCallSt</find>
-      <find>Tic</find>
-      <find>mtimes_SM</find>
-      <find>visit</find>
-      <find>copy</find>
-      <find>CopyAnal</find>
-      <find>MJCop</find>
-      <find>copyStmt</find>
+      <find>Assign</find>
+      <find>vertcat</find>
+      <find>TIRCop</find>
+      <find>do Cop</find>
       <find>MJCopy</find>
-      <find>MJCopyS</find>
-      <find>cannor</find>
-      <find>built</find>
-      <find>wi</find>
-      <find>DOUBLE</find>
-      <find>wi.clone</find>
-      <find>transpose_M</find>
-      <find>mc_tran</find>
-      <find>mc_transpose</find>
-      <find>mc_transpose_M</find>
-      <find>-wasm</find>
-      <find>let memo</find>
-      <find>console.log</find>
-      <find>tic</find>
-      <find>List</find>
+      <find>getCall</find>
+      <find>get(</find>
+      <find>merge</find>
+      <find>performCop</find>
+      <find>Copy</find>
+      <find>MJCo</find>
+      <find>scalar</find>
+      <find>getBasicMatrixValue</find>
+      <find>genAr</find>
+      <find>ForSt</find>
+      <find>caseTIRCa</find>
       <find>colon</find>
-      <find>floor</find>
+      <find>equals</find>
+      <find>Function</find>
+      <find>getU</find>
+      <find>getUse</find>
+      <find>defs</find>
+      <find>analysis.getTree().analyze(builder);</find>
+      <find>initialMap</find>
+      <find>caseTIR</find>
+      <find>for</find>
+      <find>caseFor</find>
+      <find>return</find>
+      <find>caseRet</find>
+      <find>live</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -180,23 +393,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/benchmarks/results-js-wasm-2018.10.11_23:38.csv" />
-        <option value="$PROJECT_DIR$/benchmarks/fft/fft_four1.m" />
-        <option value="$PROJECT_DIR$/benchmarks/_BUILD_CI/drv_fft-wasm.js" />
-        <option value="$PROJECT_DIR$/benchmarks/results-js-wasm-2018.10.11.csv" />
-        <option value="$PROJECT_DIR$/benchmarks/_BUILD_CI/drv_crni-wasm.js" />
-        <option value="$PROJECT_DIR$/benchmarks/_BUILD_CI/drv_babai.js" />
-        <option value="$PROJECT_DIR$/benchmarks/_BUILD_CI/drv_capr.js" />
-        <option value="$PROJECT_DIR$/benchmarks/_BUILD_CI/drv_clos.js" />
-        <option value="$PROJECT_DIR$/benchmarks/_BUILD_CI/drv_dich.js" />
-        <option value="$PROJECT_DIR$/benchmarks/_BUILD_CI/drv_fdtd.js" />
-        <option value="$PROJECT_DIR$/benchmarks/_BUILD_CI/drv_fft.js" />
-        <option value="$PROJECT_DIR$/benchmarks/_BUILD_CI/drv_fiff.js" />
-        <option value="$PROJECT_DIR$/benchmarks/_BUILD_CI/drv_matmul_p.js" />
-        <option value="$PROJECT_DIR$/benchmarks/_BUILD_CI/drv_mcpi_p.js" />
-        <option value="$PROJECT_DIR$/benchmarks/_BUILD_CI/drv_nb1d.js" />
-        <option value="$PROJECT_DIR$/benchmarks/_BUILD_CI/drv_prime.js" />
-        <option value="$PROJECT_DIR$/benchmarks/_BUILD_CI/drv_crni.js" />
         <option value="$PROJECT_DIR$/benchmarks/run.py" />
         <option value="$PROJECT_DIR$/benchmarks/_BUILD_CI/drv_lgdr.js" />
         <option value="$PROJECT_DIR$/benchmarks/results-js-2018.10.12.csv" />
@@ -221,16 +417,33 @@
         <option value="$PROJECT_DIR$/benchmarks/_BUILD_CI/drv_collatz-wasm.js" />
         <option value="$PROJECT_DIR$/benchmarks/collatz_jitted/drv_collatz_jitted.m" />
         <option value="$PROJECT_DIR$/mclab-core/languages/Natlab/src/natlab/toolkits/rewrite/Simplifier.java" />
-        <option value="$PROJECT_DIR$/mclab-core/languages/Natlab/src/natlab/tame/simplification/ThreeAddressToIR.java" />
         <option value="$PROJECT_DIR$/mclab-core/languages/Natlab/src/nodecases/natlab/NatlabAbstractNodeCaseHandler.java" />
         <option value="$PROJECT_DIR$/src/matjuice/builtin_input/VectorBuiltinInputTransformer.java" />
-        <option value="$PROJECT_DIR$/benchmarks/bubble/drv_bubble.m" />
         <option value="$PROJECT_DIR$/benchmarks/_BUILD_CI/drv_bubble.js" />
         <option value="$PROJECT_DIR$/benchmarks/_BUILD_CI/drv_bubble-wasm.js" />
         <option value="$PROJECT_DIR$/benchmarks/_BUILD_CI/drv_bubble-wasm-arr.js" />
         <option value="$PROJECT_DIR$/benchmarks/collatz/drv_collatz.m" />
         <option value="$PROJECT_DIR$/benchmarks/build.sh" />
         <option value="$PROJECT_DIR$/benchmarks/_BUILD_CI/drv_collatz.js" />
+        <option value="$PROJECT_DIR$/mclab-core/languages/Natlab/src/natlab/tame/tir/TIRAbstractAssignStmt.java" />
+        <option value="$PROJECT_DIR$/src/matjuice/utils/Pair.java" />
+        <option value="$PROJECT_DIR$/mclab-core/languages/Natlab/src/analysis/natlab/NatlabAbstractStructuralAnalysis.java" />
+        <option value="$PROJECT_DIR$/src/matjuice/analysis/PointsToMap.java" />
+        <option value="$PROJECT_DIR$/src/matjuice/analysis/PointsToAnalysis.java" />
+        <option value="$PROJECT_DIR$/mclab-core/languages/Natlab/src/natlab/toolkits/analysis/core/UseDefDefUseChain.java" />
+        <option value="$PROJECT_DIR$/mclab-core/languages/Natlab/src/natlab/utils/NodeFinder.java" />
+        <option value="$PROJECT_DIR$/mclab-core/languages/Natlab/src/natlab/tame/simplification/ThreeAddressToIR.java" />
+        <option value="$PROJECT_DIR$/mclab-core/languages/Natlab/src/natlab/tame/tir/TIRArrayGetStmt.java" />
+        <option value="$PROJECT_DIR$/mclab-core/languages/Natlab/src/natlab/tame/builtin/Builtin.java" />
+        <option value="$PROJECT_DIR$/mclab-core/languages/Natlab/src/natlab/tame/interproceduralAnalysis/InterproceduralAnalysisNode.java" />
+        <option value="$PROJECT_DIR$/src/matjuice/analysis/PointsToValue.java" />
+        <option value="$PROJECT_DIR$/src/matjuice/codegen/Generator.java" />
+        <option value="$PROJECT_DIR$/benchmarks/bubble/drv_bubble.m" />
+        <option value="$PROJECT_DIR$/mclab-core/languages/Natlab/src/natlab/tame/valueanalysis/IntraproceduralValueAnalysis.java" />
+        <option value="$PROJECT_DIR$/mclab-core/languages/Natlab/src/natlab/tame/valueanalysis/components/shape/ShapePropagator.java" />
+        <option value="$PROJECT_DIR$/mclab-core/languages/Natlab/src/natlab/toolkits/analysis/core/ReachingDefs.java" />
+        <option value="$PROJECT_DIR$/mclab-core/languages/Natlab/src/natlab/toolkits/analysis/core/CopyAnalysis.java" />
+        <option value="$PROJECT_DIR$/src/matjuice/transformer/CopyInsertion.java" />
       </list>
     </option>
   </component>
@@ -249,7 +462,7 @@
   <component name="NodeModulesDirectoryManager">
     <handled-path value="$PROJECT_DIR$/node_modules" />
   </component>
-  <component name="ProjectFrameBounds" extendedState="6" fullScreen="true">
+  <component name="ProjectFrameBounds" fullScreen="true">
     <option name="width" value="1280" />
     <option name="height" value="800" />
   </component>
@@ -268,7 +481,10 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="AndroidView" />
       <pane id="Scratches" />
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -280,9 +496,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
-      <pane id="AndroidView" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -293,7 +506,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="SearchEverywhereHistoryKey" value="drv&#9;FILE&#9;file:///Users/davidherrera/Documents/Research/Thesis/code/matjuice/benchmarks/_BUILD_CI/drv_collatz.js&#10;buil&#9;FILE&#9;file:///Users/davidherrera/Documents/Research/Thesis/code/matjuice/benchmarks/build.sh&#10;./bui&#9;FILE&#9;file:///Users/davidherrera/Documents/Research/Thesis/code/matjuice/benchmarks/build.sh&#10;Three&#9;PSI&#9;JAVA://natlab.tame.simplification.ThreeAddressToIR&#10;Simpli&#9;PSI&#9;JAVA://natlab.toolkits.rewrite.Simplifier&#10;drv_c&#9;FILE&#9;file:///Users/davidherrera/Documents/Research/Thesis/code/matjuice/benchmarks/_BUILD_CI/drv_collatz.js&#10;drv_bubb&#9;FILE&#9;file:///Users/davidherrera/Documents/Research/Thesis/code/matjuice/benchmarks/_BUILD_CI/drv_bubble-wasm-arr.js&#10;drv_babai_&#9;FILE&#9;file:///Users/davidherrera/Documents/Research/Thesis/code/matjuice/benchmarks/_BUILD_CI/drv_babai_jitted-wasm.js&#10;b&#9;FILE&#9;file:///Users/davidherrera/Documents/Research/Thesis/code/matjuice/benchmarks/build.sh&#10;ru&#9;FILE&#9;file:///Users/davidherrera/Documents/Research/Thesis/code/matjuice/benchmarks/run.py&#10;Main&#9;FILE&#9;file:///Users/davidherrera/Documents/Research/Thesis/code/matjuice/src/matjuice/Main.java&#10;drv_ff&#9;FILE&#9;file:///Users/davidherrera/Documents/Research/Thesis/code/matjuice/benchmarks/_BUILD_CI/drv_fft-wasm.js&#10;makef&#9;FILE&#9;file:///Users/davidherrera/Documents/Research/Thesis/code/matjuice/Makefile&#10;Make&#9;FILE&#9;file:///Users/davidherrera/Documents/Research/Thesis/code/matjuice/benchmarks/make_change/make_change.m&#10;Gene&#9;FILE&#9;file:///Users/davidherrera/Documents/Research/Thesis/code/matjuice/src/matjuice/codegen/Generator.java&#10;drv_multiple&#9;FILE&#9;file:///Users/davidherrera/Documents/Research/Thesis/code/matjuice/drv_multiple.js&#10;Bui&#9;FILE&#9;file:///Users/davidherrera/Documents/Research/Thesis/code/matjuice/mclab-core/languages/Natlab/src/natlab/tame/builtin/Builtin.java&#10;Built&#9;FILE&#9;file:///Users/davidherrera/Documents/Research/Thesis/code/matjuice/mclab-core/languages/Natlab/src/natlab/tame/builtin/Builtin.java&#10;Vect&#9;FILE&#9;file:///Users/davidherrera/Documents/Research/Thesis/code/matjuice/src/matjuice/builtin_input/VectorBuiltinInputTransformer.java&#10;matjuice&#9;FILE&#9;file:///Users/davidherrera/Documents/Research/Thesis/code/matjuice/matjuice.sh&#10;SPn&#9;PSI&#9;JAVA://natlab.tame.builtin.shapeprop.ast.SPNode&#10;has&#9;FILE&#9;file:///Users/davidherrera/Documents/Research/Thesis/code/matjuice/mclab-core/languages/Natlab/src/natlab/tame/builtin/classprop/HasClassPropagationInfo.java&#10;Builtin&#9;null&#9;null&#10;genWhi&#9;PSI&#9;JAVA://matjuice.codegen.Generator#genWhileStmt&#10;lib&#9;FILE&#9;file:///Users/davidherrera/Documents/Research/Thesis/code/matjuice/src/resources/lib.js&#10;Gen&#9;FILE&#9;file:///Users/davidherrera/Documents/Research/Thesis/code/matjuice/src/matjuice/codegen/Generator.java&#10;F&#9;FILE&#9;file:///Users/davidherrera/Documents/Research/Thesis/code/matjuice/src/matjuice/codegen/FunctionRenamer.java&#10;Vec&#9;PSI&#9;JAVA://matjuice.builtin_input.VectorBuiltinInputTransformer&#10;S&#9;FILE&#9;file:///Users/davidherrera/Documents/Research/Thesis/code/matjuice/src/matjuice/builtin_input/ShapeBuiltinInputTransformer.java&#10;Shape&#9;PSI&#9;JAVA://matjuice.builtin_input.ShapeBuiltinInputTransformer&#10;genTar&#9;PSI&#9;JAVA://matjuice.codegen.Generator#genAssignTargetsFromResult&#10;Fu&#9;FILE&#9;file:///Users/davidherrera/Documents/Research/Thesis/code/matjuice/src/matjuice/codegen/FunctionRenamer.java&#10;Functio&#9;FILE&#9;file:///Users/davidherrera/Documents/Research/Thesis/code/matjuice/src/matjuice/codegen/FunctionRenamer.java&#10;FunctionRe&#9;PSI&#9;JAVA://matjuice.codegen.FunctionRenamer&#10;Ge&#9;FILE&#9;file:///Users/davidherrera/Documents/Research/Thesis/code/matjuice/src/matjuice/codegen/Generator.java&#10;Ba&#9;FILE&#9;file:///Users/davidherrera/Documents/Research/Thesis/code/matjuice/new-benchmarks/bbai/babai.m&#10;bub&#9;FILE&#9;file:///Users/davidherrera/Documents/Research/Thesis/code/matjuice/nc/drv_bubble-wasm.js&#10;drv_bubble-wasm.&#9;FILE&#9;file:///Users/davidherrera/Documents/Research/Thesis/code/matjuice/nc/drv_bubble-wasm.js&#10;drv_bu&#9;FILE&#9;file:///Users/davidherrera/Documents/Research/Thesis/code/matjuice/new-benchmarks/_BUILD_CI/drv_bubble-wasm.js&#10;get_array-js&#9;FILE&#9;file:///Users/davidherrera/Documents/Research/Thesis/code/matjuice/get_array-js.js&#10;get&#9;FILE&#9;file:///Users/davidherrera/Documents/Research/Thesis/code/matjuice/tests/programs/get_array.m&#10;Generat&#9;PSI&#9;JAVA://matjuice.codegen.Generator&#10;babai&#9;FILE&#9;file:///Users/davidherrera/Documents/Research/Thesis/code/matjuice/new-benchmarks/bbai/babai.m&#10;drv_bab&#9;FILE&#9;file:///Users/davidherrera/Documents/Research/Thesis/code/matjuice/new-benchmarks/bbai/drv_babai.m&#10;dr&#9;FILE&#9;file:///Users/davidherrera/Documents/Research/Thesis/code/matjuice/new-benchmarks/_BUILD_CI/drv_bubble-wasm.js&#10;drv_bub&#9;FILE&#9;file:///Users/davidherrera/Documents/Research/Thesis/code/matjuice/new-benchmarks/_BUILD_CI/drv_bubble-wasm.js&#10;res&#9;FILE&#9;file:///Users/davidherrera/Documents/Research/Thesis/code/matjuice/new-benchmarks/results-v8.9.4.csv&#10;run&#9;null&#9;null&#10;closure&#9;FILE&#9;file:///Users/davidherrera/Documents/Research/Thesis/code/matjuice/new-benchmarks/clos/closure.m&#10;drv_clos&#9;FILE&#9;file:///Users/davidherrera/Documents/Research/Thesis/code/matjuice/new-benchmarks/clos/drv_clos.m" />
+    <property name="SearchEverywhereHistoryKey" value="Genera&#9;FILE&#9;file:///Users/davidherrera/Documents/Research/Thesis/code/matjuice/src/matjuice/codegen/Generator.java&#10;CopyI&#9;FILE&#9;file:///Users/davidherrera/Documents/Research/Thesis/code/matjuice/src/matjuice/transformer/CopyInsertion.java&#10;Three&#9;PSI&#9;JAVA://natlab.tame.simplification.ThreeAddressToIR&#10;Reac&#9;FILE&#9;file:///Users/davidherrera/Documents/Research/Thesis/code/matjuice/mclab-core/languages/Natlab/src/natlab/toolkits/analysis/core/ReachingDefs.java&#10;Poin&#9;FILE&#9;file:///Users/davidherrera/Documents/Research/Thesis/code/matjuice/src/matjuice/analysis/PointsToAnalysis.java&#10;CopyAn&#9;FILE&#9;file:///Users/davidherrera/Documents/Research/Thesis/code/matjuice/mclab-core/languages/Natlab/src/natlab/toolkits/analysis/core/CopyAnalysis.java&#10;NodeFin&#9;PSI&#9;JAVA://natlab.utils.NodeFinder&#10;Function&#9;FILE&#9;file:///Users/davidherrera/Documents/Research/Thesis/code/matjuice/mclab-core/languages/Natlab/src/natlab/tame/tir/TIRFunction.java&#10;ReachingDe&#9;PSI&#9;JAVA://natlab.toolkits.analysis.core.ReachingDefs&#10;Co&#9;FILE&#9;file:///Users/davidherrera/Documents/Research/Thesis/code/matjuice/mclab-core/languages/Natlab/src/natlab/toolkits/analysis/core/CopyAnalysis.java&#10;Transfor&#9;FILE&#9;file:///Users/davidherrera/Documents/Research/Thesis/code/matjuice/src/matjuice/transformer/ParameterCopyTransformer.java&#10;Poit&#9;FILE&#9;file:///Users/davidherrera/Documents/Research/Thesis/code/matjuice/src/matjuice/analysis/PointsToAnalysis.java&#10;PointTo&#9;FILE&#9;file:///Users/davidherrera/Documents/Research/Thesis/code/matjuice/src/matjuice/analysis/PointsToAnalysis.java&#10;Builtin&#9;FILE&#9;file:///Users/davidherrera/Documents/Research/Thesis/code/matjuice/mclab-core/languages/Natlab/src/natlab/tame/builtin/Builtin.java&#10;Shape&#9;FILE&#9;file:///Users/davidherrera/Documents/Research/Thesis/code/matjuice/mclab-core/languages/Natlab/src/natlab/tame/valueanalysis/components/shape/ShapePropagator.java&#10;Intraproce&#9;PSI&#9;JAVA://natlab.tame.valueanalysis.IntraproceduralValueAnalysis&#10;Copy&#9;FILE&#9;file:///Users/davidherrera/Documents/Research/Thesis/code/matjuice/src/matjuice/transformer/CopyInsertion.java&#10;drv_&#9;FILE&#9;file:///Users/davidherrera/Documents/Research/Thesis/code/matjuice/benchmarks/bubble/drv_bubble.m&#10;drv_b&#9;FILE&#9;file:///Users/davidherrera/Documents/Research/Thesis/code/matjuice/benchmarks/bubble/drv_bubble.m&#10;Util&#9;PSI&#9;JAVA://matjuice.utils.Utils&#10;Uti&#9;PSI&#9;JAVA://matjuice.jsast.Utils&#10;Gene&#9;FILE&#9;file:///Users/davidherrera/Documents/Research/Thesis/code/matjuice/src/matjuice/codegen/Generator.java&#10;Local&#9;FILE&#9;file:///Users/davidherrera/Documents/Research/Thesis/code/matjuice/src/matjuice/analysis/LocalVars.java&#10;gen&#9;FILE&#9;file:///Users/davidherrera/Documents/Research/Thesis/code/matjuice/src/matjuice/codegen/Generator.java&#10;Interpro&#9;PSI&#9;JAVA://natlab.tame.interproceduralAnalysis.InterproceduralAnalysisNode&#10;Builtin.java&#9;FILE&#9;file:///Users/davidherrera/Documents/Research/Thesis/code/matjuice/mclab-core/languages/Natlab/src/natlab/tame/builtin/Builtin.java&#10;ShapePro&#9;PSI&#9;JAVA://natlab.tame.valueanalysis.components.shape.ShapePropagator&#10;TIRA&#9;FILE&#9;file:///Users/davidherrera/Documents/Research/Thesis/code/matjuice/mclab-core/languages/Natlab/src/natlab/tame/tir/TIRArrayGetStmt.java&#10;TIRArrayG&#9;FILE&#9;file:///Users/davidherrera/Documents/Research/Thesis/code/matjuice/mclab-core/languages/Natlab/src/natlab/tame/tir/TIRArrayGetStmt.java&#10;TIRFunct&#9;PSI&#9;JAVA://natlab.tame.tir.TIRFunction&#10;Functi&#9;PSI&#9;JAVA://matjuice.jsast.Function&#10;ThreeA&#9;PSI&#9;JAVA://natlab.tame.simplification.ThreeAddressToIR&#10;Def&#9;PSI&#9;JAVA://natlab.toolkits.analysis.core.Def&#10;Global&#9;PSI&#9;JAVA://jdk.nashorn.internal.objects.Global&#10;POints&#9;FILE&#9;file:///Users/davidherrera/Documents/Research/Thesis/code/matjuice/src/matjuice/analysis/PointsToAnalysis.java&#10;Name&#9;FILE&#9;file:///Users/davidherrera/Documents/Research/Thesis/code/matjuice/mclab-core/languages/Natlab/gen/ast/Name.java&#10;Reach&#9;FILE&#9;file:///Users/davidherrera/Documents/Research/Thesis/code/matjuice/mclab-core/languages/Natlab/src/natlab/toolkits/analysis/core/ReachingDefs.java&#10;getdefs&#9;PSI&#9;JAVA://natlab.toolkits.analysis.core.UseDefDefUseChain#getDefs&#10;TIRArray&#9;PSI&#9;JAVA://natlab.tame.tir.TIRArrayGetStmt&#10;TIRCall&#9;PSI&#9;JAVA://natlab.tame.tir.TIRCallStmt&#10;Reaching&#9;PSI&#9;JAVA://natlab.tame.tamerplus.analysis.ReachingDefinitions&#10;Temp&#9;FILE&#9;file:///Users/davidherrera/Documents/Research/Thesis/code/matjuice/mclab-core/languages/Natlab/src/natlab/toolkits/rewrite/TempFactory.java&#10;TIRAbstractAssignFromVarStmt&#9;PSI&#9;JAVA://natlab.tame.tir.TIRAbstractAssignFromVarStmt&#10;UseDef&#9;PSI&#9;JAVA://natlab.toolkits.analysis.core.UseDefDefUseChain&#10;gene&#9;PSI&#9;JAVA://matjuice.codegen.Generator&#10;drv&#9;FILE&#9;file:///Users/davidherrera/Documents/Research/Thesis/code/matjuice/benchmarks/_BUILD_CI/drv_collatz.js&#10;buil&#9;FILE&#9;file:///Users/davidherrera/Documents/Research/Thesis/code/matjuice/benchmarks/build.sh&#10;./bui&#9;FILE&#9;file:///Users/davidherrera/Documents/Research/Thesis/code/matjuice/benchmarks/build.sh&#10;Simpli&#9;PSI&#9;JAVA://natlab.toolkits.rewrite.Simplifier&#10;drv_c&#9;FILE&#9;file:///Users/davidherrera/Documents/Research/Thesis/code/matjuice/benchmarks/_BUILD_CI/drv_collatz.js" />
     <property name="extract.method.default.visibility" value="private" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
     <property name="JavaScriptWeakerCompletionTypeGuess" value="false" />
@@ -566,14 +779,31 @@
       <workItem from="1539322045858" duration="119000" />
       <workItem from="1539349547254" duration="427000" />
       <workItem from="1539825669020" duration="23545000" />
+      <workItem from="1544750963108" duration="15357000" />
+      <workItem from="1546647787392" duration="11386000" />
+      <workItem from="1552353725526" duration="3120000" />
+      <workItem from="1552933376354" duration="1054000" />
+      <workItem from="1553093254651" duration="3938000" />
+      <workItem from="1553454037891" duration="3095000" />
+      <workItem from="1553617578024" duration="3607000" />
+      <workItem from="1553896728887" duration="1901000" />
+      <workItem from="1553928780653" duration="1227000" />
+      <workItem from="1554315783180" duration="13823000" />
+      <workItem from="1555994213587" duration="423000" />
+      <workItem from="1556218867316" duration="683000" />
+      <workItem from="1556282647830" duration="25258000" />
+      <workItem from="1557717821797" duration="1944000" />
+      <workItem from="1558308467146" duration="1136000" />
+      <workItem from="1558925578359" duration="696000" />
+      <workItem from="1559589096835" duration="1911000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="359382000" />
+    <option name="totallyTimeSpent" value="449941000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1280" height="800" extended-state="6" />
+    <frame x="0" y="0" width="1280" height="800" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
@@ -584,12 +814,12 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.41403025" sideWeight="0.5088853" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.44979367" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.41333333" sideWeight="0.4911147" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.44979367" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3445851" sideWeight="0.4911147" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2125" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15347335" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="15" side_tool="false" content_ui="tabs" />
       <window_info id="ANTLR Preview" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="SciView" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="17" side_tool="false" content_ui="tabs" />
@@ -597,8 +827,8 @@
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="18" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -607,7 +837,7 @@
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.328" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.328" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.328" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -657,195 +887,143 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/benchmarks/results-js-wasm-2018.10.12.csv">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" column="35" lean-forward="false" selection-start-line="10" selection-start-column="35" selection-end-line="10" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/benchmarks/bbai/babai.m">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/benchmarks/_BUILD/drv_bubble.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/benchmarks/_BUILD/drv_babai.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="311">
-          <caret line="123" column="0" lean-forward="true" selection-start-line="123" selection-start-column="0" selection-end-line="123" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/benchmarks/bbai_jitted/babai.m">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/benchmarks/FIXED_BENCHMARKS/drv_bubble.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" column="0" lean-forward="true" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/benchmarks/_BUILD_CI/drv_babai.js" />
-    <entry file="file://$PROJECT_DIR$/benchmarks/_BUILD_CI/drv_babai-wasm.js" />
-    <entry file="file://$PROJECT_DIR$/benchmarks/_BUILD_CI/drv_bubble_jitted.js" />
-    <entry file="file://$PROJECT_DIR$/benchmarks/FIXED_BENCHMARKS/builtins.wasm">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="12" column="45" lean-forward="true" selection-start-line="12" selection-start-column="45" selection-end-line="12" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/benchmarks/_BUILD_CI/drv_babai_jitted-wasm-arr.js" />
-    <entry file="file://$PROJECT_DIR$/benchmarks/_BUILD_CI/drv_babai-wasm-arr.js" />
-    <entry file="file://$PROJECT_DIR$/benchmarks/_BUILD_CI/drv_babai_jitted-wasm.js" />
-    <entry file="file://$PROJECT_DIR$/benchmarks/bbai_jitted/drv_babai_jitted.m">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" column="13" lean-forward="true" selection-start-line="3" selection-start-column="13" selection-end-line="3" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/benchmarks/bbai/drv_babai.m">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="11" lean-forward="true" selection-start-line="7" selection-start-column="11" selection-end-line="7" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/benchmarks/capr/drv_capr.m">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/benchmarks/collatz/main.m">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/benchmarks/_BUILD/drv_collatz.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="114" column="18" lean-forward="true" selection-start-line="114" selection-start-column="18" selection-end-line="114" selection-end-column="18" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/benchmarks/_BUILD_CI/drv_collatz.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/benchmarks/collatz_jitted/collatz.m">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/benchmarks/_BUILD_CI/drv_collatz_jitted-wasm.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="356">
-          <caret line="305" column="0" lean-forward="true" selection-start-line="305" selection-start-column="0" selection-end-line="305" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/benchmarks/_BUILD_CI/drv_collatz-wasm.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="196">
-          <caret line="238" column="22" lean-forward="false" selection-start-line="238" selection-start-column="22" selection-end-line="238" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mclab-core/languages/Natlab/src/natlab/toolkits/rewrite/AbstractLocalRewrite.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="27" column="39" lean-forward="true" selection-start-line="27" selection-start-column="39" selection-end-line="27" selection-end-column="39" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mclab-core/languages/Natlab/src/natlab/toolkits/rewrite/simplification/AbstractSimplification.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="36" column="60" lean-forward="true" selection-start-line="36" selection-start-column="60" selection-end-line="36" selection-end-column="60" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mclab-core/languages/Natlab/src/natlab/tame/simplification/ThreeAddressToIR.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="157">
-          <caret line="105" column="72" lean-forward="true" selection-start-line="105" selection-start-column="72" selection-end-line="105" selection-end-column="72" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mclab-core/languages/Natlab/src/natlab/toolkits/rewrite/Simplifier.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="103">
-          <caret line="154" column="52" lean-forward="false" selection-start-line="154" selection-start-column="52" selection-end-line="154" selection-end-column="52" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/benchmarks/clos/drv_clos.m">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/benchmarks/clos/closure.m">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="62">
-          <caret line="27" column="28" lean-forward="false" selection-start-line="27" selection-start-column="28" selection-end-line="27" selection-end-column="28" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mclab-core/languages/Natlab/src/nodecases/AbstractNodeCaseHandler.java">
+    <entry file="file://$PROJECT_DIR$/src/matjuice/transformer/MJCopyStmt.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
-          <caret line="24" column="81" lean-forward="false" selection-start-line="24" selection-start-column="81" selection-end-line="24" selection-end-column="81" />
-          <folding />
+          <caret line="25" column="11" lean-forward="false" selection-start-line="25" selection-start-column="11" selection-end-line="25" selection-end-column="11" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/mclab-core/languages/Natlab/src/nodecases/natlab/NatlabAbstractNodeCaseHandler.java">
+    <entry file="file://$PROJECT_DIR$/mclab-core/languages/Natlab/src/natlab/tame/interproceduralAnalysis/InterproceduralAnalysisNode.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="77">
-          <caret line="117" column="78" lean-forward="false" selection-start-line="117" selection-start-column="78" selection-end-line="117" selection-end-column="78" />
-          <folding>
-            <element signature="e#4046#4047#0" expanded="false" />
-            <element signature="e#4079#4080#0" expanded="false" />
-          </folding>
+        <state relative-caret-position="134">
+          <caret line="212" column="29" lean-forward="false" selection-start-line="212" selection-start-column="25" selection-end-line="212" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mclab-core/languages/Natlab/src/natlab/tame/interproceduralAnalysis/FunctionAnalysis.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-24">
+          <caret line="35" column="17" lean-forward="false" selection-start-line="35" selection-start-column="17" selection-end-line="35" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/matjuice/analysis/MallocSite.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="9" column="29" lean-forward="false" selection-start-line="9" selection-start-column="29" selection-end-line="9" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/matjuice/analysis/ParameterCopyAnalysis.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1815">
+          <caret line="149" column="25" lean-forward="false" selection-start-line="149" selection-start-column="25" selection-end-line="149" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/matjuice/analysis/ConstKind.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="15" lean-forward="false" selection-start-line="2" selection-start-column="15" selection-end-line="2" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/matjuice/analysis/ConstInfo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="20" lean-forward="false" selection-start-line="2" selection-start-column="20" selection-end-line="2" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/matjuice/analysis/PointsToValue.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1125">
+          <caret line="86" column="25" lean-forward="false" selection-start-line="86" selection-start-column="25" selection-end-line="86" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/matjuice/analysis/LocalVars.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="1" column="49" lean-forward="false" selection-start-line="1" selection-start-column="49" selection-end-line="1" selection-end-column="49" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/matjuice/jsast/Utils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="21" column="13" lean-forward="false" selection-start-line="21" selection-start-column="13" selection-end-line="21" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/matjuice/utils/Utils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="27" column="53" lean-forward="false" selection-start-line="27" selection-start-column="53" selection-end-line="27" selection-end-column="53" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/benchmarks/bubble/drv_bubble.m">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/matjuice/analysis/ConstPropagation.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="19" column="31" lean-forward="false" selection-start-line="19" selection-start-column="31" selection-end-line="19" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mclab-core/languages/Natlab/src/natlab/tame/valueanalysis/IntraproceduralValueAnalysis.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="250">
+          <caret line="182" column="32" lean-forward="false" selection-start-line="182" selection-start-column="32" selection-end-line="182" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mclab-core/languages/Natlab/src/natlab/tame/valueanalysis/components/shape/ShapePropagator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="362">
+          <caret line="50" column="0" lean-forward="false" selection-start-line="50" selection-start-column="0" selection-end-line="50" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mclab-core/languages/Natlab/src/natlab/tame/builtin/Builtin.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-866">
+          <caret line="4067" column="62" lean-forward="false" selection-start-line="4067" selection-start-column="62" selection-end-line="4067" selection-end-column="62" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/matjuice/analysis/PointsToMap.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1213">
+          <caret line="100" column="4" lean-forward="false" selection-start-line="100" selection-start-column="4" selection-end-line="100" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mclab-core/languages/Natlab/src/natlab/tame/tir/analysis/TIRAbstractSimpleStructuralBackwardAnalysis.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="58" column="4" lean-forward="false" selection-start-line="58" selection-start-column="4" selection-end-line="58" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mclab-core/languages/Natlab/src/analysis/ForwardingNodeCaseHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="24" column="76" lean-forward="true" selection-start-line="24" selection-start-column="76" selection-end-line="24" selection-end-column="76" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mclab-core/languages/Natlab/src/analysis/natlab/NatlabForwardingNodeCaseHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="118" column="60" lean-forward="true" selection-start-line="118" selection-start-column="60" selection-end-line="118" selection-end-column="60" />
         </state>
       </provider>
     </entry>
@@ -853,170 +1031,501 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
           <caret line="24" column="17" lean-forward="false" selection-start-line="24" selection-start-column="17" selection-end-line="24" selection-end-column="17" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/matjuice/builtin_input/ResultInputTransformer.java">
+    <entry file="file://$PROJECT_DIR$/mclab-core/languages/Natlab/src/natlab/tame/tir/analysis/TIRAbstractSimpleStructuralForwardAnalysis.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="7" column="13" lean-forward="false" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
-          <folding />
+        <state relative-caret-position="92">
+          <caret line="159" column="32" lean-forward="false" selection-start-line="159" selection-start-column="32" selection-end-line="159" selection-end-column="32" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/matjuice/builtin_input/NoInputTransformer.java">
+    <entry file="file://$PROJECT_DIR$/mclab-core/languages/Natlab/src/nodecases/natlab/NatlabNodeCaseHandler.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="23" column="13" lean-forward="false" selection-start-line="23" selection-start-column="13" selection-end-line="23" selection-end-column="13" />
-          <folding />
+        <state relative-caret-position="14">
+          <caret line="163" column="16" lean-forward="false" selection-start-line="163" selection-start-column="16" selection-end-line="163" selection-end-column="16" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/matjuice/builtin_input/BuiltinInput.java">
+    <entry file="file://$PROJECT_DIR$/mclab-core/languages/Natlab/src/natlab/tame/tir/analysis/TIRParentForwardingNodeCasehandler.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="19" column="13" lean-forward="false" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="13" />
-          <folding />
+        <state relative-caret-position="-1453">
+          <caret line="74" column="20" lean-forward="false" selection-start-line="74" selection-start-column="20" selection-end-line="74" selection-end-column="20" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/matjuice/builtin_input/ShapeBuiltinInputTransformer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-420">
-          <caret line="34" column="13" lean-forward="false" selection-start-line="34" selection-start-column="13" selection-end-line="34" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/matjuice/builtin_input/VectorBuiltinInputTransformer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="171">
-          <caret line="94" column="41" lean-forward="false" selection-start-line="94" selection-start-column="41" selection-end-line="94" selection-end-column="41" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/benchmarks/bubble_jitted/drv_bubble_jitted.m">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/benchmarks/bubble_jitted/bubble.m">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/benchmarks/build_benchmarks.sh">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/benchmarks/_BUILD_CI/drv_bubble.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="1372" column="16" lean-forward="false" selection-start-line="1372" selection-start-column="16" selection-end-line="1372" selection-end-column="16" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/benchmarks/_BUILD_CI/drv_bubble-wasm.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4680">
-          <caret line="312" column="16" lean-forward="false" selection-start-line="312" selection-start-column="16" selection-end-line="312" selection-end-column="16" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/benchmarks/FIXED_BENCHMARKS/drv_bubble-wasm-arr.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="190">
-          <caret line="230" column="0" lean-forward="false" selection-start-line="230" selection-start-column="0" selection-end-line="290" selection-end-column="0" />
-          <folding>
-            <element signature="n#!!block;n#bubble_M#0;n#!!block;n#runner#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/benchmarks/_BUILD_CI/drv_bubble-wasm-arr.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="256" column="1" lean-forward="false" selection-start-line="256" selection-start-column="1" selection-end-line="256" selection-end-column="1" />
-          <folding>
-            <element signature="n#!!block;n#bubble_M#0;n#!!block;n#runner#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/benchmarks/_BUILD_CI/builtins.wasm">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="7" lean-forward="true" selection-start-line="7" selection-start-column="7" selection-end-line="7" selection-end-column="7" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/benchmarks/bubble/drv_bubble.m">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="3" lean-forward="false" selection-start-line="9" selection-start-column="3" selection-end-line="9" selection-end-column="3" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/benchmarks/collatz_jitted/drv_collatz_jitted.m">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="16" column="5" lean-forward="false" selection-start-line="16" selection-start-column="5" selection-end-line="16" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/benchmarks/_BUILD_CI/drv_collatz_jitted.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="362">
-          <caret line="1364" column="28" lean-forward="false" selection-start-line="1364" selection-start-column="21" selection-end-line="1364" selection-end-column="28" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/benchmarks/build.sh">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="160">
-          <caret line="24" column="19" lean-forward="false" selection-start-line="24" selection-start-column="19" selection-end-line="24" selection-end-column="19" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/benchmarks/_BUILD_CI/drv_collatz.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="220">
-          <caret line="1313" column="23" lean-forward="false" selection-start-line="1313" selection-start-column="23" selection-end-line="1313" selection-end-column="23" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/benchmarks/collatz/collatz.m">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" column="3" lean-forward="false" selection-start-line="10" selection-start-column="3" selection-end-line="10" selection-end-column="3" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/benchmarks/collatz/drv_collatz.m">
+    <entry file="file://$PROJECT_DIR$/mclab-core/languages/Natlab/src/analysis/ForwardAnalysis.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
-          <caret line="8" column="24" lean-forward="false" selection-start-line="8" selection-start-column="24" selection-end-line="8" selection-end-column="24" />
+          <caret line="24" column="76" lean-forward="true" selection-start-line="24" selection-start-column="76" selection-end-line="24" selection-end-column="76" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mclab-core/languages/Natlab/src/analysis/natlab/NatlabAbstractSimpleStructuralForwardAnalysis.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="33" column="109" lean-forward="false" selection-start-line="33" selection-start-column="109" selection-end-line="33" selection-end-column="109" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mclab-core/languages/Natlab/src/analysis/AbstractStructuralForwardAnalysis.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="24" column="103" lean-forward="false" selection-start-line="24" selection-start-column="103" selection-end-line="24" selection-end-column="103" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mclab-core/languages/Natlab/src/analysis/natlab/NatlabAbstractStructuralForwardAnalysis.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="33" column="98" lean-forward="false" selection-start-line="33" selection-start-column="98" selection-end-line="33" selection-end-column="98" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mclab-core/languages/Natlab/src/analysis/AbstractStructuralAnalysis.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="24" column="92" lean-forward="false" selection-start-line="24" selection-start-column="92" selection-end-line="24" selection-end-column="92" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mclab-core/languages/Natlab/src/analysis/StructuralAnalysis.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="24" column="17" lean-forward="false" selection-start-line="24" selection-start-column="17" selection-end-line="24" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mclab-core/languages/Natlab/src/analysis/AnalysisHelper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="26" column="11" lean-forward="false" selection-start-line="26" selection-start-column="11" selection-end-line="26" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mclab-core/languages/Natlab/src/analysis/natlab/NatlabAbstractStructuralAnalysis.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1845">
+          <caret line="187" column="16" lean-forward="false" selection-start-line="187" selection-start-column="16" selection-end-line="187" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mclab-core/languages/Natlab/src/nodecases/AbstractNodeCaseHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="24" column="90" lean-forward="false" selection-start-line="24" selection-start-column="90" selection-end-line="24" selection-end-column="90" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mclab-core/languages/Natlab/src/nodecases/natlab/NatlabAbstractNodeCaseHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="900">
+          <caret line="293" column="24" lean-forward="false" selection-start-line="293" selection-start-column="24" selection-end-line="293" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/matjuice/transformer/ParameterCopyTransformer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="275">
+          <caret line="40" column="0" lean-forward="false" selection-start-line="40" selection-start-column="0" selection-end-line="40" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mclab-core/languages/Natlab/src/natlab/toolkits/analysis/core/NameCollector.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-351">
+          <caret line="23" column="11" lean-forward="false" selection-start-line="23" selection-start-column="11" selection-end-line="23" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mclab-core/languages/Natlab/src/natlab/toolkits/analysis/core/DefinitelyAssignedAnalysis.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1050">
+          <caret line="86" column="17" lean-forward="false" selection-start-line="86" selection-start-column="17" selection-end-line="86" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/mclab-core/languages/Natlab/McLabCore.jar!/com/google/common/collect/ImmutableSetMultimap.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="30" column="13" lean-forward="false" selection-start-line="30" selection-start-column="13" selection-end-line="30" selection-end-column="13" />
+          <folding>
+            <marker date="1556908323838" expanded="false" signature="0:104" ph="/.../" />
+            <marker date="1556908323838" expanded="false" signature="149:795" ph="..." />
+            <marker date="1556908323838" expanded="true" signature="797:859" ph="@{...}" />
+            <marker date="1556908323838" expanded="false" signature="1297:1308" ph=" { " />
+            <marker date="1556908323838" expanded="false" signature="1350:1356" ph=" }" />
+            <marker date="1556908323838" expanded="true" signature="1425:1557" ph="{...}" />
+            <marker date="1556908323838" expanded="true" signature="1638:1799" ph="{...}" />
+            <marker date="1556908323838" expanded="true" signature="1892:2082" ph="{...}" />
+            <marker date="1556908323838" expanded="true" signature="2187:2406" ph="{...}" />
+            <marker date="1556908323838" expanded="true" signature="2523:2771" ph="{...}" />
+            <marker date="1556908323838" expanded="false" signature="2842:2853" ph=" { " />
+            <marker date="1556908323838" expanded="false" signature="2895:2901" ph=" }" />
+            <marker date="1556908323838" expanded="true" signature="3007:3065" ph="{...}" />
+            <marker date="1556908323838" expanded="true" signature="3211:4415" ph="{...}" />
+            <marker date="1556908323838" expanded="true" signature="4539:4623" ph="{...}" />
+            <marker date="1556908323838" expanded="true" signature="4673:4814" ph="{...}" />
+            <marker date="1556908323838" expanded="true" signature="4864:5002" ph="{...}" />
+            <marker date="1556908323838" expanded="true" signature="5052:5468" ph="{...}" />
+            <marker date="1556908323838" expanded="true" signature="5474:5492" ph="/**...*/" />
+            <marker date="1556908323838" expanded="false" signature="5557:5568" ph=" { " />
+            <marker date="1556908323838" expanded="false" signature="5610:5616" ph=" }" />
+            <marker date="1556908323838" expanded="true" signature="5622:5640" ph="/**...*/" />
+            <marker date="1556908323838" expanded="true" signature="5735:5793" ph="{...}" />
+            <marker date="1556908323838" expanded="true" signature="5842:6005" ph="{...}" />
+            <marker date="1556908323838" expanded="true" signature="6136:6282" ph="{...}" />
+            <marker date="1556908323838" expanded="true" signature="6381:6511" ph="{...}" />
+            <marker date="1556908323838" expanded="true" signature="6639:6786" ph="{...}" />
+            <marker date="1556908323838" expanded="true" signature="6846:6971" ph="{...}" />
+            <marker date="1556908323838" expanded="true" signature="7120:8927" ph="{...}" />
+            <marker date="1556908323838" expanded="true" signature="9009:9779" ph="{...}" />
+            <marker date="1556908323838" expanded="false" signature="9134:9149" ph=" { " />
+            <marker date="1556908323838" expanded="false" signature="9174:9184" ph=" }" />
+            <marker date="1556908323838" expanded="true" signature="9243:9499" ph="{...}" />
+            <marker date="1556908323838" expanded="false" signature="9526:9541" ph=" { " />
+            <marker date="1556908323838" expanded="false" signature="9569:9579" ph=" }" />
+            <marker date="1556908323838" expanded="false" signature="9640:9655" ph=" { " />
+            <marker date="1556908323838" expanded="false" signature="9692:9702" ph=" }" />
+            <marker date="1556908323838" expanded="false" signature="9735:9750" ph=" { " />
+            <marker date="1556908323838" expanded="false" signature="9763:9773" ph=" }" />
+            <marker date="1556908323838" expanded="true" signature="9891:12737" ph="{...}" />
+            <marker date="1556908323838" expanded="false" signature="9917:9932" ph=" { " />
+            <marker date="1556908323838" expanded="false" signature="9998:10008" ph=" }" />
+            <marker date="1556908323838" expanded="true" signature="10080:10222" ph="{...}" />
+            <marker date="1556908323838" expanded="true" signature="10317:10481" ph="{...}" />
+            <marker date="1556908323838" expanded="true" signature="10577:10910" ph="{...}" />
+            <marker date="1556908323838" expanded="true" signature="10989:11070" ph="{...}" />
+            <marker date="1556908323838" expanded="true" signature="11174:11495" ph="{...}" />
+            <marker date="1556908323838" expanded="true" signature="11596:11720" ph="{...}" />
+            <marker date="1556908323838" expanded="true" signature="11825:11911" ph="{...}" />
+            <marker date="1556908323838" expanded="true" signature="11963:12731" ph="{...}" />
+            <marker date="1556908323838" expanded="true" signature="12825:13066" ph="{...}" />
+            <marker date="1556908323838" expanded="false" signature="12910:12925" ph=" { " />
+            <marker date="1556908323838" expanded="false" signature="12952:12962" ph=" }" />
+            <marker date="1556908323838" expanded="false" signature="13004:13019" ph=" { " />
+            <marker date="1556908323838" expanded="false" signature="13050:13060" ph=" }" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_60.jdk/Contents/Home/src.zip!/java/util/stream/Stream.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="11400">
+          <caret line="806" column="13" lean-forward="false" selection-start-line="806" selection-start-column="13" selection-end-line="806" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mclab-core/languages/Natlab/src/natlab/tame/tir/TIRFunction.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="26" column="35" lean-forward="false" selection-start-line="26" selection-start-column="35" selection-end-line="26" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/mclab-core/languages/Natlab/McLabCore.jar!/ast/Function.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="25" column="13" lean-forward="false" selection-start-line="25" selection-start-column="13" selection-end-line="25" selection-end-column="13" />
+          <folding>
+            <marker date="1556908323838" expanded="false" signature="0:104" ph="/.../" />
+            <marker date="1556908323838" expanded="false" signature="127:674" ph="..." />
+            <marker date="1556908323838" expanded="true" signature="1553:2033" ph="{...}" />
+            <marker date="1556908323838" expanded="false" signature="2080:2091" ph=" { " />
+            <marker date="1556908323838" expanded="false" signature="2115:2121" ph=" }" />
+            <marker date="1556908323838" expanded="true" signature="2145:2152" ph="{}" />
+            <marker date="1556908323838" expanded="true" signature="2186:2423" ph="{...}" />
+            <marker date="1556908323838" expanded="true" signature="2552:2751" ph="{...}" />
+            <marker date="1556908323838" expanded="false" signature="2784:2795" ph=" { " />
+            <marker date="1556908323838" expanded="false" signature="2804:2810" ph=" }" />
+            <marker date="1556908323838" expanded="false" signature="2847:2858" ph=" { " />
+            <marker date="1556908323838" expanded="false" signature="2871:2877" ph=" }" />
+            <marker date="1556908323838" expanded="true" signature="2912:2983" ph="{...}" />
+            <marker date="1556908323838" expanded="false" signature="3023:3034" ph=" { " />
+            <marker date="1556908323838" expanded="false" signature="3063:3069" ph=" }" />
+            <marker date="1556908323838" expanded="false" signature="3106:3117" ph=" { " />
+            <marker date="1556908323838" expanded="false" signature="3143:3149" ph=" }" />
+            <marker date="1556908323838" expanded="true" signature="3213:3290" ph="{...}" />
+            <marker date="1556908323838" expanded="true" signature="3319:3728" ph="{...}" />
+            <marker date="1556908323838" expanded="true" signature="3734:3752" ph="/**...*/" />
+            <marker date="1556908323838" expanded="false" signature="3783:3794" ph=" { " />
+            <marker date="1556908323838" expanded="false" signature="3828:3834" ph=" }" />
+            <marker date="1556908323838" expanded="true" signature="3878:4282" ph="{...}" />
+            <marker date="1556908323838" expanded="true" signature="4315:4397" ph="{...}" />
+            <marker date="1556908323838" expanded="false" signature="4443:4454" ph=" { " />
+            <marker date="1556908323838" expanded="false" signature="4482:4488" ph=" }" />
+            <marker date="1556908323838" expanded="false" signature="4541:4552" ph=" { " />
+            <marker date="1556908323838" expanded="false" signature="4575:4581" ph=" }" />
+            <marker date="1556908323838" expanded="false" signature="4617:4628" ph=" { " />
+            <marker date="1556908323838" expanded="false" signature="4675:4681" ph=" }" />
+            <marker date="1556908323838" expanded="false" signature="4728:4739" ph=" { " />
+            <marker date="1556908323838" expanded="false" signature="4808:4814" ph=" }" />
+            <marker date="1556908323838" expanded="false" signature="4856:4867" ph=" { " />
+            <marker date="1556908323838" expanded="false" signature="4921:4927" ph=" }" />
+            <marker date="1556908323838" expanded="false" signature="4964:4975" ph=" { " />
+            <marker date="1556908323838" expanded="false" signature="5027:5033" ph=" }" />
+            <marker date="1556908323838" expanded="true" signature="5077:5238" ph="{...}" />
+            <marker date="1556908323838" expanded="true" signature="5293:5387" ph="{...}" />
+            <marker date="1556908323838" expanded="true" signature="5441:5530" ph="{...}" />
+            <marker date="1556908323838" expanded="true" signature="5536:5582" ph="@{...}" />
+            <marker date="1556908323838" expanded="true" signature="5626:5726" ph="{...}" />
+            <marker date="1556908323838" expanded="false" signature="5781:5792" ph=" { " />
+            <marker date="1556908323838" expanded="false" signature="5833:5839" ph=" }" />
+            <marker date="1556908323838" expanded="false" signature="5880:5891" ph=" { " />
+            <marker date="1556908323838" expanded="false" signature="5924:5930" ph=" }" />
+            <marker date="1556908323838" expanded="false" signature="5982:5993" ph=" { " />
+            <marker date="1556908323838" expanded="false" signature="6037:6043" ph=" }" />
+            <marker date="1556908323838" expanded="false" signature="6079:6090" ph=" { " />
+            <marker date="1556908323838" expanded="false" signature="6113:6119" ph=" }" />
+            <marker date="1556908323838" expanded="true" signature="6125:6160" ph="@{...}" />
+            <marker date="1556908323838" expanded="false" signature="6186:6197" ph=" { " />
+            <marker date="1556908323838" expanded="false" signature="6227:6233" ph=" }" />
+            <marker date="1556908323838" expanded="false" signature="6271:6282" ph=" { " />
+            <marker date="1556908323838" expanded="false" signature="6323:6329" ph=" }" />
+            <marker date="1556908323838" expanded="false" signature="6381:6392" ph=" { " />
+            <marker date="1556908323838" expanded="false" signature="6415:6421" ph=" }" />
+            <marker date="1556908323838" expanded="false" signature="6456:6467" ph=" { " />
+            <marker date="1556908323838" expanded="false" signature="6513:6519" ph=" }" />
+            <marker date="1556908323838" expanded="false" signature="6565:6576" ph=" { " />
+            <marker date="1556908323838" expanded="false" signature="6644:6650" ph=" }" />
+            <marker date="1556908323838" expanded="false" signature="6691:6702" ph=" { " />
+            <marker date="1556908323838" expanded="false" signature="6755:6761" ph=" }" />
+            <marker date="1556908323838" expanded="false" signature="6797:6808" ph=" { " />
+            <marker date="1556908323838" expanded="false" signature="6859:6865" ph=" }" />
+            <marker date="1556908323838" expanded="true" signature="6908:7067" ph="{...}" />
+            <marker date="1556908323838" expanded="true" signature="7121:7214" ph="{...}" />
+            <marker date="1556908323838" expanded="true" signature="7267:7355" ph="{...}" />
+            <marker date="1556908323838" expanded="true" signature="7361:7406" ph="@{...}" />
+            <marker date="1556908323838" expanded="true" signature="7449:7549" ph="{...}" />
+            <marker date="1556908323838" expanded="false" signature="7603:7614" ph=" { " />
+            <marker date="1556908323838" expanded="false" signature="7655:7661" ph=" }" />
+            <marker date="1556908323838" expanded="false" signature="7701:7712" ph=" { " />
+            <marker date="1556908323838" expanded="false" signature="7744:7750" ph=" }" />
+            <marker date="1556908323838" expanded="false" signature="7801:7812" ph=" { " />
+            <marker date="1556908323838" expanded="false" signature="7855:7861" ph=" }" />
+            <marker date="1556908323838" expanded="false" signature="7921:7932" ph=" { " />
+            <marker date="1556908323838" expanded="false" signature="7955:7961" ph=" }" />
+            <marker date="1556908323838" expanded="false" signature="7997:8008" ph=" { " />
+            <marker date="1556908323838" expanded="false" signature="8055:8061" ph=" }" />
+            <marker date="1556908323838" expanded="false" signature="8108:8119" ph=" { " />
+            <marker date="1556908323838" expanded="false" signature="8188:8194" ph=" }" />
+            <marker date="1556908323838" expanded="false" signature="8243:8254" ph=" { " />
+            <marker date="1556908323838" expanded="false" signature="8315:8321" ph=" }" />
+            <marker date="1556908323838" expanded="false" signature="8358:8369" ph=" { " />
+            <marker date="1556908323838" expanded="false" signature="8421:8427" ph=" }" />
+            <marker date="1556908323838" expanded="true" signature="8478:8639" ph="{...}" />
+            <marker date="1556908323838" expanded="true" signature="8701:8795" ph="{...}" />
+            <marker date="1556908323838" expanded="true" signature="8856:8945" ph="{...}" />
+            <marker date="1556908323838" expanded="true" signature="8951:8997" ph="@{...}" />
+            <marker date="1556908323838" expanded="true" signature="9048:9148" ph="{...}" />
+            <marker date="1556908323838" expanded="false" signature="9210:9221" ph=" { " />
+            <marker date="1556908323838" expanded="false" signature="9262:9268" ph=" }" />
+            <marker date="1556908323838" expanded="false" signature="9316:9327" ph=" { " />
+            <marker date="1556908323838" expanded="false" signature="9360:9366" ph=" }" />
+            <marker date="1556908323838" expanded="false" signature="9425:9436" ph=" { " />
+            <marker date="1556908323838" expanded="false" signature="9480:9486" ph=" }" />
+            <marker date="1556908323838" expanded="false" signature="9532:9543" ph=" { " />
+            <marker date="1556908323838" expanded="false" signature="9566:9572" ph=" }" />
+            <marker date="1556908323838" expanded="false" signature="9601:9612" ph=" { " />
+            <marker date="1556908323838" expanded="false" signature="9652:9658" ph=" }" />
+            <marker date="1556908323838" expanded="false" signature="9698:9709" ph=" { " />
+            <marker date="1556908323838" expanded="false" signature="9771:9777" ph=" }" />
+            <marker date="1556908323838" expanded="false" signature="9812:9823" ph=" { " />
+            <marker date="1556908323838" expanded="false" signature="9870:9876" ph=" }" />
+            <marker date="1556908323838" expanded="false" signature="9906:9917" ph=" { " />
+            <marker date="1556908323838" expanded="false" signature="9962:9968" ph=" }" />
+            <marker date="1556908323838" expanded="true" signature="10005:10152" ph="{...}" />
+            <marker date="1556908323838" expanded="true" signature="10200:10287" ph="{...}" />
+            <marker date="1556908323838" expanded="true" signature="10334:10416" ph="{...}" />
+            <marker date="1556908323838" expanded="true" signature="10422:10461" ph="@{...}" />
+            <marker date="1556908323838" expanded="true" signature="10498:10598" ph="{...}" />
+            <marker date="1556908323838" expanded="false" signature="10646:10657" ph=" { " />
+            <marker date="1556908323838" expanded="false" signature="10698:10704" ph=" }" />
+            <marker date="1556908323838" expanded="false" signature="10738:10749" ph=" { " />
+            <marker date="1556908323838" expanded="false" signature="10775:10781" ph=" }" />
+            <marker date="1556908323838" expanded="false" signature="10826:10837" ph=" { " />
+            <marker date="1556908323838" expanded="false" signature="10874:10880" ph=" }" />
+            <marker date="1556908323838" expanded="false" signature="10940:10951" ph=" { " />
+            <marker date="1556908323838" expanded="false" signature="10974:10980" ph=" }" />
+            <marker date="1556908323838" expanded="false" signature="11019:11030" ph=" { " />
+            <marker date="1556908323838" expanded="false" signature="11080:11086" ph=" }" />
+            <marker date="1556908323838" expanded="true" signature="11137:11225" ph="{...}" />
+            <marker date="1556908323838" expanded="false" signature="11274:11285" ph=" { " />
+            <marker date="1556908323838" expanded="false" signature="11346:11352" ph=" }" />
+            <marker date="1556908323838" expanded="false" signature="11392:11403" ph=" { " />
+            <marker date="1556908323838" expanded="false" signature="11458:11464" ph=" }" />
+            <marker date="1556908323838" expanded="true" signature="11515:11682" ph="{...}" />
+            <marker date="1556908323838" expanded="true" signature="11744:11841" ph="{...}" />
+            <marker date="1556908323838" expanded="true" signature="11902:11994" ph="{...}" />
+            <marker date="1556908323838" expanded="true" signature="12000:12049" ph="@{...}" />
+            <marker date="1556908323838" expanded="true" signature="12100:12200" ph="{...}" />
+            <marker date="1556908323838" expanded="false" signature="12262:12273" ph=" { " />
+            <marker date="1556908323838" expanded="false" signature="12314:12320" ph=" }" />
+            <marker date="1556908323838" expanded="false" signature="12368:12379" ph=" { " />
+            <marker date="1556908323838" expanded="false" signature="12415:12421" ph=" }" />
+            <marker date="1556908323838" expanded="false" signature="12480:12491" ph=" { " />
+            <marker date="1556908323838" expanded="false" signature="12538:12544" ph=" }" />
+            <marker date="1556908323838" expanded="true" signature="12617:13393" ph="{...}" />
+            <marker date="1556908323838" expanded="true" signature="13518:16846" ph="{...}" />
+            <marker date="1556908323838" expanded="true" signature="16883:17005" ph="{...}" />
+            <marker date="1556908323838" expanded="true" signature="17067:18077" ph="{...}" />
+            <marker date="1556908323838" expanded="false" signature="18132:18143" ph=" { " />
+            <marker date="1556908323838" expanded="false" signature="18198:18204" ph=" }" />
+            <marker date="1556908323838" expanded="true" signature="18269:19408" ph="{...}" />
+            <marker date="1556908323838" expanded="true" signature="18269:19424" ph="{...}" />
+            <marker date="1556908323838" expanded="true" signature="19462:20578" ph="{...}" />
+            <marker date="1556908323838" expanded="true" signature="20625:21366" ph="{...}" />
+            <marker date="1556908323838" expanded="true" signature="21432:22221" ph="{...}" />
+            <marker date="1556908323838" expanded="true" signature="22282:23005" ph="{...}" />
+            <marker date="1556908323838" expanded="true" signature="23073:25615" ph="{...}" />
+            <marker date="1556908323838" expanded="true" signature="25679:26186" ph="{...}" />
+            <marker date="1556908323838" expanded="true" signature="26263:26832" ph="{...}" />
+            <marker date="1556908323838" expanded="true" signature="26936:27200" ph="{...}" />
+            <marker date="1556908323838" expanded="true" signature="27324:27589" ph="{...}" />
+            <marker date="1556908323838" expanded="false" signature="27621:27632" ph=" { " />
+            <marker date="1556908323838" expanded="false" signature="27657:27663" ph=" }" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mclab-core/languages/Natlab/src/natlab/utils/NodeFinder.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="25" column="13" lean-forward="false" selection-start-line="25" selection-start-column="13" selection-end-line="25" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mclab-core/languages/Natlab/src/natlab/toolkits/analysis/core/ReachingDefs.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="189">
+          <caret line="85" column="19" lean-forward="false" selection-start-line="85" selection-start-column="19" selection-end-line="85" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/matjuice/analysis/PointsToAnalysis.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1155">
+          <caret line="92" column="20" lean-forward="false" selection-start-line="92" selection-start-column="16" selection-end-line="92" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/mclab-core/languages/Natlab/McLabCore.jar!/ast/NameExpr.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="21" column="13" lean-forward="false" selection-start-line="21" selection-start-column="13" selection-end-line="21" selection-end-column="13" />
+          <folding>
+            <marker date="1556908323838" expanded="false" signature="0:104" ph="/.../" />
+            <marker date="1556908323838" expanded="false" signature="127:555" ph="..." />
+            <marker date="1556908323838" expanded="true" signature="1109:1372" ph="{...}" />
+            <marker date="1556908323838" expanded="true" signature="1426:2117" ph="{...}" />
+            <marker date="1556908323838" expanded="false" signature="2164:2175" ph=" { " />
+            <marker date="1556908323838" expanded="false" signature="2199:2205" ph=" }" />
+            <marker date="1556908323838" expanded="false" signature="2237:2248" ph=" { " />
+            <marker date="1556908323838" expanded="false" signature="2283:2289" ph=" }" />
+            <marker date="1556908323838" expanded="true" signature="2313:2320" ph="{}" />
+            <marker date="1556908323838" expanded="false" signature="2353:2364" ph=" { " />
+            <marker date="1556908323838" expanded="false" signature="2395:2401" ph=" }" />
+            <marker date="1556908323838" expanded="false" signature="2433:2444" ph=" { " />
+            <marker date="1556908323838" expanded="false" signature="2467:2473" ph=" }" />
+            <marker date="1556908323838" expanded="false" signature="2506:2517" ph=" { " />
+            <marker date="1556908323838" expanded="false" signature="2526:2532" ph=" }" />
+            <marker date="1556908323838" expanded="false" signature="2569:2580" ph=" { " />
+            <marker date="1556908323838" expanded="false" signature="2593:2599" ph=" }" />
+            <marker date="1556908323838" expanded="false" signature="2633:2644" ph=" { " />
+            <marker date="1556908323838" expanded="false" signature="2667:2673" ph=" }" />
+            <marker date="1556908323838" expanded="false" signature="2713:2724" ph=" { " />
+            <marker date="1556908323838" expanded="false" signature="2753:2759" ph=" }" />
+            <marker date="1556908323838" expanded="false" signature="2796:2807" ph=" { " />
+            <marker date="1556908323838" expanded="false" signature="2833:2839" ph=" }" />
+            <marker date="1556908323838" expanded="true" signature="2903:2980" ph="{...}" />
+            <marker date="1556908323838" expanded="true" signature="3009:3418" ph="{...}" />
+            <marker date="1556908323838" expanded="true" signature="3424:3442" ph="/**...*/" />
+            <marker date="1556908323838" expanded="false" signature="3473:3484" ph=" { " />
+            <marker date="1556908323838" expanded="false" signature="3518:3524" ph=" }" />
+            <marker date="1556908323838" expanded="true" signature="3568:3972" ph="{...}" />
+            <marker date="1556908323838" expanded="true" signature="4005:4087" ph="{...}" />
+            <marker date="1556908323838" expanded="false" signature="4133:4144" ph=" { " />
+            <marker date="1556908323838" expanded="false" signature="4172:4178" ph=" }" />
+            <marker date="1556908323838" expanded="false" signature="4214:4225" ph=" { " />
+            <marker date="1556908323838" expanded="false" signature="4248:4254" ph=" }" />
+            <marker date="1556908323838" expanded="true" signature="4260:4295" ph="@{...}" />
+            <marker date="1556908323838" expanded="false" signature="4321:4332" ph=" { " />
+            <marker date="1556908323838" expanded="false" signature="4362:4368" ph=" }" />
+            <marker date="1556908323838" expanded="false" signature="4406:4417" ph=" { " />
+            <marker date="1556908323838" expanded="false" signature="4458:4464" ph=" }" />
+            <marker date="1556908323838" expanded="true" signature="4537:5097" ph="{...}" />
+            <marker date="1556908323838" expanded="true" signature="5150:5602" ph="{...}" />
+            <marker date="1556908323838" expanded="true" signature="5665:6310" ph="{...}" />
+            <marker date="1556908323838" expanded="true" signature="6376:6909" ph="{...}" />
+            <marker date="1556908323838" expanded="true" signature="6970:7436" ph="{...}" />
+            <marker date="1556908323838" expanded="true" signature="7484:7975" ph="{...}" />
+            <marker date="1556908323838" expanded="true" signature="8043:8586" ph="{...}" />
+            <marker date="1556908323838" expanded="false" signature="8618:8629" ph=" { " />
+            <marker date="1556908323838" expanded="false" signature="8654:8660" ph=" }" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mclab-core/languages/Natlab/src/natlab/tame/simplification/ThreeAddressToIR.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1635">
+          <caret line="202" column="7" lean-forward="false" selection-start-line="202" selection-start-column="7" selection-end-line="202" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mclab-core/languages/Natlab/src/natlab/toolkits/analysis/core/UseDefDefUseChain.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-61">
+          <caret line="112" column="2" lean-forward="false" selection-start-line="112" selection-start-column="2" selection-end-line="112" selection-end-column="2" />
+          <folding>
+            <element signature="e#1920#1921#0" expanded="true" />
+            <element signature="e#1951#1952#0" expanded="true" />
+            <element signature="e#2703#2704#0" expanded="true" />
+            <element signature="e#2734#2735#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mclab-core/languages/Natlab/src/natlab/toolkits/analysis/core/LivenessAnalysis.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-889">
+          <caret line="22" column="9" lean-forward="false" selection-start-line="22" selection-start-column="9" selection-end-line="22" selection-end-column="9" />
+          <folding>
+            <element signature="e#522#523#0" expanded="true" />
+            <element signature="e#543#544#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mclab-core/languages/Natlab/src/natlab/toolkits/analysis/core/CopyAnalysis.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-372">
+          <caret line="21" column="33" lean-forward="false" selection-start-line="21" selection-start-column="29" selection-end-line="21" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/matjuice/transformer/CopyInsertion.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="68" column="0" lean-forward="false" selection-start-line="68" selection-start-column="0" selection-end-line="68" selection-end-column="0" />
+          <folding>
+            <element signature="e#5304#5305#0" expanded="true" />
+            <element signature="e#5350#5351#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/matjuice/codegen/Generator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2100">
+          <caret line="180" column="29" lean-forward="false" selection-start-line="180" selection-start-column="29" selection-end-line="180" selection-end-column="29" />
           <folding />
         </state>
       </provider>

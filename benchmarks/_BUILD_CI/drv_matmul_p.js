@@ -1292,67 +1292,75 @@ function mc_not(v) {
 
 // BEGINNING OF PROGRAM
 
-function drv_collatz_S(scale){
-    var t = 0;
-    var length = 0;
+function drv_matmul_p_S(scale){
+    var A = 0;
+    var B = 0;
+    var C = 0;
+    var mc_t3 = 0;
+    var mc_t4 = 0;
     var mc_t1 = 0;
     var mc_t2 = 0;
-    var i = 0;
-    var max_num = 0;
-    var max_length = 0;
-    max_length = 0;
-    max_num = 0;
+    var k = 0;
+    var mc_t0 = 0;
+    var m = 0;
+    var n = 0;
+    var t = 0;
+
+
+
+
+    scale = 100;
+    m = scale;
+    mc_t2 = 2;
+    k = scale / mc_t2;
+    n = scale;
+
+    mc_t0 = mc_randn(m, k);
+    mc_t3 = 100;
+    A = mc_mtimes_SM(mc_t3, mc_t0);
+    mc_t1 = mc_randn(k, n);
+    mc_t4 = 100;
+    B = mc_mtimes_SM(mc_t4, mc_t1);
     mc_tic();
-    mc_t2 = 1;
-    for (i = mc_t2; i<=scale; i = i+1) {
-        length = collatz_S(i);
-        mc_t1 = length > max_length;
-        if (mc_t1) {
-            max_length = length;
-            max_num = i;
-        }
-    }
+    C = matmul_p_MMSSS(A, B, m, k, n);
     t = mc_toc();
     mc_disp_S(t);
-    mc_disp_S(max_num);
+
     return;
 }
 
-function collatz_S(n){
+function matmul_p_MMSSS(A, B, m, k, n){
     var mc_t9 = 0;
     var mc_t7 = 0;
+    var c = 0;
     var mc_t8 = 0;
-    var mc_t5 = 0;
+    var h = 0;
+    var i = 0;
+    var j = 0;
     var mc_t10 = 0;
     var mc_t11 = 0;
     var mc_t12 = 0;
     var mc_t13 = 0;
     var mc_t14 = 0;
-    var mc_t15 = 0;
-    var mc_t16 = 0;
-    var y = 0;
-    y = 0;
-    mc_t16 = 1;
-    mc_t15 = n > mc_t16;
-    while (mc_t15) {
-        mc_t8 = 2;
-        mc_t5 = mc_mod_SS(n, mc_t8);
-        mc_t13 = 0;
-        mc_t12 = mc_t5 === mc_t13;
-        if (mc_t12) {
-            mc_t9 = 2;
-            n = n / mc_t9;
-        } else {
-            mc_t10 = 3;
-            mc_t7 = mc_t10 * n;
-            mc_t11 = 1;
-            n = mc_t7 + mc_t11;
+
+    c = mc_zeros(m, n);
+
+    mc_t14 = 1;
+    for (j = mc_t14; j<=n; j = j+1) {
+        mc_t13 = 1;
+        for (h = mc_t13; h<=k; h = h+1) {
+            mc_t12 = 1;
+            for (i = mc_t12; i<=m; i = i+1) {
+                mc_t8 = c[((i-1)+(100*(j-1)))];
+                mc_t10 = A[((i-1)+(100*(h-1)))];
+                mc_t11 = B[((h-1)+(50*(j-1)))];
+                mc_t9 = mc_t10 * mc_t11;
+                mc_t7 = mc_t8 + mc_t9;
+                c[((i-1)+(100*(j-1)))] = mc_t7;
+            }
         }
-        mc_t14 = 1;
-        y = y + mc_t14;
-        mc_t16 = 1;
-        mc_t15 = n > mc_t16;
     }
-    return y;
+
+    return c;
 }
-drv_collatz_S(1);
+drv_matmul_p_S(1);

@@ -228,89 +228,90 @@ async function runner(){
 
 // BEGINNING OF PROGRAM
 
-function drv_bubble_S(size){
+function drv_matmul_p_S(scale){
     var A = 0;
-    var t = 0;
+    var B = 0;
+    var C = 0;
+    var mc_t3 = 0;
     var mc_t4 = 0;
     var mc_t1 = 0;
     var mc_t2 = 0;
-    var i = 0;
-    var y = 0;
+    var k = 0;
     var mc_t0 = 0;
-    var mc_t22 = 0;
-    mc_t0 = 300;
-    mc_t1 = 1;
-    mc_t22 = wi.create_mxvector(2);
-    wi.set_array_index_f64(mc_t22, 1, mc_t0);
-    wi.set_array_index_f64(mc_t22, 2, mc_t1);
-    A = wi.rand(mc_t22);
-    mc_t2 = 10000;
-    A = wi.mtimes_SM(mc_t2, A);
+    var m = 0;
+    var n = 0;
+    var mc_t15 = 0;
+    var mc_t16 = 0;
+    var t = 0;
+
+
+
+
+    scale = 100;
+    m = scale;
+    mc_t2 = 2;
+    k = scale / mc_t2;
+    n = scale;
+
+    mc_t15 = wi.create_mxvector(2);
+    wi.set_array_index_f64(mc_t15, 1, m);
+    wi.set_array_index_f64(mc_t15, 2, k);
+    mc_t0 = wi.randn(mc_t15);
+    mc_t3 = 100;
+    A = wi.mtimes_SM(mc_t3, mc_t0);
+    mc_t16 = wi.create_mxvector(2);
+    wi.set_array_index_f64(mc_t16, 1, k);
+    wi.set_array_index_f64(mc_t16, 2, n);
+    mc_t1 = wi.randn(mc_t16);
+    mc_t4 = 100;
+    B = wi.mtimes_SM(mc_t4, mc_t1);
     wi.tic();
-    mc_t4 = 1;
-    for (i = mc_t4; i<=size; i = i+1) {
-        y = bubble_M(A);
-    }
+    C = matmul_p_MMSSS(A, B, m, k, n);
     t = wi.toc();
     wi.disp_S(t);
+
     return;
 }
 
-function bubble_M(A){
+function matmul_p_MMSSS(A, B, m, k, n){
     var mc_t9 = 0;
     var mc_t7 = 0;
-    var temp = 0;
+    var c = 0;
     var mc_t8 = 0;
-    var mc_t6 = 0;
-    var mc_t20 = 0;
+    var h = 0;
     var i = 0;
-    var mc_t21 = 0;
     var j = 0;
     var mc_t10 = 0;
     var mc_t11 = 0;
     var mc_t12 = 0;
     var mc_t13 = 0;
-    var n = 0;
     var mc_t14 = 0;
-    var mc_t15 = 0;
-    var mc_t16 = 0;
     var mc_t17 = 0;
-    var mc_t18 = 0;
-    var mc_t19 = 0;
-    var x = 0;
-    A = wi.clone(A);
-    n = wi.length_M(A);
-    mc_t14 = 1;
-    mc_t13 = n - mc_t14;
-    mc_t21 = 1;
-    for (j = mc_t21; j<=mc_t13; j = j+1) {
 
-        mc_t15 = 1;
-        mc_t12 = n - mc_t15;
-        mc_t20 = 1;
-        for (i = mc_t20; i<=mc_t12; i = i+1) {
-            mc_t6 = wi.get_array_index_f64(A, i);
-            mc_t16 = 1;
-            mc_t10 = i + mc_t16;
-            mc_t7 = wi.get_array_index_f64(A, mc_t10);
-            mc_t19 = mc_t6 > mc_t7;
-            if (mc_t19) {
-                temp = wi.get_array_index_f64(A, i);
-                mc_t17 = 1;
-                mc_t11 = i + mc_t17;
-                mc_t8 = wi.get_array_index_f64(A, mc_t11);
-                wi.set_array_index_f64(A, i, mc_t8);
-                mc_t18 = 1;
-                mc_t9 = i + mc_t18;
-                wi.set_array_index_f64(A, mc_t9, temp);
+    mc_t17 = wi.create_mxvector(2);
+    wi.set_array_index_f64(mc_t17, 1, m);
+    wi.set_array_index_f64(mc_t17, 2, n);
+    c = wi.zeros(mc_t17);
+
+    mc_t14 = 1;
+    for (j = mc_t14; j<=n; j = j+1) {
+        mc_t13 = 1;
+        for (h = mc_t13; h<=k; h = h+1) {
+            mc_t12 = 1;
+            for (i = mc_t12; i<=m; i = i+1) {
+                mc_t8 = wi.get_array_index_f64(c, (((i-1)+(100*(j-1)))+1));
+                mc_t10 = wi.get_array_index_f64(A, (((i-1)+(100*(h-1)))+1));
+                mc_t11 = wi.get_array_index_f64(B, (((h-1)+(50*(j-1)))+1));
+                mc_t9 = mc_t10 * mc_t11;
+                mc_t7 = mc_t8 + mc_t9;
+                wi.set_array_index_f64(c, (((i-1)+(100*(j-1)))+1), mc_t7);
             }
         }
     }
-    x = A;
 
-    return x;
+    return c;
 }
-drv_bubble_S(1);
+drv_matmul_p_S(1);
 }
 runner().then((res)=>{}).catch((err)=>{
     throw err;

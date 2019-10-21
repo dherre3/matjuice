@@ -1292,67 +1292,433 @@ function mc_not(v) {
 
 // BEGINNING OF PROGRAM
 
-function drv_collatz_S(scale){
-    var t = 0;
-    var length = 0;
+function drv_dich_S(scale){
+    var a = 0;
+    var b = 0;
+    var mc_t4 = 0;
+    var h = 0;
     var mc_t1 = 0;
     var mc_t2 = 0;
-    var i = 0;
-    var max_num = 0;
-    var max_length = 0;
-    max_length = 0;
-    max_num = 0;
+    var mc_t0 = 0;
+    var f1 = 0;
+    var f2 = 0;
+    var f3 = 0;
+    var f4 = 0;
+    var tol = 0;
+    var t = 0;
+    var U = 0;
+    var time = 0;
+    var max1 = 0;
+
+
+
+
+    a = 4;
+    b = 4;
+    h = 0.030000000000000000000;
+    mc_t1 = 5;
+    mc_t0 = -mc_t1;
+    mc_t2 = 10;
+    tol = mc_mpower_SS(mc_t2, mc_t0);
+    max1 = 1000;
+
+    f1 = 20;
+    f2 = 180;
+    f3 = 80;
+    f4 = 0;
     mc_tic();
-    mc_t2 = 1;
-    for (i = mc_t2; i<=scale; i = i+1) {
-        length = collatz_S(i);
-        mc_t1 = length > max_length;
-        if (mc_t1) {
-            max_length = length;
-            max_num = i;
-        }
+    mc_t4 = 1;
+    for (time = mc_t4; time<=scale; time = time+1) {
+        U = dirich_SSSSSSSSS(f1, f2, f3, f4, a, b, h, tol, max1);
     }
     t = mc_toc();
     mc_disp_S(t);
-    mc_disp_S(max_num);
     return;
 }
 
-function collatz_S(n){
+function dirich_SSSSSSSSS(f1, f2, f3, f4, a, b, h, tol, max1){
+    var mc_t132 = 0;
+    var mc_t131 = 0;
+    var mc_t130 = 0;
+    var mc_t30 = 0;
+    var mc_t31 = 0;
+    var mc_t32 = 0;
+    var mc_t33 = 0;
+    var mc_t34 = 0;
+    var mc_t35 = 0;
+    var mc_t36 = 0;
+    var mc_t37 = 0;
+    var mc_t38 = 0;
+    var mc_t39 = 0;
+    var mc_t123 = 0;
+    var mc_t122 = 0;
+    var mc_t121 = 0;
+    var mc_t120 = 0;
+    var mc_t20 = 0;
+    var mc_t21 = 0;
+    var mc_t129 = 0;
+    var mc_t22 = 0;
+    var mc_t128 = 0;
+    var mc_t23 = 0;
+    var mc_t127 = 0;
+    var mc_t24 = 0;
+    var mc_t126 = 0;
+    var mc_t25 = 0;
+    var mc_t125 = 0;
+    var mc_t26 = 0;
+    var mc_t124 = 0;
+    var mc_t27 = 0;
+    var mc_t28 = 0;
+    var mc_t29 = 0;
+    var mc_t112 = 0;
+    var mc_t111 = 0;
+    var mc_t110 = 0;
+    var mc_t50 = 0;
+    var mc_t51 = 0;
+    var mc_t52 = 0;
+    var mc_t53 = 0;
+    var mc_t119 = 0;
+    var mc_t54 = 0;
+    var mc_t118 = 0;
+    var mc_t55 = 0;
+    var mc_t117 = 0;
+    var mc_t116 = 0;
+    var mc_t56 = 0;
+    var mc_t115 = 0;
+    var mc_t57 = 0;
+    var mc_t114 = 0;
+    var mc_t58 = 0;
+    var mc_t113 = 0;
+    var mc_t59 = 0;
+    var U = 0;
+    var mc_t101 = 0;
+    var mc_t100 = 0;
+    var err = 0;
+    var mc_t40 = 0;
+    var mc_t109 = 0;
+    var mc_t41 = 0;
+    var cnt = 0;
+    var mc_t42 = 0;
+    var mc_t108 = 0;
+    var mc_t107 = 0;
+    var mc_t43 = 0;
+    var k = 0;
+    var mc_t106 = 0;
+    var mc_t44 = 0;
+    var l = 0;
+    var mc_t105 = 0;
+    var mc_t45 = 0;
+    var m = 0;
+    var mc_t104 = 0;
+    var mc_t46 = 0;
+    var n = 0;
+    var mc_t103 = 0;
+    var mc_t47 = 0;
+    var mc_t102 = 0;
+    var mc_t48 = 0;
+    var mc_t49 = 0;
+    var w = 0;
+    var mc_t70 = 0;
+    var mc_t71 = 0;
+    var mc_t72 = 0;
+    var mc_t73 = 0;
+    var mc_t74 = 0;
+    var mc_t75 = 0;
+    var mc_t76 = 0;
+    var mc_t77 = 0;
+    var mc_t78 = 0;
+    var mc_t79 = 0;
     var mc_t9 = 0;
     var mc_t7 = 0;
     var mc_t8 = 0;
-    var mc_t5 = 0;
+    var mc_t6 = 0;
+    var mc_t60 = 0;
+    var mc_t61 = 0;
+    var mc_t62 = 0;
+    var mc_t63 = 0;
+    var mc_t64 = 0;
+    var mc_t65 = 0;
+    var mc_t66 = 0;
+    var mc_t67 = 0;
+    var mc_t68 = 0;
+    var mc_t69 = 0;
+    var mc_t90 = 0;
+    var mc_t91 = 0;
+    var mc_t92 = 0;
+    var mc_t93 = 0;
+    var mc_t94 = 0;
+    var mc_t95 = 0;
+    var mc_t96 = 0;
+    var mc_t97 = 0;
+    var mc_t98 = 0;
+    var relx = 0;
     var mc_t10 = 0;
+    var mc_t99 = 0;
     var mc_t11 = 0;
     var mc_t12 = 0;
     var mc_t13 = 0;
-    var mc_t14 = 0;
     var mc_t15 = 0;
     var mc_t16 = 0;
-    var y = 0;
-    y = 0;
-    mc_t16 = 1;
-    mc_t15 = n > mc_t16;
-    while (mc_t15) {
-        mc_t8 = 2;
-        mc_t5 = mc_mod_SS(n, mc_t8);
-        mc_t13 = 0;
-        mc_t12 = mc_t5 === mc_t13;
-        if (mc_t12) {
-            mc_t9 = 2;
-            n = n / mc_t9;
-        } else {
-            mc_t10 = 3;
-            mc_t7 = mc_t10 * n;
-            mc_t11 = 1;
-            n = mc_t7 + mc_t11;
-        }
-        mc_t14 = 1;
-        y = y + mc_t14;
-        mc_t16 = 1;
-        mc_t15 = n > mc_t16;
+    var mc_t17 = 0;
+    var ave = 0;
+    var mc_t18 = 0;
+    var mc_t19 = 0;
+    var mc_t80 = 0;
+    var mc_t81 = 0;
+    var mc_t82 = 0;
+    var mc_t83 = 0;
+    var mc_t84 = 0;
+    var mc_t85 = 0;
+    var mc_t86 = 0;
+    var mc_t87 = 0;
+    var mc_t88 = 0;
+    var mc_t89 = 0;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    mc_t17 = a / h;
+    mc_t16 = mc_fix_S(mc_t17);
+    mc_t87 = 1;
+    n = mc_t16 + mc_t87;
+    mc_t19 = b / h;
+    mc_t18 = mc_fix_S(mc_t19);
+    mc_t88 = 1;
+    m = mc_t18 + mc_t88;
+    mc_t28 = a;
+    mc_t29 = f1 + f2;
+    mc_t24 = mc_t28 * mc_t29;
+    mc_t26 = b;
+    mc_t27 = f3 + f4;
+    mc_t25 = mc_t26 * mc_t27;
+    mc_t20 = mc_t24 + mc_t25;
+    mc_t89 = 2;
+    mc_t22 = mc_t89 * a;
+    mc_t90 = 2;
+    mc_t23 = mc_t90 * b;
+    mc_t21 = mc_t22 + mc_t23;
+    ave = mc_t20 / mc_t21;
+    mc_t30 = ave;
+    mc_t31 = mc_ones(n, m);
+    U = mc_mtimes_SM(mc_t30, mc_t31);
+    mc_t92 = 1;
+    for (l = mc_t92; l<=m; l = l+1) {
+        mc_t91 = 1;
+        U[((mc_t91-1)+(134*(l-1)))] = f3;
+        U[((n-1)+(134*(l-1)))] = f4;
     }
-    return y;
+
+    mc_t94 = 1;
+    for (k = mc_t94; k<=n; k = k+1) {
+        mc_t93 = 1;
+        U[((k-1)+(134*(mc_t93-1)))] = f1;
+        U[((k-1)+(134*(m-1)))] = f2;
+    }
+
+    mc_t95 = 1;
+    mc_t96 = 2;
+    mc_t33 = U[((mc_t95-1)+(134*(mc_t96-1)))];
+    mc_t97 = 2;
+    mc_t98 = 1;
+    mc_t34 = U[((mc_t97-1)+(134*(mc_t98-1)))];
+    mc_t32 = mc_t33 + mc_t34;
+    mc_t99 = 2;
+    mc_t6 = mc_t32 / mc_t99;
+    mc_t100 = 1;
+    mc_t101 = 1;
+    U[((mc_t100-1)+(134*(mc_t101-1)))] = mc_t6;
+    mc_t102 = 1;
+    mc_t38 = m - mc_t102;
+    mc_t103 = 1;
+    mc_t36 = U[((mc_t103-1)+(134*(mc_t38-1)))];
+    mc_t104 = 2;
+    mc_t37 = U[((mc_t104-1)+(134*(m-1)))];
+    mc_t35 = mc_t36 + mc_t37;
+    mc_t105 = 2;
+    mc_t7 = mc_t35 / mc_t105;
+    mc_t106 = 1;
+    U[((mc_t106-1)+(134*(m-1)))] = mc_t7;
+    mc_t107 = 1;
+    mc_t42 = n - mc_t107;
+    mc_t108 = 1;
+    mc_t40 = U[((mc_t42-1)+(134*(mc_t108-1)))];
+    mc_t109 = 2;
+    mc_t41 = U[((n-1)+(134*(mc_t109-1)))];
+    mc_t39 = mc_t40 + mc_t41;
+    mc_t110 = 2;
+    mc_t8 = mc_t39 / mc_t110;
+    mc_t111 = 1;
+    U[((n-1)+(134*(mc_t111-1)))] = mc_t8;
+    mc_t112 = 1;
+    mc_t48 = n - mc_t112;
+    mc_t49 = m;
+    mc_t44 = U[((mc_t48-1)+(134*(mc_t49-1)))];
+    mc_t46 = n;
+    mc_t113 = 1;
+    mc_t47 = m - mc_t113;
+    mc_t45 = U[((mc_t46-1)+(134*(mc_t47-1)))];
+    mc_t43 = mc_t44 + mc_t45;
+    mc_t114 = 2;
+    mc_t9 = mc_t43 / mc_t114;
+    U[((n-1)+(134*(m-1)))] = mc_t9;
+
+    mc_t61 = mc_pi();
+    mc_t115 = 1;
+    mc_t62 = n - mc_t115;
+    mc_t60 = mc_t61 / mc_t62;
+    mc_t55 = mc_cos_S(mc_t60);
+    mc_t58 = mc_pi();
+    mc_t116 = 1;
+    mc_t59 = m - mc_t116;
+    mc_t57 = mc_t58 / mc_t59;
+    mc_t56 = mc_cos_S(mc_t57);
+    mc_t54 = mc_t55 + mc_t56;
+    mc_t117 = 2;
+    mc_t53 = mc_mpower_SS(mc_t54, mc_t117);
+    mc_t118 = 4;
+    mc_t52 = mc_t118 - mc_t53;
+    mc_t51 = mc_sqrt_S(mc_t52);
+    mc_t119 = 2;
+    mc_t50 = mc_t119 + mc_t51;
+    mc_t120 = 4;
+    w = mc_t120 / mc_t50;
+    err = 1;
+    cnt = 0;
+
+    mc_t12 = err > tol;
+    if (mc_t12) {
+        mc_t13 = cnt <= max1;
+        mc_t11 = mc_and_SS(mc_t12, mc_t13);
+    } else {
+        mc_t11 = mc_t12;
+    }
+    while (mc_t11) {
+        err = 0;
+        mc_t121 = 1;
+        mc_t86 = m - mc_t121;
+        mc_t131 = 2;
+        for (l = mc_t131; l<=mc_t86; l = l+1) {
+            mc_t122 = 1;
+            mc_t85 = n - mc_t122;
+            mc_t130 = 2;
+            for (k = mc_t130; k<=mc_t85; k = k+1) {
+                mc_t64 = w;
+                mc_t81 = k;
+                mc_t123 = 1;
+                mc_t82 = l + mc_t123;
+                mc_t77 = U[((mc_t81-1)+(134*(mc_t82-1)))];
+                mc_t79 = k;
+                mc_t124 = 1;
+                mc_t80 = l - mc_t124;
+                mc_t78 = U[((mc_t79-1)+(134*(mc_t80-1)))];
+                mc_t73 = mc_t77 + mc_t78;
+                mc_t125 = 1;
+                mc_t75 = k + mc_t125;
+                mc_t76 = l;
+                mc_t74 = U[((mc_t75-1)+(134*(mc_t76-1)))];
+                mc_t69 = mc_t73 + mc_t74;
+                mc_t126 = 1;
+                mc_t71 = k - mc_t126;
+                mc_t72 = l;
+                mc_t70 = U[((mc_t71-1)+(134*(mc_t72-1)))];
+                mc_t66 = mc_t69 + mc_t70;
+                mc_t68 = U[((k-1)+(134*(l-1)))];
+                mc_t127 = 4;
+                mc_t67 = mc_t127 * mc_t68;
+                mc_t65 = mc_t66 - mc_t67;
+                mc_t63 = mc_t64 * mc_t65;
+                mc_t128 = 4;
+                relx = mc_t63 / mc_t128;
+
+                mc_t83 = U[((k-1)+(134*(l-1)))];
+                mc_t84 = relx;
+                mc_t10 = mc_t83 + mc_t84;
+                U[((k-1)+(134*(l-1)))] = mc_t10;
+                mc_t15 = mc_abs_S(relx);
+                mc_t129 = err <= mc_t15;
+                if (mc_t129) {
+                    err = mc_abs_S(relx);
+                }
+            }
+        }
+        mc_t132 = 1;
+        cnt = cnt + mc_t132;
+        mc_t12 = err > tol;
+        if (mc_t12) {
+            mc_t13 = cnt <= max1;
+            mc_t11 = mc_and_SS(mc_t12, mc_t13);
+        } else {
+            mc_t11 = mc_t12;
+        }
+    }
+
+    return U;
 }
-drv_collatz_S(1);
+drv_dich_S(1);

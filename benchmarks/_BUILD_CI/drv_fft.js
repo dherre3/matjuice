@@ -1292,67 +1292,290 @@ function mc_not(v) {
 
 // BEGINNING OF PROGRAM
 
-function drv_collatz_S(scale){
-    var t = 0;
-    var length = 0;
-    var mc_t1 = 0;
-    var mc_t2 = 0;
+function fft_four1_MSS(data, n, isign){
+    var mc_t70 = 0;
+    var mc_t71 = 0;
+    var mc_t72 = 0;
+    var mc_t73 = 0;
+    var tempi = 0;
+    var mc_t74 = 0;
+    var wtemp = 0;
+    var mc_t30 = 0;
+    var mc_t75 = 0;
+    var mc_t31 = 0;
+    var mc_t76 = 0;
+    var mc_t32 = 0;
+    var mc_t77 = 0;
+    var mc_t33 = 0;
+    var mc_t78 = 0;
+    var mc_t34 = 0;
+    var tempr = 0;
+    var theta = 0;
+    var mc_t79 = 0;
+    var mc_t35 = 0;
+    var mc_t36 = 0;
+    var mc_t37 = 0;
+    var mc_t38 = 0;
+    var mc_t39 = 0;
+    var mc_t60 = 0;
+    var mc_t61 = 0;
+    var mc_t62 = 0;
+    var mc_t63 = 0;
+    var mc_t64 = 0;
+    var mc_t20 = 0;
+    var mc_t65 = 0;
+    var mc_t21 = 0;
+    var mc_t66 = 0;
+    var mc_t22 = 0;
+    var mc_t67 = 0;
+    var mc_t23 = 0;
+    var mc_t68 = 0;
+    var mc_t24 = 0;
+    var mc_t69 = 0;
+    var mc_t25 = 0;
+    var mc_t26 = 0;
+    var mc_t27 = 0;
+    var mc_t28 = 0;
+    var wpi = 0;
+    var mc_t29 = 0;
+    var wpr = 0;
+    var nn = 0;
+    var mc_t50 = 0;
+    var mc_t51 = 0;
+    var istep = 0;
+    var mc_t52 = 0;
+    var mc_t53 = 0;
+    var mc_t10 = 0;
+    var mc_t54 = 0;
+    var mc_t11 = 0;
+    var mc_t55 = 0;
+    var mc_t12 = 0;
+    var mc_t56 = 0;
+    var mc_t13 = 0;
+    var mc_t57 = 0;
+    var mc_t14 = 0;
+    var mc_t58 = 0;
+    var mc_t15 = 0;
+    var mc_t59 = 0;
+    var mc_t16 = 0;
+    var result = 0;
+    var mc_t17 = 0;
+    var mc_t18 = 0;
+    var mc_t19 = 0;
+    var wr = 0;
+    var wis = 0;
+    var mc_t80 = 0;
+    var mmax = 0;
+    var mc_t81 = 0;
+    var mc_t82 = 0;
+    var mc_t83 = 0;
+    var mc_t40 = 0;
+    var mc_t84 = 0;
+    var mc_t85 = 0;
+    var mc_t41 = 0;
     var i = 0;
-    var max_num = 0;
-    var max_length = 0;
-    max_length = 0;
-    max_num = 0;
-    mc_tic();
-    mc_t2 = 1;
-    for (i = mc_t2; i<=scale; i = i+1) {
-        length = collatz_S(i);
-        mc_t1 = length > max_length;
-        if (mc_t1) {
-            max_length = length;
-            max_num = i;
+    var mc_t86 = 0;
+    var mc_t42 = 0;
+    var j = 0;
+    var mc_t87 = 0;
+    var mc_t43 = 0;
+    var mc_t44 = 0;
+    var mc_t45 = 0;
+    var m = 0;
+    var mc_t46 = 0;
+    var mc_t47 = 0;
+    var mc_t48 = 0;
+    var mc_t49 = 0;
+    var t = 0;
+    data = data.mj_clone();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    mc_t64 = 2;
+    nn = mc_t64 * n;
+    j = 2;
+    mc_t73 = 2;
+    mc_t74 = 2;
+    for (i = mc_t73; i<=nn; i = i+mc_t74) {
+        mc_t69 = j > i;
+        if (mc_t69) {
+            mc_t65 = 1;
+            mc_t21 = j - mc_t65;
+            t = data[(mc_t21-1)];
+            mc_t66 = 1;
+            mc_t22 = i - mc_t66;
+            mc_t10 = data[(mc_t22-1)];
+            mc_t67 = 1;
+            mc_t16 = j - mc_t67;
+            data[(mc_t16-1)] = mc_t10;
+            mc_t68 = 1;
+            mc_t17 = i - mc_t68;
+            data[(mc_t17-1)] = t;
+
+            t = data[(j-1)];
+            mc_t11 = data[(i-1)];
+            data[(j-1)] = mc_t11;
+            data[(i-1)] = t;
         }
+        m = n;
+        mc_t70 = 2;
+        mc_t23 = m >= mc_t70;
+        if (mc_t23) {
+            mc_t23 = j > m;
+        } else {
+            mc_t23 = mc_false();
+        }
+        mc_t20 = mc_t23;
+        while (mc_t20) {
+            j = j - m;
+            mc_t71 = 2;
+            m = m / mc_t71;
+            mc_t72 = 2;
+            mc_t24 = m >= mc_t72;
+            if (mc_t24) {
+                mc_t24 = j > m;
+            } else {
+                mc_t24 = mc_false();
+            }
+            mc_t20 = mc_t24;
+        }
+        j = j + m;
     }
-    t = mc_toc();
-    mc_disp_S(t);
-    mc_disp_S(max_num);
-    return;
+    mmax = 2;
+    mc_t87 = nn > mmax;
+    while (mc_t87) {
+        mc_t75 = 2;
+        istep = mmax * mc_t75;
+        mc_t25 = isign;
+        mc_t76 = 6.2831853071795900000;
+        mc_t26 = mc_t76 / mmax;
+        theta = mc_t25 * mc_t26;
+        mc_t77 = 0.50000000000000000000;
+        mc_t27 = mc_t77 * theta;
+        wtemp = mc_sin_S(mc_t27);
+        mc_t78 = 2.0000000000000000000;
+        mc_t30 = -mc_t78;
+        mc_t31 = wtemp;
+        mc_t28 = mc_t30 * mc_t31;
+        mc_t29 = wtemp;
+        wpr = mc_t28 * mc_t29;
+        wpi = mc_sin_S(theta);
+        wr = 1.0000000000000000000;
+        wis = 0.0000000000000000000;
+        mc_t85 = 2;
+        mc_t86 = 2;
+        for (m = mc_t85; m<=mmax; m = m+mc_t86) {
+            for (i = m; i<=nn; i = i+istep) {
+                j = i + mmax;
+                mc_t36 = wr;
+                mc_t79 = 1;
+                mc_t38 = j - mc_t79;
+                mc_t37 = data[(mc_t38-1)];
+                mc_t32 = mc_t36 * mc_t37;
+                mc_t34 = wis;
+                mc_t35 = data[(j-1)];
+                mc_t33 = mc_t34 * mc_t35;
+                tempr = mc_t32 - mc_t33;
+                mc_t44 = wr;
+                mc_t45 = data[(j-1)];
+                mc_t39 = mc_t44 * mc_t45;
+                mc_t41 = wis;
+                mc_t80 = 1;
+                mc_t43 = j - mc_t80;
+                mc_t42 = data[(mc_t43-1)];
+                mc_t40 = mc_t41 * mc_t42;
+                tempi = mc_t39 + mc_t40;
+                mc_t81 = 1;
+                mc_t48 = i - mc_t81;
+                mc_t46 = data[(mc_t48-1)];
+                mc_t47 = tempr;
+                mc_t12 = mc_t46 - mc_t47;
+                mc_t82 = 1;
+                mc_t18 = j - mc_t82;
+                data[(mc_t18-1)] = mc_t12;
+                mc_t49 = data[(i-1)];
+                mc_t50 = tempi;
+                mc_t13 = mc_t49 - mc_t50;
+                data[(j-1)] = mc_t13;
+                mc_t83 = 1;
+                mc_t53 = i - mc_t83;
+                mc_t51 = data[(mc_t53-1)];
+                mc_t52 = tempr;
+                mc_t14 = mc_t51 + mc_t52;
+                mc_t84 = 1;
+                mc_t19 = i - mc_t84;
+                data[(mc_t19-1)] = mc_t14;
+                mc_t54 = data[(i-1)];
+                mc_t55 = tempi;
+                mc_t15 = mc_t54 + mc_t55;
+                data[(i-1)] = mc_t15;
+            }
+            wtemp = wr;
+            mc_t58 = wtemp * wpr;
+            mc_t59 = wis * wpi;
+            mc_t56 = mc_t58 - mc_t59;
+            mc_t57 = wr;
+            wr = mc_t56 + mc_t57;
+            mc_t62 = wis * wpr;
+            mc_t63 = wtemp * wpi;
+            mc_t60 = mc_t62 + mc_t63;
+            mc_t61 = wis;
+            wis = mc_t60 + mc_t61;
+        }
+        mmax = istep;
+        mc_t87 = nn > mmax;
+    }
+    result = data;
+    return result;
 }
 
-function collatz_S(n){
-    var mc_t9 = 0;
-    var mc_t7 = 0;
+function drv_fft_S(scale){
     var mc_t8 = 0;
     var mc_t5 = 0;
-    var mc_t10 = 0;
-    var mc_t11 = 0;
-    var mc_t12 = 0;
-    var mc_t13 = 0;
-    var mc_t14 = 0;
-    var mc_t15 = 0;
-    var mc_t16 = 0;
-    var y = 0;
-    y = 0;
-    mc_t16 = 1;
-    mc_t15 = n > mc_t16;
-    while (mc_t15) {
-        mc_t8 = 2;
-        mc_t5 = mc_mod_SS(n, mc_t8);
-        mc_t13 = 0;
-        mc_t12 = mc_t5 === mc_t13;
-        if (mc_t12) {
-            mc_t9 = 2;
-            n = n / mc_t9;
-        } else {
-            mc_t10 = 3;
-            mc_t7 = mc_t10 * n;
-            mc_t11 = 1;
-            n = mc_t7 + mc_t11;
-        }
-        mc_t14 = 1;
-        y = y + mc_t14;
-        mc_t16 = 1;
-        mc_t15 = n > mc_t16;
-    }
-    return y;
+    var data = 0;
+    var t = 0;
+    var mc_t6 = 0;
+    var mc_t3 = 0;
+    var mc_t4 = 0;
+    var mc_t1 = 0;
+    var mc_t2 = 0;
+    var mc_t0 = 0;
+    var n = 0;
+    var out = 0;
+
+
+
+
+
+
+    mc_t1 = mc_round_S(scale);
+    mc_t3 = 2;
+    mc_t0 = mc_mpower_SS(mc_t3, mc_t1);
+    mc_t4 = 1024;
+    n = mc_t4 * mc_t0;
+    mc_t5 = 2;
+    mc_t2 = mc_t5 * n;
+    mc_t6 = 1;
+    data = mc_randn(mc_t6, mc_t2);
+
+
+    mc_tic();
+    mc_t8 = 1;
+    out = fft_four1_MSS(data, n, mc_t8);
+    t = mc_toc();
+    mc_disp_S(t);
+    return;
 }
-drv_collatz_S(1);
+drv_fft_S(1);

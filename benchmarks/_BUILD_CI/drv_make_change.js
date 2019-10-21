@@ -1292,67 +1292,110 @@ function mc_not(v) {
 
 // BEGINNING OF PROGRAM
 
-function drv_collatz_S(scale){
-    var t = 0;
-    var length = 0;
-    var mc_t1 = 0;
-    var mc_t2 = 0;
-    var i = 0;
-    var max_num = 0;
-    var max_length = 0;
-    max_length = 0;
-    max_num = 0;
-    mc_tic();
-    mc_t2 = 1;
-    for (i = mc_t2; i<=scale; i = i+1) {
-        length = collatz_S(i);
-        mc_t1 = length > max_length;
-        if (mc_t1) {
-            max_length = length;
-            max_num = i;
-        }
-    }
-    t = mc_toc();
-    mc_disp_S(t);
-    mc_disp_S(max_num);
-    return;
-}
-
-function collatz_S(n){
-    var mc_t9 = 0;
-    var mc_t7 = 0;
-    var mc_t8 = 0;
-    var mc_t5 = 0;
+function make_change_MSS(coins, n, amount){
+    var A = 0;
+    var mc_t30 = 0;
+    var mc_t31 = 0;
     var mc_t10 = 0;
+    var mc_t32 = 0;
+    var mc_t33 = 0;
     var mc_t11 = 0;
+    var mc_t34 = 0;
     var mc_t12 = 0;
+    var mc_t35 = 0;
     var mc_t13 = 0;
+    var N = 0;
     var mc_t14 = 0;
     var mc_t15 = 0;
     var mc_t16 = 0;
-    var y = 0;
-    y = 0;
-    mc_t16 = 1;
-    mc_t15 = n > mc_t16;
-    while (mc_t15) {
-        mc_t8 = 2;
-        mc_t5 = mc_mod_SS(n, mc_t8);
-        mc_t13 = 0;
-        mc_t12 = mc_t5 === mc_t13;
-        if (mc_t12) {
-            mc_t9 = 2;
-            n = n / mc_t9;
-        } else {
-            mc_t10 = 3;
-            mc_t7 = mc_t10 * n;
-            mc_t11 = 1;
-            n = mc_t7 + mc_t11;
-        }
-        mc_t14 = 1;
-        y = y + mc_t14;
-        mc_t16 = 1;
-        mc_t15 = n > mc_t16;
+    var mc_t17 = 0;
+    var mc_t18 = 0;
+    var mc_t19 = 0;
+    var ways = 0;
+    var T = 0;
+    var i = 0;
+    var mc_t20 = 0;
+    var j = 0;
+    var mc_t21 = 0;
+    var mc_t22 = 0;
+    var mc_t23 = 0;
+    var mc_t24 = 0;
+    var mc_t25 = 0;
+    var mc_t26 = 0;
+    var mc_t27 = 0;
+    var mc_t28 = 0;
+    var mc_t29 = 0;
+    var left_idx = 0;
+    mc_t23 = 1;
+    N = n + mc_t23;
+    mc_t24 = 1;
+    A = amount + mc_t24;
+    T = mc_zeros(N, A);
+
+    mc_t27 = 1;
+    for (i = mc_t27; i<=N; i = i+1) {
+        mc_t25 = 1;
+        mc_t26 = 1;
+        T[((i-1)+(5*(mc_t26-1)))] = mc_t25;
     }
-    return y;
+
+    mc_t35 = 2;
+    for (i = mc_t35; i<=N; i = i+1) {
+        mc_t34 = 2;
+        for (j = mc_t34; j<=A; j = j+1) {
+            mc_t12 = T[((i-1)+(5*(j-1)))];
+            mc_t28 = 1;
+            mc_t14 = i - mc_t28;
+            mc_t15 = j;
+            mc_t13 = T[((mc_t14-1)+(5*(mc_t15-1)))];
+            mc_t10 = mc_t12 + mc_t13;
+            T[((i-1)+(5*(j-1)))] = mc_t10;
+            mc_t29 = 1;
+            mc_t16 = j - mc_t29;
+            mc_t30 = 1;
+            mc_t18 = i - mc_t30;
+            mc_t17 = coins[(mc_t18-1)];
+            left_idx = mc_t16 - mc_t17;
+            mc_t33 = 0;
+            mc_t32 = left_idx >= mc_t33;
+            if (mc_t32) {
+                mc_t19 = T[((i-1)+(5*(j-1)))];
+                mc_t21 = i;
+                mc_t31 = 1;
+                mc_t22 = left_idx + mc_t31;
+                mc_t20 = T[((mc_t21-1)+(5*(mc_t22-1)))];
+                mc_t11 = mc_t19 + mc_t20;
+                T[((i-1)+(5*(j-1)))] = mc_t11;
+            }
+        }
+    }
+    ways = T[((N-1)+(5*(A-1)))];
+    return ways;
 }
-drv_collatz_S(1);
+
+function drv_make_change_S(scale){
+    var mc_t7 = 0;
+    var mc_t8 = 0;
+    var t = 0;
+    var coins = 0;
+    var mc_t3 = 0;
+    var mc_t4 = 0;
+    var mc_t1 = 0;
+    var mc_t2 = 0;
+    var i = 0;
+    mc_t1 = 1;
+    mc_t2 = 5;
+    mc_t3 = 10;
+    mc_t4 = 25;
+    coins = mc_horzcat(mc_t1, mc_t2, mc_t3, mc_t4);
+    mc_tic();
+    mc_t8 = 0;
+    for (i = mc_t8; i<=scale; i = i+1) {
+        mc_t7 = 4;
+        make_change_MSS(coins, mc_t7, i);
+    }
+    t = mc_toc();
+    mc_disp_S(t);
+    return;
+}
+drv_make_change_S(1);

@@ -92,14 +92,12 @@ public class CopyInsertion {
                 }
             }
         }
-
-        @Override
-        public void caseTIRReturnStmt(TIRReturnStmt retStmt) {
+        private void processReturn(ASTNode node){
             // Only "un-alias" one variable per transformation.
             if (addedCopy)
                 return;
 
-            PointsToMap inSet = pta.getInFlowSets().get(retStmt);
+            PointsToMap inSet = pta.getInFlowSets().get(node);
 
             // Add copies for output parameters that may point to
             // externally allocated memory.
@@ -107,10 +105,10 @@ public class CopyInsertion {
                 PointsToValue ptv = inSet.get(outParam);
 
                 Set<MallocSite> externalAliases = ptv
-                  .getMallocSites()
-                  .stream()
-                  .filter(m -> m.isExternal())
-                  .collect(Collectors.toCollection(HashSet::new));
+                        .getMallocSites()
+                        .stream()
+                        .filter(m -> m.isExternal())
+                        .collect(Collectors.toCollection(HashSet::new));
                 if (!externalAliases.isEmpty()) {
                     for (MallocSite m: externalAliases) {
                         for (TIRCopyStmt aliasingStmt: ptv.getAliasingStmts(m)) {
@@ -138,6 +136,10 @@ public class CopyInsertion {
                     }
                 }
             }
+        }
+        @Override
+        public void caseTIRReturnStmt(TIRReturnStmt retStmt) {
+            processReturn(retStmt);
         }
     }
 }

@@ -6,7 +6,6 @@ import java.util.Set;
 import java.util.HashSet;
 
 import natlab.tame.tir.TIRCopyStmt;
-
 public class PointsToMap {
     private Map<String, PointsToValue> map = new HashMap<>();
 

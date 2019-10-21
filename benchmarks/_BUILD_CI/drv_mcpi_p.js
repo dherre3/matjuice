@@ -1292,67 +1292,67 @@ function mc_not(v) {
 
 // BEGINNING OF PROGRAM
 
-function drv_collatz_S(scale){
-    var t = 0;
-    var length = 0;
-    var mc_t1 = 0;
-    var mc_t2 = 0;
-    var i = 0;
-    var max_num = 0;
-    var max_length = 0;
-    max_length = 0;
-    max_num = 0;
-    mc_tic();
-    mc_t2 = 1;
-    for (i = mc_t2; i<=scale; i = i+1) {
-        length = collatz_S(i);
-        mc_t1 = length > max_length;
-        if (mc_t1) {
-            max_length = length;
-            max_num = i;
-        }
-    }
-    t = mc_toc();
-    mc_disp_S(t);
-    mc_disp_S(max_num);
-    return;
-}
-
-function collatz_S(n){
+function mcpi_p_SS(N, P){
     var mc_t9 = 0;
+    var temp = 0;
     var mc_t7 = 0;
     var mc_t8 = 0;
-    var mc_t5 = 0;
+    var mc_t6 = 0;
+    var mc_t4 = 0;
     var mc_t10 = 0;
     var mc_t11 = 0;
+    var myRes = 0;
+    var temp2 = 0;
     var mc_t12 = 0;
     var mc_t13 = 0;
     var mc_t14 = 0;
     var mc_t15 = 0;
+    var result = 0;
     var mc_t16 = 0;
+    var mc_t17 = 0;
+    var x = 0;
     var y = 0;
-    y = 0;
+    result = 0;
+
     mc_t16 = 1;
-    mc_t15 = n > mc_t16;
-    while (mc_t15) {
-        mc_t8 = 2;
-        mc_t5 = mc_mod_SS(n, mc_t8);
-        mc_t13 = 0;
-        mc_t12 = mc_t5 === mc_t13;
-        if (mc_t12) {
-            mc_t9 = 2;
-            n = n / mc_t9;
-        } else {
-            mc_t10 = 3;
-            mc_t7 = mc_t10 * n;
+    for (temp = mc_t16; temp<=P; temp = temp+1) {
+        myRes = 0;
+        mc_t8 = N / P;
+        mc_t15 = 1;
+        for (temp2 = mc_t15; temp2<=mc_t8; temp2 = temp2+1) {
+            mc_t10 = 1;
+            x = mc_rand(mc_t10);
             mc_t11 = 1;
-            n = mc_t7 + mc_t11;
+            y = mc_rand(mc_t11);
+            mc_t6 = x * x;
+            mc_t7 = y * y;
+            mc_t4 = mc_t6 + mc_t7;
+            mc_t14 = 1;
+            mc_t13 = mc_t4 <= mc_t14;
+            if (mc_t13) {
+                mc_t12 = 1;
+                myRes = myRes + mc_t12;
+            }
         }
-        mc_t14 = 1;
-        y = y + mc_t14;
-        mc_t16 = 1;
-        mc_t15 = n > mc_t16;
+        result = result + myRes;
     }
-    return y;
+    mc_t9 = result / N;
+    mc_t17 = 4;
+    result = mc_t9 * mc_t17;
+    return result;
 }
-drv_collatz_S(1);
+
+function drv_mcpi_p_S(scale){
+    var res = 0;
+    var t = 0;
+    var mc_t1 = 0;
+    var mc_t2 = 0;
+    mc_tic();
+    mc_t1 = 50000;
+    mc_t2 = 10;
+    res = mcpi_p_SS(mc_t1, mc_t2);
+    t = mc_toc();
+    mc_disp_S(t);
+    return;
+}
+drv_mcpi_p_S(1);

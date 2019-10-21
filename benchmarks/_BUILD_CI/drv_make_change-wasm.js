@@ -228,89 +228,131 @@ async function runner(){
 
 // BEGINNING OF PROGRAM
 
-function drv_bubble_S(size){
+function make_change_MSS(coins, n, amount){
     var A = 0;
-    var t = 0;
-    var mc_t4 = 0;
-    var mc_t1 = 0;
-    var mc_t2 = 0;
-    var i = 0;
-    var y = 0;
-    var mc_t0 = 0;
-    var mc_t22 = 0;
-    mc_t0 = 300;
-    mc_t1 = 1;
-    mc_t22 = wi.create_mxvector(2);
-    wi.set_array_index_f64(mc_t22, 1, mc_t0);
-    wi.set_array_index_f64(mc_t22, 2, mc_t1);
-    A = wi.rand(mc_t22);
-    mc_t2 = 10000;
-    A = wi.mtimes_SM(mc_t2, A);
-    wi.tic();
-    mc_t4 = 1;
-    for (i = mc_t4; i<=size; i = i+1) {
-        y = bubble_M(A);
-    }
-    t = wi.toc();
-    wi.disp_S(t);
-    return;
-}
-
-function bubble_M(A){
-    var mc_t9 = 0;
-    var mc_t7 = 0;
-    var temp = 0;
-    var mc_t8 = 0;
-    var mc_t6 = 0;
-    var mc_t20 = 0;
-    var i = 0;
-    var mc_t21 = 0;
-    var j = 0;
+    var mc_t30 = 0;
+    var mc_t31 = 0;
     var mc_t10 = 0;
+    var mc_t32 = 0;
+    var mc_t33 = 0;
     var mc_t11 = 0;
+    var mc_t34 = 0;
     var mc_t12 = 0;
+    var mc_t35 = 0;
     var mc_t13 = 0;
-    var n = 0;
+    var N = 0;
     var mc_t14 = 0;
+    var mc_t36 = 0;
     var mc_t15 = 0;
     var mc_t16 = 0;
     var mc_t17 = 0;
     var mc_t18 = 0;
     var mc_t19 = 0;
-    var x = 0;
-    A = wi.clone(A);
-    n = wi.length_M(A);
-    mc_t14 = 1;
-    mc_t13 = n - mc_t14;
-    mc_t21 = 1;
-    for (j = mc_t21; j<=mc_t13; j = j+1) {
+    var ways = 0;
+    var T = 0;
+    var i = 0;
+    var mc_t20 = 0;
+    var j = 0;
+    var mc_t21 = 0;
+    var mc_t22 = 0;
+    var mc_t23 = 0;
+    var mc_t24 = 0;
+    var mc_t25 = 0;
+    var mc_t26 = 0;
+    var mc_t27 = 0;
+    var mc_t28 = 0;
+    var mc_t29 = 0;
+    var left_idx = 0;
+    mc_t23 = 1;
+    N = n + mc_t23;
+    mc_t24 = 1;
+    A = amount + mc_t24;
+    mc_t36 = wi.create_mxvector(2);
+    wi.set_array_index_f64(mc_t36, 1, N);
+    wi.set_array_index_f64(mc_t36, 2, A);
+    T = wi.zeros(mc_t36);
 
-        mc_t15 = 1;
-        mc_t12 = n - mc_t15;
-        mc_t20 = 1;
-        for (i = mc_t20; i<=mc_t12; i = i+1) {
-            mc_t6 = wi.get_array_index_f64(A, i);
-            mc_t16 = 1;
-            mc_t10 = i + mc_t16;
-            mc_t7 = wi.get_array_index_f64(A, mc_t10);
-            mc_t19 = mc_t6 > mc_t7;
-            if (mc_t19) {
-                temp = wi.get_array_index_f64(A, i);
-                mc_t17 = 1;
-                mc_t11 = i + mc_t17;
-                mc_t8 = wi.get_array_index_f64(A, mc_t11);
-                wi.set_array_index_f64(A, i, mc_t8);
-                mc_t18 = 1;
-                mc_t9 = i + mc_t18;
-                wi.set_array_index_f64(A, mc_t9, temp);
+    mc_t27 = 1;
+    for (i = mc_t27; i<=N; i = i+1) {
+        mc_t25 = 1;
+        mc_t26 = 1;
+        wi.set_array_index_f64(T, (((i-1)+(5*(mc_t26-1)))+1), mc_t25);
+    }
+
+    mc_t35 = 2;
+    for (i = mc_t35; i<=N; i = i+1) {
+        mc_t34 = 2;
+        for (j = mc_t34; j<=A; j = j+1) {
+            mc_t12 = wi.get_array_index_f64(T, (((i-1)+(5*(j-1)))+1));
+            mc_t28 = 1;
+            mc_t14 = i - mc_t28;
+            mc_t15 = j;
+            mc_t13 = wi.get_array_index_f64(T, (((mc_t14-1)+(5*(mc_t15-1)))+1));
+            mc_t10 = mc_t12 + mc_t13;
+            wi.set_array_index_f64(T, (((i-1)+(5*(j-1)))+1), mc_t10);
+            mc_t29 = 1;
+            mc_t16 = j - mc_t29;
+            mc_t30 = 1;
+            mc_t18 = i - mc_t30;
+            mc_t17 = wi.get_array_index_f64(coins, mc_t18);
+            left_idx = mc_t16 - mc_t17;
+            mc_t33 = 0;
+            mc_t32 = left_idx >= mc_t33;
+            if (mc_t32) {
+                mc_t19 = wi.get_array_index_f64(T, (((i-1)+(5*(j-1)))+1));
+                mc_t21 = i;
+                mc_t31 = 1;
+                mc_t22 = left_idx + mc_t31;
+                mc_t20 = wi.get_array_index_f64(T, (((mc_t21-1)+(5*(mc_t22-1)))+1));
+                mc_t11 = mc_t19 + mc_t20;
+                wi.set_array_index_f64(T, (((i-1)+(5*(j-1)))+1), mc_t11);
             }
         }
     }
-    x = A;
-
-    return x;
+    ways = wi.get_array_index_f64(T, (((N-1)+(5*(A-1)))+1));
+    return ways;
 }
-drv_bubble_S(1);
+
+function drv_make_change_S(scale){
+    var mc_t7 = 0;
+    var mc_t8 = 0;
+    var coins = 0;
+    var mc_t3 = 0;
+    var mc_t4 = 0;
+    var mc_t40 = 0;
+    var mc_t1 = 0;
+    var mc_t41 = 0;
+    var mc_t2 = 0;
+    var i = 0;
+    var mc_t37 = 0;
+    var mc_t38 = 0;
+    var mc_t39 = 0;
+    var t = 0;
+    mc_t1 = 1;
+    mc_t2 = 5;
+    mc_t3 = 10;
+    mc_t4 = 25;
+    mc_t37 = wi.create_mxvector(4, 5);
+    mc_t38 = wi.convert_scalar_to_mxarray(mc_t1);
+    wi.set_array_index_i32(mc_t37, 1, mc_t38);
+    mc_t39 = wi.convert_scalar_to_mxarray(mc_t2);
+    wi.set_array_index_i32(mc_t37, 2, mc_t39);
+    mc_t40 = wi.convert_scalar_to_mxarray(mc_t3);
+    wi.set_array_index_i32(mc_t37, 3, mc_t40);
+    mc_t41 = wi.convert_scalar_to_mxarray(mc_t4);
+    wi.set_array_index_i32(mc_t37, 4, mc_t41);
+    coins = wi.horzcat(mc_t37);
+    wi.tic();
+    mc_t8 = 0;
+    for (i = mc_t8; i<=scale; i = i+1) {
+        mc_t7 = 4;
+        make_change_MSS(coins, mc_t7, i);
+    }
+    t = wi.toc();
+    wi.disp_S(t);
+    return;
+}
+drv_make_change_S(1);
 }
 runner().then((res)=>{}).catch((err)=>{
     throw err;

@@ -1370,4 +1370,4 @@ function bubble_M(A){
 
     return x;
 }
-drv_bubble_S(300);
+drv_bubble_S(1);

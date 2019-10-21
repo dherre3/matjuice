@@ -1292,67 +1292,50 @@ function mc_not(v) {
 
 // BEGINNING OF PROGRAM
 
-function drv_collatz_S(scale){
-    var t = 0;
-    var length = 0;
-    var mc_t1 = 0;
-    var mc_t2 = 0;
-    var i = 0;
-    var max_num = 0;
-    var max_length = 0;
-    max_length = 0;
-    max_num = 0;
-    mc_tic();
-    mc_t2 = 1;
-    for (i = mc_t2; i<=scale; i = i+1) {
-        length = collatz_S(i);
-        mc_t1 = length > max_length;
-        if (mc_t1) {
-            max_length = length;
-            max_num = i;
-        }
-    }
-    t = mc_toc();
-    mc_disp_S(t);
-    mc_disp_S(max_num);
-    return;
-}
-
-function collatz_S(n){
-    var mc_t9 = 0;
+function prime_total_S(n){
+    var prime = 0;
+    var total = 0;
     var mc_t7 = 0;
     var mc_t8 = 0;
     var mc_t5 = 0;
-    var mc_t10 = 0;
-    var mc_t11 = 0;
-    var mc_t12 = 0;
-    var mc_t13 = 0;
-    var mc_t14 = 0;
-    var mc_t15 = 0;
-    var mc_t16 = 0;
-    var y = 0;
-    y = 0;
-    mc_t16 = 1;
-    mc_t15 = n > mc_t16;
-    while (mc_t15) {
-        mc_t8 = 2;
-        mc_t5 = mc_mod_SS(n, mc_t8);
-        mc_t13 = 0;
-        mc_t12 = mc_t5 === mc_t13;
-        if (mc_t12) {
-            mc_t9 = 2;
-            n = n / mc_t9;
-        } else {
-            mc_t10 = 3;
-            mc_t7 = mc_t10 * n;
-            mc_t11 = 1;
-            n = mc_t7 + mc_t11;
+    var mc_t6 = 0;
+    var mc_t4 = 0;
+    var i = 0;
+    var mc_t2 = 0;
+    var j = 0;
+
+
+    total = 0;
+    mc_t8 = 2;
+    for (i = mc_t8; i<=n; i = i+1) {
+        prime = 1;
+        mc_t4 = mc_sqrt_S(i);
+        mc_t7 = 2;
+        for (j = mc_t7; j<=mc_t4; j = j+1) {
+            mc_t2 = mc_mod_SS(i, j);
+            mc_t6 = 0;
+            mc_t5 = mc_t2 === mc_t6;
+            if (mc_t5) {
+                prime = 0;
+                break;
+            }
         }
-        mc_t14 = 1;
-        y = y + mc_t14;
-        mc_t16 = 1;
-        mc_t15 = n > mc_t16;
+        total = total + prime;
     }
-    return y;
+    return total;
 }
-drv_collatz_S(1);
+
+function drv_prime_S(scale){
+    var t = 0;
+    var y = 0;
+
+
+
+    mc_tic();
+    y = prime_total_S(scale);
+    t = mc_toc();
+    mc_disp_S(t);
+
+    return;
+}
+drv_prime_S(1);

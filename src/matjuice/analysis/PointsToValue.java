@@ -17,6 +17,7 @@ import natlab.tame.tir.*;
  * site between multiple identifiers.
  */
 public class PointsToValue {
+
     private Map<MallocSite, Set<TIRCopyStmt>> mallocs = new HashMap<>();
 
     /**

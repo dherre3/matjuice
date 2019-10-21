@@ -15,7 +15,6 @@
  */
 
 package matjuice.codegen;
-
 import java.util.Set;
 import java.util.Map;
 
@@ -41,12 +40,12 @@ import natlab.tame.valueanalysis.aggrvalue.AggrValue;
 import natlab.tame.valueanalysis.basicmatrix.BasicMatrixValue;
 import natlab.tame.valueanalysis.components.shape.DimValue;
 import natlab.toolkits.rewrite.TempFactory;
-
 public class Generator {
-    private enum LoopDirection {Ascending, Descending, NonMoving, Unknown}
 
+    private enum LoopDirection {Ascending, Descending, NonMoving, Unknown}
     private Set<String> locals;
     private IntraproceduralValueAnalysis<AggrValue<BasicMatrixValue>> analysis;
+
     private boolean doCopyInsertion;
     private long startTime = 0;
     private long endTime = 0;
@@ -186,11 +185,13 @@ public class Generator {
         // 2. insert MJCopyStmt nodes for one aliased variable
         // 3. re-run analysis and transformation
         // 4. iterate until fixed point
+
         PointsToAnalysis pta;
         do {
             pta = new PointsToAnalysis(tirFunction);
             tirFunction.tirAnalyze(pta);
         } while (CopyInsertion.apply(tirFunction, pta));
+        System.out.println(tirFunction.getPrettyPrinted());
     }
 
     /**
@@ -266,6 +267,7 @@ public class Generator {
         if (doCopyInsertion) {
             return new StmtAssign(lhs, rhsExpr);
         } else {
+
             BasicMatrixValue bmv = Utils.getBasicMatrixValue(analysis, tirStmt, tirStmt.getSourceName().getID());
             if (bmv.getShape().isScalar()) {
                 return new StmtAssign(lhs, rhsExpr);
@@ -374,8 +376,7 @@ public class Generator {
                 }
                 return seq;
             }
-        }else{
-
+        } else {
             String functionName = FunctionRenamer.getFunctionName(tirStmt, analysis, useWasm);
             boolean isVectorInput = FunctionRenamer.isVectorInput(tirStmt.getFunctionName().getID());
             boolean isBuiltIn = FunctionRenamer.isMatlabBuiltin(tirStmt.getFunctionName().getID());
@@ -434,8 +435,11 @@ public class Generator {
                     if(tirStmt.getArguments().size() > 0){
                         throw new Error("No support for current boolean builtins false|true that are not scalar");
                     }
-                    seq.addStmt(new StmtAssign(listTarget,new ExprId(functionName)));
-                    // TODO FIX THIS, this is incorrect. Assumption is that there is a lhs. Also
+                    if(listTarget.equals("")){
+                        seq.addStmt(new StmtAssign(listTarget,new ExprId(functionName)));
+                    }else{
+                        seq.addStmt(new StmtAssign(listTarget,new ExprId(functionName)));
+                    }
                     return seq;
                 }else{
                     genCallStmtDefaultInputWasm(seq, tirStmt, listTarget,isBuiltIn);
@@ -921,7 +925,6 @@ public class Generator {
         }
         return seq;
     }
-
 
     private Expr genExpr(ast.Expr expr) {
         if (expr instanceof ast.IntLiteralExpr)

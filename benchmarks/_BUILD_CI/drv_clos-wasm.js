@@ -228,89 +228,144 @@ async function runner(){
 
 // BEGINNING OF PROGRAM
 
-function drv_bubble_S(size){
+function closure_S(N){
+    var jj = 0;
     var A = 0;
-    var t = 0;
-    var mc_t4 = 0;
-    var mc_t1 = 0;
-    var mc_t2 = 0;
-    var i = 0;
-    var y = 0;
-    var mc_t0 = 0;
-    var mc_t22 = 0;
-    mc_t0 = 300;
-    mc_t1 = 1;
-    mc_t22 = wi.create_mxvector(2);
-    wi.set_array_index_f64(mc_t22, 1, mc_t0);
-    wi.set_array_index_f64(mc_t22, 2, mc_t1);
-    A = wi.rand(mc_t22);
-    mc_t2 = 10000;
-    A = wi.mtimes_SM(mc_t2, A);
-    wi.tic();
-    mc_t4 = 1;
-    for (i = mc_t4; i<=size; i = i+1) {
-        y = bubble_M(A);
-    }
-    t = wi.toc();
-    wi.disp_S(t);
-    return;
-}
-
-function bubble_M(A){
-    var mc_t9 = 0;
-    var mc_t7 = 0;
-    var temp = 0;
-    var mc_t8 = 0;
-    var mc_t6 = 0;
-    var mc_t20 = 0;
-    var i = 0;
-    var mc_t21 = 0;
-    var j = 0;
+    var B = 0;
     var mc_t10 = 0;
     var mc_t11 = 0;
     var mc_t12 = 0;
     var mc_t13 = 0;
-    var n = 0;
     var mc_t14 = 0;
     var mc_t15 = 0;
     var mc_t16 = 0;
+    var ii1 = 0;
     var mc_t17 = 0;
     var mc_t18 = 0;
     var mc_t19 = 0;
-    var x = 0;
-    A = wi.clone(A);
-    n = wi.length_M(A);
-    mc_t14 = 1;
-    mc_t13 = n - mc_t14;
-    mc_t21 = 1;
-    for (j = mc_t21; j<=mc_t13; j = j+1) {
+    var ii = 0;
+    var mc_t9 = 0;
+    var mc_t7 = 0;
+    var mc_t8 = 0;
+    var mc_t5 = 0;
+    var mc_t6 = 0;
+    var mc_t3 = 0;
+    var mc_t4 = 0;
+    var mc_t2 = 0;
+    var mc_t20 = 0;
+    var mc_t21 = 0;
+    var mc_t22 = 0;
+    var mc_t23 = 0;
+    var B1 = 0;
 
-        mc_t15 = 1;
-        mc_t12 = n - mc_t15;
-        mc_t20 = 1;
-        for (i = mc_t20; i<=mc_t12; i = i+1) {
-            mc_t6 = wi.get_array_index_f64(A, i);
-            mc_t16 = 1;
-            mc_t10 = i + mc_t16;
-            mc_t7 = wi.get_array_index_f64(A, mc_t10);
-            mc_t19 = mc_t6 > mc_t7;
-            if (mc_t19) {
-                temp = wi.get_array_index_f64(A, i);
-                mc_t17 = 1;
-                mc_t11 = i + mc_t17;
-                mc_t8 = wi.get_array_index_f64(A, mc_t11);
-                wi.set_array_index_f64(A, i, mc_t8);
-                mc_t18 = 1;
-                mc_t9 = i + mc_t18;
-                wi.set_array_index_f64(A, mc_t9, temp);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    mc_t23 = wi.create_mxvector(2);
+    wi.set_array_index_f64(mc_t23, 1, N);
+    wi.set_array_index_f64(mc_t23, 2, N);
+    A = wi.zeros(mc_t23);
+    mc_t17 = 1;
+    for (ii = mc_t17; ii<=N; ii = ii+1) {
+        mc_t16 = 1;
+        for (jj = mc_t16; jj<=N; jj = jj+1) {
+            mc_t2 = ii * jj;
+            mc_t10 = 2;
+            mc_t3 = N / mc_t10;
+            mc_t13 = mc_t2 < mc_t3;
+            if (mc_t13) {
+                mc_t4 = N - ii;
+                mc_t5 = ii + jj;
+                mc_t11 = 1;
+                wi.set_array_index_f64(A, (((mc_t4-1)+(wi.get_array_stride(A, 1)*(mc_t5-1)))+1), mc_t11);
+                mc_t6 = ii;
+                mc_t8 = N - ii;
+                mc_t9 = jj;
+                mc_t7 = mc_t8 - mc_t9;
+                mc_t12 = 1;
+                wi.set_array_index_f64(A, (((mc_t6-1)+(wi.get_array_stride(A, 1)*(mc_t7-1)))+1), mc_t12);
+            }
+            mc_t15 = ii === jj;
+            if (mc_t15) {
+                mc_t14 = 1;
+                wi.set_array_index_f64(A, (((ii-1)+(wi.get_array_stride(A, 1)*(jj-1)))+1), mc_t14);
             }
         }
     }
-    x = A;
 
-    return x;
+    B = A;
+
+
+
+    mc_t18 = 2;
+    ii1 = N / mc_t18;
+    mc_t21 = 1;
+    mc_t20 = ii1 >= mc_t21;
+    while (mc_t20) {
+        B = wi.mtimes_MM(B, B);
+        mc_t19 = 2;
+        ii1 = ii1 / mc_t19;
+        mc_t21 = 1;
+        mc_t20 = ii1 >= mc_t21;
+    }
+
+
+    mc_t22 = 1;
+    B1 = wi.lt_MS(B, mc_t22);
+    return B1;
 }
-drv_bubble_S(1);
+
+function drv_clos_S(scale){
+    var B = 0;
+    var t = 0;
+    var N = 0;
+
+
+
+
+    N = 450;
+    wi.tic();
+    B = closure_S(N);
+    t = wi.toc();
+    wi.disp_S(t);
+    return;
+}
+drv_clos_S(1);
 }
 runner().then((res)=>{}).catch((err)=>{
     throw err;

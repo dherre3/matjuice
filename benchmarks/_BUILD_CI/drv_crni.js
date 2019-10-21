@@ -1292,67 +1292,494 @@ function mc_not(v) {
 
 // BEGINNING OF PROGRAM
 
-function drv_collatz_S(scale){
-    var t = 0;
-    var length = 0;
-    var mc_t1 = 0;
-    var mc_t2 = 0;
-    var i = 0;
-    var max_num = 0;
-    var max_length = 0;
-    max_length = 0;
-    max_num = 0;
-    mc_tic();
-    mc_t2 = 1;
-    for (i = mc_t2; i<=scale; i = i+1) {
-        length = collatz_S(i);
-        mc_t1 = length > max_length;
-        if (mc_t1) {
-            max_length = length;
-            max_num = i;
-        }
+function tridiagonal_MMMMS(A, D, C, B, n){
+    var mc_t112 = 0;
+    var mc_t111 = 0;
+    var mc_t110 = 0;
+    var mult = 0;
+    var mc_t91 = 0;
+    var mc_t92 = 0;
+    var mc_t93 = 0;
+    var mc_t94 = 0;
+    var mc_t95 = 0;
+    var mc_t96 = 0;
+    var mc_t97 = 0;
+    var mc_t119 = 0;
+    var mc_t98 = 0;
+    var mc_t118 = 0;
+    var mc_t99 = 0;
+    var mc_t117 = 0;
+    var mc_t116 = 0;
+    var mc_t115 = 0;
+    var mc_t114 = 0;
+    var mc_t113 = 0;
+    var X = 0;
+    var mc_t101 = 0;
+    var mc_t123 = 0;
+    var mc_t122 = 0;
+    var mc_t100 = 0;
+    var mc_t121 = 0;
+    var mc_t120 = 0;
+    var mc_t109 = 0;
+    var mc_t108 = 0;
+    var mc_t107 = 0;
+    var mc_t129 = 0;
+    var k = 0;
+    var mc_t106 = 0;
+    var mc_t128 = 0;
+    var mc_t105 = 0;
+    var mc_t127 = 0;
+    var mc_t104 = 0;
+    var mc_t126 = 0;
+    var mc_t103 = 0;
+    var mc_t125 = 0;
+    var mc_t124 = 0;
+    var mc_t102 = 0;
+    D = D.mj_clone();
+    B = B.mj_clone();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    mc_t124 = 2;
+    for (k = mc_t124; k<=n; k = k+1) {
+        mc_t120 = 1;
+        mc_t98 = k - mc_t120;
+        mc_t95 = A[(mc_t98-1)];
+        mc_t121 = 1;
+        mc_t97 = k - mc_t121;
+        mc_t96 = D[(mc_t97-1)];
+        mult = mc_t95 / mc_t96;
+        mc_t99 = D[(k-1)];
+        mc_t101 = mult;
+        mc_t122 = 1;
+        mc_t103 = k - mc_t122;
+        mc_t102 = C[(mc_t103-1)];
+        mc_t100 = mc_t101 * mc_t102;
+        mc_t91 = mc_t99 - mc_t100;
+        D[(k-1)] = mc_t91;
+        mc_t104 = B[(k-1)];
+        mc_t106 = mult;
+        mc_t123 = 1;
+        mc_t108 = k - mc_t123;
+        mc_t107 = B[(mc_t108-1)];
+        mc_t105 = mc_t106 * mc_t107;
+        mc_t92 = mc_t104 - mc_t105;
+        B[(k-1)] = mc_t92;
     }
-    t = mc_toc();
-    mc_disp_S(t);
-    mc_disp_S(max_num);
-    return;
+
+    mc_t125 = 1;
+    X = mc_zeros(mc_t125, n);
+    mc_t109 = B[(n-1)];
+    mc_t110 = D[(n-1)];
+    mc_t93 = mc_t109 / mc_t110;
+    X[(n-1)] = mc_t93;
+
+    mc_t126 = 1;
+    mc_t118 = n - mc_t126;
+    mc_t127 = 1;
+    mc_t119 = -mc_t127;
+    mc_t129 = 1;
+    for (k = mc_t118; k>=mc_t129; k = k+mc_t119) {
+        mc_t113 = B[(k-1)];
+        mc_t115 = C[(k-1)];
+        mc_t128 = 1;
+        mc_t117 = k + mc_t128;
+        mc_t116 = X[(mc_t117-1)];
+        mc_t114 = mc_t115 * mc_t116;
+        mc_t111 = mc_t113 - mc_t114;
+        mc_t112 = D[(k-1)];
+        mc_t94 = mc_t111 / mc_t112;
+        X[(k-1)] = mc_t94;
+    }
+
+
+
+    return X;
 }
 
-function collatz_S(n){
+function crnich_SSSSS(a, b, c, n, m){
+    var j1 = 0;
+    var mc_t30 = 0;
+    var mc_t31 = 0;
+    var mc_t32 = 0;
+    var mc_t33 = 0;
+    var mc_t34 = 0;
+    var mc_t35 = 0;
+    var mc_t36 = 0;
+    var mc_t37 = 0;
+    var mc_t38 = 0;
+    var mc_t39 = 0;
+    var s1 = 0;
+    var s2 = 0;
+    var mc_t20 = 0;
+    var mc_t21 = 0;
+    var mc_t22 = 0;
+    var mc_t23 = 0;
+    var mc_t24 = 0;
+    var mc_t25 = 0;
+    var mc_t26 = 0;
+    var mc_t27 = 0;
+    var mc_t28 = 0;
+    var mc_t29 = 0;
+    var mc_t50 = 0;
+    var mc_t51 = 0;
+    var mc_t52 = 0;
+    var mc_t53 = 0;
+    var mc_t54 = 0;
+    var mc_t55 = 0;
+    var mc_t56 = 0;
+    var mc_t57 = 0;
+    var mc_t58 = 0;
+    var mc_t59 = 0;
+    var U = 0;
+    var X = 0;
+    var mc_t40 = 0;
+    var h = 0;
+    var mc_t41 = 0;
+    var mc_t42 = 0;
+    var mc_t43 = 0;
+    var k = 0;
+    var mc_t44 = 0;
+    var mc_t45 = 0;
+    var mc_t46 = 0;
+    var mc_t47 = 0;
+    var mc_t48 = 0;
+    var mc_t49 = 0;
+    var r = 0;
+    var mc_t70 = 0;
+    var mc_t71 = 0;
+    var mc_t72 = 0;
+    var mc_t73 = 0;
+    var mc_t74 = 0;
+    var mc_t75 = 0;
+    var mc_t76 = 0;
+    var mc_t77 = 0;
+    var mc_t78 = 0;
+    var mc_t79 = 0;
     var mc_t9 = 0;
     var mc_t7 = 0;
     var mc_t8 = 0;
     var mc_t5 = 0;
+    var mc_t60 = 0;
+    var mc_t6 = 0;
+    var mc_t61 = 0;
+    var mc_t3 = 0;
+    var mc_t62 = 0;
+    var mc_t4 = 0;
+    var mc_t63 = 0;
+    var mc_t64 = 0;
+    var mc_t65 = 0;
+    var mc_t66 = 0;
+    var mc_t67 = 0;
+    var mc_t68 = 0;
+    var mc_t69 = 0;
+    var mc_t90 = 0;
     var mc_t10 = 0;
     var mc_t11 = 0;
+    var Va = 0;
     var mc_t12 = 0;
+    var Vb = 0;
     var mc_t13 = 0;
+    var Vc = 0;
     var mc_t14 = 0;
+    var Vd = 0;
     var mc_t15 = 0;
     var mc_t16 = 0;
-    var y = 0;
-    y = 0;
-    mc_t16 = 1;
-    mc_t15 = n > mc_t16;
-    while (mc_t15) {
-        mc_t8 = 2;
-        mc_t5 = mc_mod_SS(n, mc_t8);
-        mc_t13 = 0;
-        mc_t12 = mc_t5 === mc_t13;
-        if (mc_t12) {
-            mc_t9 = 2;
-            n = n / mc_t9;
-        } else {
-            mc_t10 = 3;
-            mc_t7 = mc_t10 * n;
-            mc_t11 = 1;
-            n = mc_t7 + mc_t11;
-        }
-        mc_t14 = 1;
-        y = y + mc_t14;
-        mc_t16 = 1;
-        mc_t15 = n > mc_t16;
+    var mc_t17 = 0;
+    var mc_t18 = 0;
+    var mc_t19 = 0;
+    var mc_t80 = 0;
+    var mc_t81 = 0;
+    var mc_t82 = 0;
+    var mc_t83 = 0;
+    var mc_t84 = 0;
+    var i1 = 0;
+    var mc_t85 = 0;
+    var mc_t86 = 0;
+    var mc_t87 = 0;
+    var mc_t88 = 0;
+    var mc_t89 = 0;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    mc_t9 = a;
+    mc_t52 = 1;
+    mc_t10 = n - mc_t52;
+    h = mc_t9 / mc_t10;
+    mc_t11 = b;
+    mc_t53 = 1;
+    mc_t12 = m - mc_t53;
+    k = mc_t11 / mc_t12;
+    mc_t54 = 2;
+    mc_t15 = mc_mpower_SS(c, mc_t54);
+    mc_t16 = k;
+    mc_t13 = mc_t15 * mc_t16;
+    mc_t55 = 2;
+    mc_t14 = mc_mpower_SS(h, mc_t55);
+    r = mc_t13 / mc_t14;
+    mc_t56 = 2;
+    mc_t17 = mc_t56 / r;
+    mc_t57 = 2;
+    s1 = mc_t57 + mc_t17;
+    mc_t58 = 2;
+    mc_t18 = mc_t58 / r;
+    mc_t59 = 2;
+    s2 = mc_t18 - mc_t59;
+    U = mc_zeros(n, m);
+    mc_t60 = 1;
+    mc_t32 = n - mc_t60;
+    mc_t65 = 2;
+    for (i1 = mc_t65; i1<=mc_t32; i1 = i1+1) {
+
+        mc_t30 = mc_pi();
+        mc_t31 = h;
+        mc_t28 = mc_t30 * mc_t31;
+        mc_t61 = 1;
+        mc_t29 = i1 - mc_t61;
+        mc_t27 = mc_t28 * mc_t29;
+        mc_t19 = mc_sin_S(mc_t27);
+        mc_t26 = mc_pi();
+        mc_t62 = 3;
+        mc_t24 = mc_t62 * mc_t26;
+        mc_t25 = h;
+        mc_t22 = mc_t24 * mc_t25;
+        mc_t63 = 1;
+        mc_t23 = i1 - mc_t63;
+        mc_t21 = mc_t22 * mc_t23;
+        mc_t20 = mc_sin_S(mc_t21);
+        mc_t3 = mc_t19 + mc_t20;
+        mc_t64 = 1;
+        U[((i1-1)+(2300*(mc_t64-1)))] = mc_t3;
     }
-    return y;
+
+    mc_t33 = s1;
+    mc_t66 = 1;
+    mc_t34 = mc_ones(mc_t66, n);
+    Vd = mc_mtimes_SM(mc_t33, mc_t34);
+    mc_t67 = 1;
+    mc_t68 = 1;
+    Vd[(mc_t68-1)] = mc_t67;
+    mc_t69 = 1;
+    Vd[(n-1)] = mc_t69;
+    mc_t70 = 1;
+    mc_t36 = n - mc_t70;
+    mc_t71 = 1;
+    mc_t35 = mc_ones(mc_t71, mc_t36);
+    Va = mc_uminus_M(mc_t35);
+    mc_t72 = 1;
+    mc_t6 = n - mc_t72;
+    mc_t73 = 0;
+    Va[(mc_t6-1)] = mc_t73;
+    mc_t74 = 1;
+    mc_t38 = n - mc_t74;
+    mc_t75 = 1;
+    mc_t37 = mc_ones(mc_t75, mc_t38);
+    Vc = mc_uminus_M(mc_t37);
+    mc_t76 = 0;
+    mc_t77 = 1;
+    Vc[(mc_t77-1)] = mc_t76;
+    mc_t78 = 1;
+    Vb = mc_zeros(mc_t78, n);
+    mc_t79 = 0;
+    mc_t80 = 1;
+    Vb[(mc_t80-1)] = mc_t79;
+    mc_t81 = 0;
+    Vb[(n-1)] = mc_t81;
+
+    mc_t90 = 2;
+    for (j1 = mc_t90; j1<=m; j1 = j1+1) {
+        mc_t82 = 1;
+        mc_t51 = n - mc_t82;
+        mc_t88 = 2;
+        for (i1 = mc_t88; i1<=mc_t51; i1 = i1+1) {
+            mc_t83 = 1;
+            mc_t49 = i1 - mc_t83;
+            mc_t84 = 1;
+            mc_t50 = j1 - mc_t84;
+            mc_t45 = U[((mc_t49-1)+(2300*(mc_t50-1)))];
+            mc_t85 = 1;
+            mc_t47 = i1 + mc_t85;
+            mc_t86 = 1;
+            mc_t48 = j1 - mc_t86;
+            mc_t46 = U[((mc_t47-1)+(2300*(mc_t48-1)))];
+            mc_t39 = mc_t45 + mc_t46;
+            mc_t41 = s2;
+            mc_t43 = i1;
+            mc_t87 = 1;
+            mc_t44 = j1 - mc_t87;
+            mc_t42 = U[((mc_t43-1)+(2300*(mc_t44-1)))];
+            mc_t40 = mc_t41 * mc_t42;
+            mc_t4 = mc_t39 + mc_t40;
+            Vb[(i1-1)] = mc_t4;
+        }
+        X = tridiagonal_MMMMS(Va, Vd, Vc, Vb, n);
+        mc_t5 = mc_transpose_M(X);
+        mc_t89 = 1;
+        mc_t7 = mc_colon(mc_t89, n);
+        mc_t8 = j1;
+        mc_slice_set(U, mc_t5, [mc_t7, mc_t8]);
+    }
+
+    return U;
 }
-drv_collatz_S(1);
+
+function drv_crni_S(scale){
+    var a = 0;
+    var b = 0;
+    var c = 0;
+    var t = 0;
+    var U = 0;
+    var mc_t1 = 0;
+    var time = 0;
+    var m = 0;
+    var n = 0;
+
+
+
+
+
+
+
+    a = 2.5000000000000000000;
+
+    b = 1.5000000000000000000;
+
+    c = 5;
+
+    m = 2300;
+
+    n = 2300;
+
+    mc_tic();
+    mc_t1 = 1;
+    for (time = mc_t1; time<=scale; time = time+1) {
+        U = crnich_SSSSS(a, b, c, n, m);
+    }
+    t = mc_toc();
+    mc_disp_S(t);
+    return;
+}
+drv_crni_S(1);
